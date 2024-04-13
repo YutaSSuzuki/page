@@ -1,9 +1,15 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "My Website"
-
+  sidebar:
+    contents: auto
 format:
   html:
     theme: cosmo
+  revealjs:
+    theme: defult
+    scrollable: true
+    history: false
