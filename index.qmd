@@ -1,14 +1,24 @@
 ---
-title: "This is my website"
+title: "About"
 format: html
 ---
+**Yuta Suzuki**
 
-Hello, world.
+## hobby
+* ノベルゲーム
+* メドレー作成
+  * アニソンメドレー、ノベルゲーメドレーを作成（個人用）
+* アニメ
+  * ガンダム、コードギアスなど
+* 漫画 
+  * ハヤテのごとく！、神のみぞ知るセカイ、未来日記など
 
-My *name* is **Yuta** ***Suzuki***.
 
-I like
+**Links**<br>
+:<a rel="me" href="https://github.com/YutaSSuzuki/" title="GitHub"><img height=20 width=20 style="vertical-align: text-top;" src="https://cdn.simpleicons.org/github/333333">
+    YutaSSuzuki
+</a>
 
-- Sushi
-- Ra-men
-- Coffee
+:<a rel="me" href="https://x.com/SuzuemonPinfu" title="GitHub"><img height=20 width=20 style="vertical-align: text-top;" src="https://simpleicons.org/icons/x.svg">
+    右衛門
+</a>

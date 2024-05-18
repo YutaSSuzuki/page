@@ -1,11 +1,30 @@
 project:
   type: website
   output-dir: docs
+  preview: 
+    port: 5556
+    browser: true
+    watch-inputs: true
+    navigate: true
 
 website:
-  title: "My Website"
+  title: "Yuta Suzuki"
+  favicon: static/favicon.png
+  bread-crumbs: false
   sidebar:
-    contents: auto
+    title: <img src="/static/favicon.png" height="28" vertical-align="text-bottom"> Yuta Suzuki
+    style: "floating"
+    search: true
+    collapse-level: 1
+    contents:
+      - text: "HOME"
+        file: index.qmd
+      - section: "note"
+        contents: note/*.qmd
+    page-footer:
+      right: "Copyright 2024, Yuta Suzuki"
+    google-analytics: "G-HLCP5V0Y7N"
+
 format:
   html:
     theme: cosmo
@@ -13,3 +32,4 @@ format:
     theme: defult
     scrollable: true
     history: false
+    
