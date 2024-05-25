@@ -27,7 +27,8 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: static/custom.scss
+    fontsize: 16px
   revealjs:
     theme: defult
     scrollable: true

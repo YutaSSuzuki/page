@@ -1,0 +1,17 @@
+/*-- scss:defaults --*/
+$theme: "default" !default;
+
+$grey2: #f4f4f4 !default;
+$grey3: #ccc !default;
+
+h2 {
+	background-color: $grey2;
+	border-bottom: none;
+	padding: 0.4em 0.5em;
+	font-weight: 400;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	margin-inline-start: -12px;
+  border-inline-start: 12px solid $grey3;
+}
+
