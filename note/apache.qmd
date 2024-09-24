@@ -1,0 +1,61 @@
+---
+title: "Apache"
+format: html
+---
+
+## 概要
+
+## Apatchのインストールとコマンド
+
+`sudo apt install apache2`<br>
+Apacheのインストール、CentOSの場合httpdとなる。以下も同様
+
+`sudo ufw allow 'Apache'`<br>
+ポート80番の通信を許可し、ページの閲覧が可能なようにする。
+
+`sudo systemctl status apache2`<br>
+Apacheの状態確認、この段階ではinactiveになっている
+
+`sudo systemctl start apache2`<br>
+Apacheを起動する。起動を止めたい場合は`start`を`stop`に変える
+
+`sudo systemctl enable apache2`
+Apacheをシステムが起動した際、同時に起動できるようにしておく
+
+`sudo systemctl restart apache2`<br>
+Apacheを再起動する。Apacheのコンフィグを変えた場合にその都度使用する。
+
+
+## リクエストのモード選択
+
+クライアントからリクエストを受ける際3つの方法からその受け方を選択できる。<br>
+* prefork
+* worker
+* event
+
+workerはプロセス内にスレッドを持つ構造であり、スレッドがリクエストを処理する。<br>
+同時に処理できるリクエスト数はserverlimit × threadperchildになる。
+
+``` bash
+#ex 1
+serverlimit: 4
+threadperchild: 25
+
+#ex2
+serverlimit: 10
+thredperchild: 10
+```
+
+ex1の場合4×25=100となる。<br>
+ex2も同様に上限は100である。プロセスとスレッド数のどちらを大きくするかは、システムの構成による。<br>
+
+ex1のメリットとデメリット<br>
+* メリット
+  * プロセスの切り替えが少なく、スループットが向上する
+* デメリット
+  * １つのプロセスに障害が起こると、その中にあるスレッド全てに影響が出る。
+
+スレッド数はクライアントにリクエストを受けてからレスポンスを返すまで同じものが使われる。<br>
+つまりその後のAPやDBで遅延があると、スレッドが埋まりやすくなる。<br>
+上限の数の目安 = 1秒間の最大リクエスト数 × レスポンスタイム <br>
+リクエスト数は多少のブレがあるため、×1.2など多少多めに取る。

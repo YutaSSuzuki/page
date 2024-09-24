@@ -1,0 +1,130 @@
+---
+title: "Tomcat"
+format: html
+---
+
+## 概要
+
+WebアプリでAPサーバーを構築するために使用されるソフト。<br>
+動的なアプリを動かすことができ、Appacheで受けたリクエストをTomcatで処理して返すために使用される。<br>
+Javaで動作し、Tomcat内でJavaがDBへ検索を行ったり、必要なテンプレートを作成する。<br>
+
+参考サイト<br>
+
+* https://qiita.com/tanayasu1228/items/11e22a18dbfa796745b5
+* https://tomcat.apache.org/
+
+
+
+## インストール環境
+環境<br>
+* Ubuntu 22.04
+* Tomcat 10.1.25（ここでインストールするもの）
+
+## 1. Javaのインストール
+
+Javaがインストールされているか確認<br>
+``` bash 
+java -version
+```
+
+TomcatにはOpenJDKが必要なため、インストールされていない場合はインストール<br>
+``` bash 
+sudo apt install defalt-jdk
+```
+
+
+JAVA_HOMEのパスを設定していない場合は`.bashrc`にJAVA_HOMEのパスを記載する。<br>
+``` bash 
+nano ~/.bashrc
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+source ~/.bashrc
+echo $JAVA_HOME
+```
+JAVA_HOMEのパスは各自がインストールした場所へ変える。
+
+## 2. Tomcatのインストール
+
+[公式サイト](https://tomcat.apache.org/download-10.cgi)のCoreから自分のPCにあった形式のtar.gzファイルを/tmp/にダウンロードする。<br>
+``` bash
+cd /tmp
+wget https://tomcat.apache.org/download-10.cgi
+```
+
+Tomcat用のディレクトリを作成し、ダウンロードしたファイルを解凍する。<br>
+``` bash
+sudo mkdir /opt/tomcat
+cd /opt/tomcat
+sudo tar xzvf /tmp/apache-tomcat-9.0.*tar.gz -C /opt/tomcat --strip-components=1
+```
+
+Tomcatのユーザーを作成し、Tomcatがファイルを実行できるように権限を変更する。<br>
+``` bash
+sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat
+sudo chown -R tomcat: /opt/tomcat
+sudo chmod -R 755 /opt/tomcat
+```
+
+## 3.Tomcatのサービスファイルを作成
+
+Tomcatを利用するために必要な.serviceファイルを作成する。<br>
+``` bash
+sudo nano /etc/systemd/system/tomcat.service
+```
+以下の内容をコピペする。<br>
+``` 
+[Unit]
+Description=Apache Tomcat Web Application Container
+After=network.target
+
+[Service]
+Type=forking
+
+Environment=JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre
+Environment=CATALINA_PID=/opt/tomcat/temp/tomcat.pid
+Environment=CATALINA_Home=/opt/tomcat
+Environment=CATALINA_BASE=/opt/tomcat
+Environment=’CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC’
+Environment=’JAVA_OPTS.awt.headless=true -Djava.security.egd=file:/dev/v/urandom’
+
+ExecStart=/opt/tomcat/bin/startup.sh
+ExecStop=/opt/tomcat/bin/shutdown.sh
+
+User=tomcat
+Group=tomcat
+UMask=0007
+RestartSec=10
+Restart=always
+
+[Install]
+
+WantedBy=multi-user.target
+```
+
+.serviceファイルの作成後デーモンをリロードする。<br>
+``` bash
+sudo systemctl daemon-reload
+```
+
+## 4. Tomcatの起動
+
+Tomcatのステータス確認<br>
+``` bash
+sudo systemctl status tomcat
+```
+
+Tomcatの起動<br>
+``` bash
+sudo systemctl start tomcat
+```
+
+Tomcatの停止<br>
+``` bash
+sudo systemctl stop tomcat
+```
+
+
+
+参考サイト<br>
+
+https://www.hostinger.com/tutorials/how-to-install-tomcat-on-ubuntu/

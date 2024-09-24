@@ -1,0 +1,142 @@
+---
+title: "オブジェクト指向の三大要素"
+format: html
+---
+
+## 継承
+
+あるクラスを引き継いで、別のクラスを定義すること。<br>
+継承をして作られたクラスは継承元のデータやメソッドを引き継ぐことができる。<br>
+継承を使用することで新しいクラスを作る際に差分を加えるだけで良い。<br>
+また修正を行う際も継承元のクラスを修正すればすべてに反映されるため保守、仕様変更に強い。
+
+継承元のクラス
+``` {.java filename="Player.java"}
+    public class player {
+    int hp = 200;
+    int atk  = 50;
+    public void attack(Player target) {
+        System.out.println("プレイヤーの攻撃！");
+        target.hp = target.hp - this.atk;
+    }
+}
+```
+
+継承したクラス（ChatGPTにより生成）
+``` {.java filename="Player.java"}
+public class Warrior extends Player {
+    int defense = 20;
+
+    public Warrior() {
+        super();
+    }
+
+    // Warrior特有のメソッド
+    public void shieldBlock() {
+        System.out.println("ウォリアーが盾で攻撃を防いだ！");
+        this.hp += defense;
+    }
+
+    // 攻撃方法のオーバーライド
+    @Override
+    public void attack(Player target) {
+        System.out.println("ウォリアーの強力な攻撃！");
+        target.hp = target.hp - this.atk- this.atk;
+    }
+}
+
+```
+playerクラスを継承したwarriorクラスを作成している。<br>
+warriorクラスではplayerクラスのデータとメソッドを引き継いでいる。<br>
+さらにwarriorクラスではplayerクラスになかったshieldBlockというメソッドが使用可能になっている。<br>
+worriorクラスではplayerクラスのattackメッソドがオーバーライドされており、<br>
+worriorクラスのattackメッソドは2回atkがhpから引かれている。
+
+
+
+
+## カプセル化
+
+クラス内の内部状態を隠蔽し、外部から直接アクセスできないようにすること。
+データの不整合や意図しない変更を防ぐことができる。
+開発を行う際、複数人で開発をすると1人が開発したものが意図されない使われ方をする場合がある。<br>
+それを防ぐために、開発したクラスの使用範囲を決め、意図されない仕様を防ぐことができる。
+
+```{.java filename="Player.java"}
+public class Player {
+    // フィールドをprivateにすることで直接アクセスを防ぐ
+    private int hp;
+    private int atk;
+
+    // コンストラクタ
+    public Player(int hp, int atk) {
+        this.hp = hp;
+        this.atk = atk;
+    }
+
+    // getterメソッド
+    public int getHp() {
+        return hp;
+    }
+
+    // setterメソッド
+    public void setHp(int hp) {
+        if (hp >= 0) {
+            this.hp = hp;
+        } else {
+            System.out.println("HPは0以上の値に設定してください。");
+        }
+    }
+
+    // getterメソッド
+    public int getAtk() {
+        return atk;
+    }
+
+    // setterメソッド
+    public void setAtk(int atk) {
+        if (atk > 0) {
+            this.atk = atk;
+        } else {
+            System.out.println("攻撃力は0以上の値に設定してください。");
+        }
+    }
+
+    // 攻撃メソッド
+    public void attack(Player target) {
+        System.out.println("プレイヤーの攻撃！");
+        target.setHp(target.getHp() - this.atk);
+    }
+}
+```
+
+
+```{.java filename="Main.java"}
+public class Main {
+    public static void main(String[] args) {
+        Player player1 = new Player(200, 50);
+        Player player2 = new Player(150, 30);
+
+    }
+}
+
+```
+PlayerのHPはPlayerクラス内でprivateによって定義されているため、他のクラスでは直接アクセスする事ができない。<br>
+privateで定義されたものにアクセスするにはゲッターを通して取得する必要がある。<br>
+そして値を更新するためにはセッターを活用する。<br>
+このような参照方式にする事によって、直接のアクセスを禁止している。<br>
+
+さらにカプセル化は仕様変更にも強い。<br>
+HPを数値による代入ではなく、その他のステータスから算出する方法に変更になったとする。<br>
+PlayerクラスからHPを参照する方法では、player.hpを参照していた場所をすべて書き換える必要がある。<br>
+一方でセッターでhpを設定していれば、playerクラスのセッターを書き換えることで全てのhpを変更する事ができる。
+
+
+## ポリモーフィズム
+
+オーバーライドやオーバーロードによってメッソドを使い分けること。<br>
+継承時に継承元のメソッドをオーバーライドすることで、同じ名前で別のメッソドを定義する事ができる。<br>
+ゲームで勇者、魔術師、戦士がいたとする。<br>
+それらはすべて同じ攻撃というメソッドを持つが、それぞれの攻撃の内容は違う。<br>
+これをplayerクラス内にattackメッソドを定義し、勇者、魔術師、戦士のクラスを継承して作成する。<br>
+そして継承時にattackをオーバーライドすることで、同じattackの挙動をするが、それぞれ異なった内容の攻撃が可能になる。

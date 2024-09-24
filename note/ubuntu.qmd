@@ -1,0 +1,174 @@
+---
+title: "Linuxサーバー構築に向けた準備"
+format: html
+---
+
+## 背景
+
+新しいゲーミングPCの運用に慣れてきたため、古いゲーミングPCをLinuxサーバーとして運用することにした。<br>
+Linuxサーバーとして運用をするまでの設定や準備をまとめる。
+
+## Linuxインストールまで
+
+旧PCの構成
+* intel4790k
+* DDR3 8G
+* Geforce 900番台
+* SSD 256GB
+* HDD 2TB
+
+WindowsはSSDの方には入っていた、HDDはストレージとして運用されていた。<br>
+調べてみるとWinodowsは残してサーバー構築を行っている人が多かったため、Windowsを残してサーバー構築を行うことにした。<br>
+Windowsとデュアルブートをする場合メモリが足らなくなるため、SSDはWinodows、HDDはLinuxとして使用することにした。<br>
+
+ubuntuのインストールまでの準備
+1. UbuntuとRufusをダンロードし、Rufusを使用してUSBにUbuntuの起動デバイスを作成（USB8GB以上）
+2. 旧PCのHDDをフォーマット（エクスプローラーから右クリックでフォーマット）
+3. シャットダウン状態の旧PCにUSBを刺す
+4. 旧PCのBIOS起動
+5. ブートディレクトリをUSBに指定して起動
+6. ubuntuの指示に従いインストール
+
+ubuntuのインストールは英語が推奨。日本語でインストールを行うとディレクトリが日本で作成される（一敗）。<br>
+インストールディスクを選ぶ項目ではWindowsと共存させるを選択した。
+
+ubuntuインストール後は`sudo apt update`を使用してアップデートを実行した。
+
+
+## IPアドレスの固定
+
+ubuntu側とルーター側でそれぞれ設定を行った。
+
+### Ubuntu側の設定
+
+`ip`コマンドでIPアドレスとMACアドレスを取得した。
+`ip a`<br>の出力例
+```
+1: lo: <LOOPBACK,UP,LOWER_UP>  ~~
+  ~~
+
+2: インターフェース名: <BROADCAST,MULTICAST,UP,LOWER_UP>  ~~
+  link/ether ＜MACアドレス＞ brd ~~ 
+  inet <IPアドレス> brd ~~
+  ~~
+```
+1:、2:の部分は接続している方法によって数が異なる。<br>
+上記は有線でインターネットに接続している例で、有線と無線が接続されている場合は３つになる。
+
+次に`/etc/netplan`下にある、**.yaml**ファイルの編集を行った。<br>
+編集ファイルのバックアップ<br>
+`sudo cp /etc/netplan/01-network-manager-all.yaml /etc/netplan/01-network-manager-all.yaml_org`
+
+一度このファイルの編集に失敗し、ネットワークへ接続できなくなったため、**必ずバックアップは作成すること**
+
+以下のようにyamlファイルを編集した。<br>
+尚yamlファイルはインデントに意味があるため、インデントに注意して編集すること。<br>
+```
+network:
+   version: 2
+   renderer: networkd
+   ethernets:
+      インターフェース名:
+         addresses: [固定するIP]
+         nameservers:
+            addresses: [8.8.8.8]
+         routes:
+            - to: default
+              via:ルーターのIPアドレス
+```
+
+編集後は以下のコマンドで変更を反映させた。<br>
+尚拡張子が.**yaml**のファイルはすべて設定ファイルとして反映されるため、注意<br>
+`sudo netplan apply`
+
+インターネットの通信確認はpingコマンドで行い、以下のような出力が出れば通信が確認できる。<br>
+```
+ ping www.google.co.jp
+64 bytes from kix06s11-in-f3.1e100.net (142.250.207.99): icmp_seq=1 ttl=115 time=10.0 ms
+```
+
+うまくいかない場合はインデントの確認、設定のIpアドレスの確認を行う。<br>
+それでもうまくいかない場合はバックアップをもとに戻しやり直す。
+
+参考サイト:https://note.com/ogs_digilife/n/ne30f8120b7ea
+
+
+### ルーター側の設定
+
+私の家ではONUがルーターの役割を果たしていた。<br>
+WebブラウザにルーターのIPアドレスを入力し、ユーザー名とパスワードを入力して管理画面にログインした。<br>
+その後DHCPの項目から固定したいIPアドレスと機器のMACアドレスを入力して登録を行った。
+
+ルーターの設定方法は機器によって違うため、製品名で検索すること
+
+
+
+
+## SSHの設定
+
+ssh_configを以下のように設定した。
+
+```
+Host <接続先PCの略称>
+  Hostname <Ipアドレス>
+  Port <sshdで設定したポート>
+  User <ユーザ名>
+  IdentityFile ~/.ssh/<秘密鍵のファイル名>
+```
+ポート番号をIdentityFileの後に書くと`Permission denied`になったので注意
+
+### sshdの設定
+
+設定を始める前に/etc/ssh/sshd_configをsshd_config_orgとして同じ場所にバックアップを作成した。
+コンフィグは以下のように変更した
+
+* port変更
+  * デフォルトのポートは不正アクセスが多いため、22番ポートを削除し、エフェメラルポート番号から１つ選んで変更
+* PermitRootLogin no
+  * ルートログインの禁止
+* PasswordAuthentication no
+  * パスワードでのログインを禁止する
+* KbdInteractiveAuthentication no
+  * キーボードインタラクティブ認証の無効化
+  * 旧チャレンジレスポンス、受け取ったパスワードとキーワードが一致するかを確かめる認証方法
+* KerberosAuthentication no
+  * Kerberos認証を無効化する
+  * あるPCから身元認証書を初回ログイン時に発行してもらい、２回目移行の関連するPCのへのログインには身元認証書をつかう方法
+* GSSAPIAuthentication no
+  *  GSSAPI認証を無効化する
+* UsePAM no 
+  * PAM認証の無効化
+
+
+## Firewallの設定
+
+`sudo ufw allow ssh` <br>
+SSH接続を許可する
+
+
+`sudo ufw allow ポート番号` <br>
+ポート番号を開放する。不要なポートを開放すると不正アクセスの温床になるため、必要なポートのみ開放する。<br>
+`ポート番号/プロトコル`でポート番号の特定のプロトコルのみ許可できる
+
+`sudo ufw status` <br>
+firewallの開放状況を一覧表示する
+
+## Apatchのインストール
+
+`sudo apt install apache2`<br>
+Apacheのインストール、CentOSの場合httpdとなる。以下も同様
+
+`sudo ufw allow 'Apache'`<br>
+ポート80番の通信を許可し、ページの閲覧が可能なようにする。
+
+`sudo systemctl status apache2`<br>
+Apacheの状態確認、この段階ではinactiveになっている
+
+`sudo systemctl start apache2`<br>
+Apacheを起動する。起動を止めたい場合は`start`を`stop`に変える
+
+`sudo systemctl enable apache2`
+Apacheをシステムが起動した際、同時に起動できるようにしておく
+
+`sudo systemctl restart apache2`<br>
+Apacheを再起動する。Apacheのコンフィグを変えた場合にその都度使用する。

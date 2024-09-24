@@ -1,0 +1,79 @@
+---
+title: "オブジェクト指向概要"
+format: html
+---
+
+## オブジェクト指向って何？
+
+データと手続きをまとめたものをオブジェクトとして定義し、役割ごとにオブジェクトを作成し、それらを組み上げてシステムを作る考え方のこと。<br>
+オブジェクトは**属性**と**機能**から構成されている。<br>
+属性はフィールド（変数）として定義され、機能はメソッドとして定義される。<br>
+フィールドとメソッドをあわせたものをクラスと呼ぶ。
+
+## どう動くの？
+
+クラスにデータや機能が定義されており、そのクラスを呼び出すことでメモリ領域上にインスタンスが生成される。<br>
+このインスタンスが実際の機能を持つものとして動作する。<br>
+
+例<br>
+ゲームでモンスターがプレイヤーに攻撃する場面があったとする。<br>
+このときオブジェクト指向では**モンスター**と**プレイヤー**という2種類のクラスを用意する。<br>
+
+プレイヤーのクラス
+
+``` {.java filename="Player.java"}
+public class player {
+    int hp = 200;
+
+}
+```
+
+モンスターのクラス
+
+```{.java filename="Monster.java"}
+public class Monster {
+    int hp = 100;
+    int atk = 50;
+
+    public void attack(Player target) {
+        System.out.println("モンスターがプレイヤーに攻撃した！");
+        target.hp = target.hp - this.atk;
+    }
+}
+```
+
+プレイヤークラスにはデータとしてhp:200が設定されており、モンスターにはhp:100と、atk:50が設定されている。<br>
+モンスタークラスにはデータに加え、attackという機能が備わっている。<br>
+ここでモンスターがプレイヤーに攻撃する場面を考える。
+
+```{.java filename="Main.java"}
+public class Main {
+    public static void main(String[] args) {
+        Monster monster = new Monster();
+        Player player = new Player();
+
+        System.out.println("プレイヤーのHP: " + player.hp);
+        monster.attack(player);
+        System.out.println("攻撃後のプレイヤーのHP: " + player.hp);
+    }
+}
+```
+
+プレイヤーとモンスターはクラスであり、クラスのままではインスタンスを持たないため、ゲーム上プレイヤーもモンスターも存在していない。<br>
+そこでnewを使いモンスタークラスからインスタンスを生成し、そのインスタンスを参照するmonster変数を設定した。（プレイヤーも同様）<br>
+これによりゲーム上にモンスターとプレイヤーが出現した。<br>
+そしてモンスターはプレイヤーを攻撃するattack機能を持つため、<br>
+monster.attackでインスタンス内のattack機能を呼び出し、プレイヤーの体力を減らした。
+
+``` {.sh filename= "実行結果"}
+プレイヤーのHP: 200
+モンスターがプレイヤーに攻撃した！
+攻撃後のプレイヤーのHP: 150
+```
+
+このようにオブジェクト指向ではデータと機能を一体化したクラスからインスタンスを生成し、システムを作り上げていく。
+
+
+
+## 参考文献
+https://eng-entrance.com/wha<br>t-oop<br>

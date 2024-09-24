@@ -1,0 +1,71 @@
+---
+title: "三層連携"
+format: html
+---
+
+## Apacheの設定
+
+ApacheからTomcatへ転送するには3種のプロトコルが存在する。いづれか1つに対応したmod_proxyを有効化する。
+
+``` bash 
+sudo a2enmod proxy
+sudo a2enmod proxy_ajp #ajpプロトコルによる転送を有効化
+sudo a2enmod proxy_http
+```
+Apacheのバーチャルホストの設定
+
+``` bash
+sudo nano /etc/apache2/sites-available/yourdomain.conf
+```
+
+``` bash
+<VirtualHost *:80>
+    ServerName yourdomain.com
+    ServerAlias www.yourdomain.com
+
+    ProxyRequests Off
+    ProxyPreserveHost On
+
+    <Proxy *>
+        Require all granted
+    </Proxy>
+
+    ProxyPass / http://localhost:8009/
+    ProxyPassReverse / http://localhost:8009/
+
+    ErrorLog ${APACHE_LOG_DIR}/yourdomain_error.log
+    CustomLog ${APACHE_LOG_DIR}/yourdomain_access.log combined
+</VirtualHost>
+
+```
+
+apacheのコンフィグを設定し、tomcatへ8009ポートを通した転送をする。
+
+``` bash
+sudo nano /etc/apache2/aoache2.conf 
+```
+
+```
+ProxyPass / ajp://localhost:8009/
+ProxyPassReverse / ajp://localhost:8009/
+```
+
+設定後apacheを再起動する
+
+## tomcatの設定
+
+server.xmlを設定し、tomcatでAJPプロトコルを8009ポートで受け取り、8080のtomcatへの通信を遮断する。
+```
+<!--
+<Connector port="8080" protocol="AJP/1.3" redirectPort="8443" secretRequired="false" />
+-->
+
+...
+
+<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" secretRequired="false" />
+```
+
+設定を変更したらTomcatを再起動する。
+ファイヤーフォールの設定を変更し8009ポートを有効化する。
+
+http://localhostへアクセスし、tomcatの画面が表示されたらApacheからtomcatへの転送成功

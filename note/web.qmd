@@ -1,0 +1,11 @@
+---
+title: "Web三層モデル"
+format: html
+---
+
+## 概要
+
+Web三層モデルとは、WebアプリをWebサーバー、APサーバー、DBサーバーに分けて構築するモデルのこと。<br>
+
+https://qiita.com/xyz666/items/387251d0aee41a25fec1
+
