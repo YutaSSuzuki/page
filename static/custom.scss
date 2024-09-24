@@ -4,6 +4,8 @@ $theme: "default" !default;
 $grey2: #f4f4f4 !default;
 $grey3: #ccc !default;
 
+$bulegrey: #b7c2ce !default;
+
 h2 {
 	background-color: $grey2;
 	border-bottom: none;
@@ -14,4 +16,5 @@ h2 {
 	margin-inline-start: -12px;
   border-inline-start: 12px solid $grey3;
 }
+
 
