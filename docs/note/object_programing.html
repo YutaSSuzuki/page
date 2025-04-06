@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Yuta Suzuki - クラウドを活用したPCの引っ越し</title>
+<title>Yuta Suzuki - オブジェクト指向概要</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -81,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">クラウドを活用したPCの引っ越し</h1>
+          <h1 class="quarto-secondary-nav-title">オブジェクト指向概要</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -122,7 +156,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../note/replace_pc.html" class="sidebar-item-text sidebar-link active">
+  <a href="../note/ap_web.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Webアプリ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/apache.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apache</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">三層連携</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">メモリー</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/object_programing.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">オブジェクト指向概要</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/object_programing2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">オブジェクト指向の三大要素</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/reinstall_ubuntu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ubuntuの再構築</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/replace_pc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">クラウドを活用したPCの引っ越し</span></a>
   </div>
 </li>
@@ -130,6 +206,24 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../note/scss.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SCSSの書き方</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/tomcat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tomcat</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/ubuntu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linuxサーバー構築に向けた準備</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/web.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Web三層モデル</span></a>
   </div>
 </li>
       </ul>
@@ -145,8 +239,38 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../AWS/About_AWS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AWS概要</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/instance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">インスタンス</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/network.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ネットワーク</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/secueiry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">セキュリティ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../AWS/setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AWS初期設定</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/strage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AWSストレージ</span></a>
   </div>
 </li>
       </ul>
@@ -162,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">クラウドを活用したPCの引っ越し</h1>
+<h1 class="title d-none d-lg-block">オブジェクト指向概要</h1>
 </div>
 
 
@@ -179,110 +303,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="背景" class="level2">
-<h2 class="anchored" data-anchor-id="背景">背景</h2>
-<p>使用していたゲーミングPCが10才を迎え、性能と動作が怪しくなったたため、新しいゲーミングPCを購入した。<br> それに伴いデータ移行の必要性が出たのだが、古いPCはデータ構造が汚くそのまま移行したくない。<br> 古いPCはLinux PCとして運用する予定だったため、ストレージを外して付け直しするのも面倒だった。<br> 移行用のHDD等を買うにしても、この少しの間しか使わないものにお金をかけたくない。<br> このような状況下で、GoogleDriveでは１ヶ月間無料で容量を２Tまでアップできることを知った。<br> そこでクラウドを活用したデータ移行を試みた。</p>
+<section id="オブジェクト指向って何" class="level2">
+<h2 class="anchored" data-anchor-id="オブジェクト指向って何">オブジェクト指向って何？</h2>
+<p>データと手続きをまとめたものをオブジェクトとして定義し、役割ごとにオブジェクトを作成し、それらを組み上げてシステムを作る考え方のこと。<br> オブジェクトは<strong>属性</strong>と<strong>機能</strong>から構成されている。<br> 属性はフィールド（変数）として定義され、機能はメソッドとして定義される。<br> フィールドとメソッドをあわせたものをクラスと呼ぶ。</p>
 </section>
-<section id="準備" class="level2">
-<h2 class="anchored" data-anchor-id="準備">準備</h2>
-<p>主に２種類の準備を行った。</p>
-<ul>
-<li>データの選別</li>
-<li>インストールするソフトのリストアップ</li>
-</ul>
-<section id="データの選別" class="level3">
-<h3 class="anchored" data-anchor-id="データの選別">データの選別</h3>
-<p>再取得が不可能もしくは、時間がかかるデータを中心に以下のデータをクラウドにアップロードした。</p>
-<ul>
-<li>約500曲以上の音楽データ</li>
-<li>音楽、動画の編集データ</li>
-<li>写真</li>
-<li>ノベルゲームのセーブデータ
-<ul>
-<li>ゲームによってセーブデータの場所が異なるため、データのパスをインストールするソフトのリストに記載した。</li>
-</ul></li>
-</ul>
-<p>以上のデータ(合計100G程度)を光回線の有線接続を使って1時間程度でアップロードを行った。</p>
+<section id="どう動くの" class="level2">
+<h2 class="anchored" data-anchor-id="どう動くの">どう動くの？</h2>
+<p>クラスにデータや機能が定義されており、そのクラスを呼び出すことでメモリ領域上にインスタンスが生成される。<br> このインスタンスが実際の機能を持つものとして動作する。<br></p>
+<p>例<br> ゲームでモンスターがプレイヤーに攻撃する場面があったとする。<br> このときオブジェクト指向では<strong>モンスター</strong>と<strong>プレイヤー</strong>という2種類のクラスを用意する。<br></p>
+<p>プレイヤーのクラス</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Player.java</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="Player.java"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> player <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> hp <span class="op">=</span> <span class="dv">200</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>モンスターのクラス</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Monster.java</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="Monster.java"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Monster <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> hp <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> atk <span class="op">=</span> <span class="dv">50</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">attack</span><span class="op">(</span>Player target<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"モンスターがプレイヤーに攻撃した！"</span><span class="op">);</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        target<span class="op">.</span><span class="fu">hp</span> <span class="op">=</span> target<span class="op">.</span><span class="fu">hp</span> <span class="op">-</span> <span class="kw">this</span><span class="op">.</span><span class="fu">atk</span><span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>プレイヤークラスにはデータとしてhp:200が設定されており、モンスターにはhp:100と、atk:50が設定されている。<br> モンスタークラスにはデータに加え、attackという機能が備わっている。<br> ここでモンスターがプレイヤーに攻撃する場面を考える。</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Main.java</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="Main.java"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Main <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        Monster monster <span class="op">=</span> <span class="kw">new</span> <span class="fu">Monster</span><span class="op">();</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        Player player <span class="op">=</span> <span class="kw">new</span> <span class="fu">Player</span><span class="op">();</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"プレイヤーのHP: "</span> <span class="op">+</span> player<span class="op">.</span><span class="fu">hp</span><span class="op">);</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        monster<span class="op">.</span><span class="fu">attack</span><span class="op">(</span>player<span class="op">);</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"攻撃後のプレイヤーのHP: "</span> <span class="op">+</span> player<span class="op">.</span><span class="fu">hp</span><span class="op">);</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>プレイヤーとモンスターはクラスであり、クラスのままではインスタンスを持たないため、ゲーム上プレイヤーもモンスターも存在していない。<br> そこでnewを使いモンスタークラスからインスタンスを生成し、そのインスタンスを参照するmonster変数を設定した。（プレイヤーも同様）<br> これによりゲーム上にモンスターとプレイヤーが出現した。<br> そしてモンスターはプレイヤーを攻撃するattack機能を持つため、<br> monster.attackでインスタンス内のattack機能を呼び出し、プレイヤーの体力を減らした。</p>
+<p><code>{.sh filename= "実行結果"} プレイヤーのHP: 200 モンスターがプレイヤーに攻撃した！ 攻撃後のプレイヤーのHP: 150</code></p>
+<p>このようにオブジェクト指向ではデータと機能を一体化したクラスからインスタンスを生成し、システムを作り上げていく。</p>
 </section>
-<section id="インストールするソフトのリストアップ" class="level3">
-<h3 class="anchored" data-anchor-id="インストールするソフトのリストアップ">インストールするソフトのリストアップ</h3>
-<p>新PCは何もソフトが入っていない状態から始める予定であった。<br> いれる予定のフリーソフトなどをMarkdownファイルにまとめ、GitHub上にアップロードしてセットアップの効率化を図った。<br> またおすすめのフリーソフトはyoutubeなどで調べた。</p>
-<p>参考になった動画</p>
-<ul>
-<li>https://www.youtube.com/<span class="citation" data-cites="pragraa/videos">@pragraa/videos</span></li>
-<li>https://www.youtube.com/watch?v=WJGhky4Ikkw</li>
-</ul>
-</section>
-</section>
-<section id="移行" class="level2">
-<h2 class="anchored" data-anchor-id="移行">移行</h2>
-<p>全体として４時間程度で終了した。<br> 流れは以下の通り</p>
-<ol type="1">
-<li>PCの初期設定（ユーザー登録など）</li>
-<li>chormeのインストール</li>
-<li>GoogleDriveからアップロードしたデータをダウンロード</li>
-<li>Adobeなどのソフトのインストール</li>
-<li>編集ファイルをAdobeで開き、編集できることを確認</li>
-<li>セーブデータをゲームファイル内に挿入し、起動確認</li>
-</ol>
-<p>2までは問題なく進んだが、3の部分で合計30分程度の時間がかかった。<br> 6は問題なく、前回の続きからゲームを起動する事ができた。<br></p>
-</section>
-<section id="移行時のトラブル" class="level2">
-<h2 class="anchored" data-anchor-id="移行時のトラブル">移行時のトラブル</h2>
-<p>移行工程5で一部の曲が編集ソフト上でリンク切れになる問題が発生した。<br> 原因の曲を調べると、ダウンロードして展開したファイルの3割で文字化けが発生していた。<br> それらの曲のリンクを指定したところ、曲が認識されるようになった。<br> 曲のファイルが文字化けしたことでAdobeのソフトが認識できなくなったと考えられる。<br></p>
-<section id="対策" class="level3">
-<h3 class="anchored" data-anchor-id="対策">対策</h3>
-<p><a href="https://7-zip.opensource.jp/">7zip</a>をインストールし、ディレクトリの解凍を7zipで行った。<br> 7zipでの解凍で文字化けを5%程度まで抑える事ができた。<br> Win11の標準解凍では30%程度文字化けがあったため、7zipの方が望ましいと考えられる。<br> 文字化けしたファイルは全ファイルの解凍後10個程度であったため、個別でリンクを指定した。<br></p>
-</section>
-<section id="後日談" class="level3">
-<h3 class="anchored" data-anchor-id="後日談">後日談</h3>
-<p>後日対応するファイルを確認したところ、文字化けが治っていたため、時間経過で解決する問題だったのかもしれない。<br></p>
-<p>問題の原因を調べたところ、２つの原因があることがわかった。</p>
-<ul>
-<li>文字コードの違い
-<ul>
-<li>Windowsでは「Shift-JIS」が、Macでは「UTF-8」が使われているため、異なるOSでデータをやり取りすると文字化けを起こす</li>
-</ul></li>
-<li>解凍ソフトの問題
-<ul>
-<li>原因は不明だが、Windows標準の解凍ソフトと、「LhacaPlus」というソフトでの解凍で文字化けが起こることがあるらしい</li>
-</ul></li>
-</ul>
-<p>今回はWin10とwin11のソフト交換であり、7zipを使ったが、10程度のファイルで文字化けが起こった。<br> 問題の完全解決には至っていないが、２つの問題に対しては「7zip」か「Explzh」の活用が有効なもよう</p>
-<p>参考サイト</p>
-<ul>
-<li><a href="https://cadvance-review.netsbizlife.com/windows11%E3%81%A7zip%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E5%90%8D%E3%82%84zip%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D%E3%81%8C%E6%96%87%E5%AD%97%E5%8C%96%E3%81%91%E3%81%97%E3%81%9F%E6%99%82/">WindowsでZIPフォルダ名やZIPファイル名が文字化けした時の対処方法</a></li>
-<li><a href="https://recoverit.wondershare.jp/file-repair/unzipped-zip-files-are-garbled.html">Zipファイルを解凍すると文字化けになった！その原因と対処法は？</a></li>
-</ul>
-</section>
-</section>
-<section id="反省" class="level2">
-<h2 class="anchored" data-anchor-id="反省">反省</h2>
-<p>以下の点で反省事項がある。</p>
-<ol type="1">
-<li>休憩時間を取らなかった</li>
-<li>新PCへの移行手順をまとめていなかった</li>
-<li>インストールするソフトのリンクを用意していなかった</li>
-<li>ディレクトリ設定法を調べて置かなかった</li>
-</ol>
-<section id="休憩時間について" class="level3">
-<h3 class="anchored" data-anchor-id="休憩時間について">休憩時間について</h3>
-<p>PCの初期設定ではやることが多く、思った以上に時間と気力が奪われる。<br> ここの作業は簡単なのだが、それをいくつもやると疲れが溜まってくる。<br> そして疲れにより作業効率が極端に落ちたため、１時間に１回の休憩は必要であった。</p>
-</section>
-<section id="移行手順書の必要性について" class="level3">
-<h3 class="anchored" data-anchor-id="移行手順書の必要性について">移行手順書の必要性について</h3>
-<p>可能な限り思考を減らすために必要。<br> 移行時にはやるべきことが多く、疲れが溜まりやすいため疲れないようにする必要がある。<br> インストールするソフトを決めるだけでは、どれからインストールするかを考えてしまい、時間と体力の無駄につながった。</p>
-</section>
-<section id="インストールするソフトのリンク準備" class="level3">
-<h3 class="anchored" data-anchor-id="インストールするソフトのリンク準備">インストールするソフトのリンク準備</h3>
-<p>思考を減らすために必要。<br> 一部のソフトは偽のリンクなどがあるため、正しいリンクか確認するのに負担がかかった。<br> またソフトのリンクを探すだけでも手間なので、事前にマークダウンにまとめておくべきだった。</p>
-</section>
-<section id="ディレクトリ設定について" class="level3">
-<h3 class="anchored" data-anchor-id="ディレクトリ設定について">ディレクトリ設定について</h3>
-<p>インストール時の負荷軽減に必要。<br> インストールする際曲はDドライブに置くなど、データ構造は事前に決めてあった。<br> しかしwin11では標準設定でCドライブへのインストールになる仕様だった。<br> そのためitunesなどはCドライブにインストールされ、曲もその中に入れられる事があった。<br> それらを修正するのに時間がかかったため、ソフト等がインストール、ダウンロードされる場所の設定方法をまとめておくべきだった。</p>
+<section id="参考文献" class="level2">
+<h2 class="anchored" data-anchor-id="参考文献">参考文献</h2>
+<p>https://eng-entrance.com/wha<br>t-oop<br></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

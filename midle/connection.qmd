@@ -1,0 +1,18 @@
+---
+title: "3層連携"
+format: html
+---
+
+
+## TomatからDBへの接続
+
+`/opt/tomcat/conf/connecttest.xml`内に接続先のDBのURLを記入
+
+`url="jdbc:postgresql://ipアドレス:5432/DB名"`
+
+DB側でAPからのアクセスを許可する`/database/data/pg_hba.conf`
+
+この中にホストごとの認証方法が設定されており、ここに記載されているアクセスしかデータベースを利用できない。<br>
+例）testdbのtestユーザーでアクセスする場合
+
+`host testdb test APのID/32 md5`

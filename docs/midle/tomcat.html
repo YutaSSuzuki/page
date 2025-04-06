@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Yuta Suzuki - クラウドを活用したPCの引っ越し</title>
+<title>Yuta Suzuki - Tomcat</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,90 +105,12 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">クラウドを活用したPCの引っ越し</h1>
-        </a>     
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../"><img src="../static/favicon.png" height="28" vertical-align="text-bottom"> Yuta Suzuki</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HOME</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">note</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../note/replace_pc.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">クラウドを活用したPCの引っ越し</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../note/scss.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SCSSの書き方</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">AWS</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../AWS/setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AWS初期設定</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -162,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">クラウドを活用したPCの引っ越し</h1>
+<h1 class="title">Tomcat</h1>
 </div>
 
 
@@ -179,110 +135,92 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="背景" class="level2">
-<h2 class="anchored" data-anchor-id="背景">背景</h2>
-<p>使用していたゲーミングPCが10才を迎え、性能と動作が怪しくなったたため、新しいゲーミングPCを購入した。<br> それに伴いデータ移行の必要性が出たのだが、古いPCはデータ構造が汚くそのまま移行したくない。<br> 古いPCはLinux PCとして運用する予定だったため、ストレージを外して付け直しするのも面倒だった。<br> 移行用のHDD等を買うにしても、この少しの間しか使わないものにお金をかけたくない。<br> このような状況下で、GoogleDriveでは１ヶ月間無料で容量を２Tまでアップできることを知った。<br> そこでクラウドを活用したデータ移行を試みた。</p>
-</section>
-<section id="準備" class="level2">
-<h2 class="anchored" data-anchor-id="準備">準備</h2>
-<p>主に２種類の準備を行った。</p>
+<section id="概要" class="level2">
+<h2 class="anchored" data-anchor-id="概要">概要</h2>
+<p>WebアプリでAPサーバーを構築するために使用されるソフト。<br> 動的なアプリを動かすことができ、Appacheで受けたリクエストをTomcatで処理して返すために使用される。<br> Javaで動作し、Tomcat内でJavaがDBへ検索を行ったり、必要なテンプレートを作成する。<br></p>
+<p>参考サイト<br></p>
 <ul>
-<li>データの選別</li>
-<li>インストールするソフトのリストアップ</li>
-</ul>
-<section id="データの選別" class="level3">
-<h3 class="anchored" data-anchor-id="データの選別">データの選別</h3>
-<p>再取得が不可能もしくは、時間がかかるデータを中心に以下のデータをクラウドにアップロードした。</p>
-<ul>
-<li>約500曲以上の音楽データ</li>
-<li>音楽、動画の編集データ</li>
-<li>写真</li>
-<li>ノベルゲームのセーブデータ
-<ul>
-<li>ゲームによってセーブデータの場所が異なるため、データのパスをインストールするソフトのリストに記載した。</li>
-</ul></li>
-</ul>
-<p>以上のデータ(合計100G程度)を光回線の有線接続を使って1時間程度でアップロードを行った。</p>
-</section>
-<section id="インストールするソフトのリストアップ" class="level3">
-<h3 class="anchored" data-anchor-id="インストールするソフトのリストアップ">インストールするソフトのリストアップ</h3>
-<p>新PCは何もソフトが入っていない状態から始める予定であった。<br> いれる予定のフリーソフトなどをMarkdownファイルにまとめ、GitHub上にアップロードしてセットアップの効率化を図った。<br> またおすすめのフリーソフトはyoutubeなどで調べた。</p>
-<p>参考になった動画</p>
-<ul>
-<li>https://www.youtube.com/<span class="citation" data-cites="pragraa/videos">@pragraa/videos</span></li>
-<li>https://www.youtube.com/watch?v=WJGhky4Ikkw</li>
+<li>https://qiita.com/tanayasu1228/items/11e22a18dbfa796745b5</li>
+<li>https://tomcat.apache.org/</li>
 </ul>
 </section>
+<section id="インストール環境" class="level2">
+<h2 class="anchored" data-anchor-id="インストール環境">インストール環境</h2>
+<p>環境<br> * Ubuntu 22.04 * Tomcat 10.1.25（ここでインストールするもの）</p>
 </section>
-<section id="移行" class="level2">
-<h2 class="anchored" data-anchor-id="移行">移行</h2>
-<p>全体として４時間程度で終了した。<br> 流れは以下の通り</p>
-<ol type="1">
-<li>PCの初期設定（ユーザー登録など）</li>
-<li>chormeのインストール</li>
-<li>GoogleDriveからアップロードしたデータをダウンロード</li>
-<li>Adobeなどのソフトのインストール</li>
-<li>編集ファイルをAdobeで開き、編集できることを確認</li>
-<li>セーブデータをゲームファイル内に挿入し、起動確認</li>
-</ol>
-<p>2までは問題なく進んだが、3の部分で合計30分程度の時間がかかった。<br> 6は問題なく、前回の続きからゲームを起動する事ができた。<br></p>
+<section id="javaのインストール" class="level2">
+<h2 class="anchored" data-anchor-id="javaのインストール">1. Javaのインストール</h2>
+<p>Javaがインストールされているか確認<br></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">java</span> <span class="at">-version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>TomcatにはOpenJDKが必要なため、インストールされていない場合はインストール<br></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install defalt-jdk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>JAVA_HOMEのパスを設定していない場合は<code>.bashrc</code>にJAVA_HOMEのパスを記載する。<br></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/.bashrc</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">JAVA_HOME</span><span class="op">=</span>/usr/lib/jvm/java-11-openjdk-amd64</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$JAVA_HOME</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>JAVA_HOMEのパスは各自がインストールした場所へ変える。</p>
 </section>
-<section id="移行時のトラブル" class="level2">
-<h2 class="anchored" data-anchor-id="移行時のトラブル">移行時のトラブル</h2>
-<p>移行工程5で一部の曲が編集ソフト上でリンク切れになる問題が発生した。<br> 原因の曲を調べると、ダウンロードして展開したファイルの3割で文字化けが発生していた。<br> それらの曲のリンクを指定したところ、曲が認識されるようになった。<br> 曲のファイルが文字化けしたことでAdobeのソフトが認識できなくなったと考えられる。<br></p>
-<section id="対策" class="level3">
-<h3 class="anchored" data-anchor-id="対策">対策</h3>
-<p><a href="https://7-zip.opensource.jp/">7zip</a>をインストールし、ディレクトリの解凍を7zipで行った。<br> 7zipでの解凍で文字化けを5%程度まで抑える事ができた。<br> Win11の標準解凍では30%程度文字化けがあったため、7zipの方が望ましいと考えられる。<br> 文字化けしたファイルは全ファイルの解凍後10個程度であったため、個別でリンクを指定した。<br></p>
+<section id="tomcatのインストール" class="level2">
+<h2 class="anchored" data-anchor-id="tomcatのインストール">2. Tomcatのインストール</h2>
+<p><a href="https://tomcat.apache.org/download-10.cgi">公式サイト</a>のCoreから自分のPCにあった形式のtar.gzファイルを/tmp/にダウンロードする。<br></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /tmp</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://tomcat.apache.org/download-10.cgi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tomcat用のディレクトリを作成し、ダウンロードしたファイルを解凍する。<br></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir /opt/tomcat</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /opt/tomcat</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> tar xzvf /tmp/apache-tomcat-9.0.<span class="pp">*</span>tar.gz <span class="at">-C</span> /opt/tomcat <span class="at">--strip-components</span><span class="op">=</span>1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tomcatのユーザーを作成し、Tomcatがファイルを実行できるように権限を変更する。<br></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> useradd <span class="at">-r</span> <span class="at">-m</span> <span class="at">-U</span> <span class="at">-d</span> /opt/tomcat <span class="at">-s</span> /bin/false tomcat</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> tomcat: /opt/tomcat</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod <span class="at">-R</span> 755 /opt/tomcat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="後日談" class="level3">
-<h3 class="anchored" data-anchor-id="後日談">後日談</h3>
-<p>後日対応するファイルを確認したところ、文字化けが治っていたため、時間経過で解決する問題だったのかもしれない。<br></p>
-<p>問題の原因を調べたところ、２つの原因があることがわかった。</p>
-<ul>
-<li>文字コードの違い
-<ul>
-<li>Windowsでは「Shift-JIS」が、Macでは「UTF-8」が使われているため、異なるOSでデータをやり取りすると文字化けを起こす</li>
-</ul></li>
-<li>解凍ソフトの問題
-<ul>
-<li>原因は不明だが、Windows標準の解凍ソフトと、「LhacaPlus」というソフトでの解凍で文字化けが起こることがあるらしい</li>
-</ul></li>
-</ul>
-<p>今回はWin10とwin11のソフト交換であり、7zipを使ったが、10程度のファイルで文字化けが起こった。<br> 問題の完全解決には至っていないが、２つの問題に対しては「7zip」か「Explzh」の活用が有効なもよう</p>
-<p>参考サイト</p>
-<ul>
-<li><a href="https://cadvance-review.netsbizlife.com/windows11%E3%81%A7zip%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E5%90%8D%E3%82%84zip%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D%E3%81%8C%E6%96%87%E5%AD%97%E5%8C%96%E3%81%91%E3%81%97%E3%81%9F%E6%99%82/">WindowsでZIPフォルダ名やZIPファイル名が文字化けした時の対処方法</a></li>
-<li><a href="https://recoverit.wondershare.jp/file-repair/unzipped-zip-files-are-garbled.html">Zipファイルを解凍すると文字化けになった！その原因と対処法は？</a></li>
-</ul>
+<section id="tomcatのサービスファイルを作成" class="level2">
+<h2 class="anchored" data-anchor-id="tomcatのサービスファイルを作成">3.Tomcatのサービスファイルを作成</h2>
+<p>Tomcatを利用するために必要な.serviceファイルを作成する。<br></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano /etc/systemd/system/tomcat.service</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>以下の内容をコピペする。<br></p>
+<pre><code>[Unit]
+Description=Apache Tomcat Web Application Container
+After=network.target
+
+[Service]
+Type=forking
+
+Environment=JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre
+Environment=CATALINA_PID=/opt/tomcat/temp/tomcat.pid
+Environment=CATALINA_Home=/opt/tomcat
+Environment=CATALINA_BASE=/opt/tomcat
+Environment=’CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC’
+Environment=’JAVA_OPTS.awt.headless=true -Djava.security.egd=file:/dev/v/urandom’
+
+ExecStart=/opt/tomcat/bin/startup.sh
+ExecStop=/opt/tomcat/bin/shutdown.sh
+
+User=tomcat
+Group=tomcat
+UMask=0007
+RestartSec=10
+Restart=always
+
+[Install]
+
+WantedBy=multi-user.target</code></pre>
+<p>.serviceファイルの作成後デーモンをリロードする。<br></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl daemon-reload</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-<section id="反省" class="level2">
-<h2 class="anchored" data-anchor-id="反省">反省</h2>
-<p>以下の点で反省事項がある。</p>
-<ol type="1">
-<li>休憩時間を取らなかった</li>
-<li>新PCへの移行手順をまとめていなかった</li>
-<li>インストールするソフトのリンクを用意していなかった</li>
-<li>ディレクトリ設定法を調べて置かなかった</li>
-</ol>
-<section id="休憩時間について" class="level3">
-<h3 class="anchored" data-anchor-id="休憩時間について">休憩時間について</h3>
-<p>PCの初期設定ではやることが多く、思った以上に時間と気力が奪われる。<br> ここの作業は簡単なのだが、それをいくつもやると疲れが溜まってくる。<br> そして疲れにより作業効率が極端に落ちたため、１時間に１回の休憩は必要であった。</p>
-</section>
-<section id="移行手順書の必要性について" class="level3">
-<h3 class="anchored" data-anchor-id="移行手順書の必要性について">移行手順書の必要性について</h3>
-<p>可能な限り思考を減らすために必要。<br> 移行時にはやるべきことが多く、疲れが溜まりやすいため疲れないようにする必要がある。<br> インストールするソフトを決めるだけでは、どれからインストールするかを考えてしまい、時間と体力の無駄につながった。</p>
-</section>
-<section id="インストールするソフトのリンク準備" class="level3">
-<h3 class="anchored" data-anchor-id="インストールするソフトのリンク準備">インストールするソフトのリンク準備</h3>
-<p>思考を減らすために必要。<br> 一部のソフトは偽のリンクなどがあるため、正しいリンクか確認するのに負担がかかった。<br> またソフトのリンクを探すだけでも手間なので、事前にマークダウンにまとめておくべきだった。</p>
-</section>
-<section id="ディレクトリ設定について" class="level3">
-<h3 class="anchored" data-anchor-id="ディレクトリ設定について">ディレクトリ設定について</h3>
-<p>インストール時の負荷軽減に必要。<br> インストールする際曲はDドライブに置くなど、データ構造は事前に決めてあった。<br> しかしwin11では標準設定でCドライブへのインストールになる仕様だった。<br> そのためitunesなどはCドライブにインストールされ、曲もその中に入れられる事があった。<br> それらを修正するのに時間がかかったため、ソフト等がインストール、ダウンロードされる場所の設定方法をまとめておくべきだった。</p>
+<section id="tomcatの起動" class="level2">
+<h2 class="anchored" data-anchor-id="tomcatの起動">4. Tomcatの起動</h2>
+<p>Tomcatのステータス確認<br></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl status tomcat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tomcatの起動<br></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl start tomcat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tomcatの停止<br></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl stop tomcat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>参考サイト<br></p>
+<p>https://www.hostinger.com/tutorials/how-to-install-tomcat-on-ubuntu/</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

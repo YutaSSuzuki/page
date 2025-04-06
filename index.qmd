@@ -14,7 +14,7 @@ format: html
   * ハヤテのごとく！、神のみぞ知るセカイ、未来日記など
 
 
-**Links**<br>
+## Links
 :<a rel="me" href="https://github.com/YutaSSuzuki/" title="GitHub"><img height=20 width=20 style="vertical-align: text-top;" src="https://cdn.simpleicons.org/github/333333">
     YutaSSuzuki
 </a>
@@ -22,3 +22,7 @@ format: html
 :<a rel="me" href="https://x.com/SuzuemonPinfu" title="GitHub"><img height=20 width=20 style="vertical-align: text-top;" src="https://simpleicons.org/icons/x.svg">
     右衛門
 </a>
+
+## Reference
+本Webサイトの作成にあたり以下のWebサイトを参考にした。<br>
+https://ymat2.github.io/

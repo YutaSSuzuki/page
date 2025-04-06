@@ -1,0 +1,108 @@
+---
+title: "SQL処理方式"
+format: html
+---
+
+
+## 参考文献
+Oracleの公式DOCS<br>
+https://docs.oracle.com/cd/F19136_01/tgsql/introduction-to-sql-tuning.html#GUID-B653E5F3-F078-4BBC-9516-B892960046A2
+
+最適化の補足説明<br>
+https://kemboooo.hatenablog.com/entry/2023/05/13/145554
+
+DMLとDDLの違いの説明<br>
+https://qiita.com/zhao-xy/items/204c902dde45bf206ff5
+
+## SQLの処理方式
+
+SQLは以下の手順を経て実行される。<br>
+1の手順の後2,3をスキップして実行されるものを**ソフトパース**、<br>
+2,3を経て実行されるものを**ハードパース**という。
+
+1. SQL文の解析
+   1. 構文チェック
+   2. セマンティックスチェック
+   3. 共有プールチェック
+2. 最適化
+3. 行ソース生成
+4. 実行
+
+
+## ソフトパース
+
+SQL文の解釈を伴わない実行方法のこと。<br>
+SQLの実行までに最適化と行ソース生成を行わないため、実行速度が早くなる。<br>
+
+### 1-1 構文チェック
+
+SQL文内にスペルがないかをチェックする。<br>
+下記の例ではFROMをFORMとスペルミスしている。
+``` sql
+SQL> SELECT * FORM employees;
+SELECT * FORM employees
+         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+```
+
+### 1-2 セマンティクスチェック
+
+文内のオブジェクト及び列が存在するかなど、文の意味が有効化チェックする。<br>
+下記の例では存在しないテーブルを指定することでエラーが生じている。
+``` sql
+SQL> SELECT * FROM nonexistent_table;
+SELECT * FROM nonexistent_table
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+```
+### 1-3 共有プールチェック
+
+SQL文のハードパースが不要か判定している。<br>
+SQL文は各文ごとにSQLIDとしてハッシュ値が発行され、共有プールに格納される。<br>
+SQL文が発行された場合、その文のハッシュ値を共有SQL領域内で検索し、既に解析済みか判定する。<br>
+解析済みの場合最適化と行ソース生成をスキップしてSQL文が実行される。
+
+共有プール内に同じハッシュがある場合、セマンティクスシェック、環境チェックを行い同じ意味の文であるかを解析する。<br>
+同じ意味であるかは構文の一致だけではなく、文の記法や内容による。<br>
+例えば以下のSQL文を２人のユーザーが実行する場合、異なる意味のSQLとしてハード解析が行われる。
+
+```sql
+CREATE TABLE my_table ( some_col INTEGER );
+SELECT * FROM my_table;
+```
+これはSELECT文が同じであっても、別々のmy_tableとして解釈されるためである。<br>
+一方で以下の例の場合１文目は異なる文として認識されるが、２文目は同じ文として認識される。
+
+``` sql
+SELECT my_name FROM my_tabele where = "Tom";
+SELECT my_name FROM my_tabele where = :1;
+```
+
+## ハードパース
+
+SQL文の解釈を伴う実行方法のこと。<br>
+すべてのSQLは１度必ずハードパースが行われる。<br>
+ソフトパースより時間がかかるため、可能な限りハードパースは減らしたい。
+
+### 2 SQLの最適化
+
+オプティマイザが複数の実行計画を作成し、その中から最もコストの小さい実行計画を選択して行ソース生成に渡す。<br>
+DML（データ操作を行う言語）とDDL（データ定義を行う言語）でそれぞれ実行手順が異なる。<br>
+**DMLは最適化が行われれる**が、DDLは一部例外を除いて基本的に最適化が行われない。
+
+### 3 行ソース生成
+
+オプティマイザから受け取った最適な実行計画を下に、SQLの実行に使用するデータ構造（行ソースツリー）を出力する。<br>
+行ソースツリーには以下のものが含まれる。<br>
+* SQL文によって参照される表の順序
+  * 外部表はDEPT表、内部表はEMP表など
+* SQL分で言及される各表のアクセス方法
+  * DEPT表へのアクセスはINDEX UNIQUE SCAN、EMP表はINDEX RANGE SCANなど
+* SQL文の結合操作の影響を受ける表の結合方法
+  * ネステッドループ結合など
+* フィルタ、ソートまたは集計などのデータ操作
+  * DEPTNO=10でフィルタするなど
+
+

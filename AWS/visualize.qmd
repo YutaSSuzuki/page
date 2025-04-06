@@ -1,0 +1,36 @@
+---
+title: "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+format: html
+toc: true
+toc-depth: 2
+---
+
+## 概要
+
+本記事の手順はChatGPT 4oでコードを作成して実機検証を行いました>
+また本記事の作成はChatGPT 4oで原案を作成し、一部修正を行っていますbr>
+誤った内容が含まれている可能性があるため、重要な情報は確認するようにしてください。
+
+
+本ドキュメントでは、Amazon EC2 上に構築した Spring Boot アプリケーションのメトリクスを Prometheus 経由で収集し、CloudWatch Logs/メトリクスに連携することで可視化する手順をまとめます。
+
+対象とするメトリクスは以下の通りです：
+
+- Tomcat スレッド関連メトリクス
+- JVM メモリ、GC、スレッド関連メトリクス
+
+
+---
+
+## Spring Boot Actuator の設定
+
+`application.properties` に以下を追記し、Prometheus 向けメトリクス出力を有効化します。
+
+```properties
+management.endpoints.web.exposure.include=prometheus
+management.endpoint.prometheus.enabled=true
+management.metrics.export.prometheus.enabled=true
+```
+
+curl -s http://localhost:8080/actuator/prometheus | grep jvm
+curl -s http://localhost:8080/actuator/prometheus | grep tomcat

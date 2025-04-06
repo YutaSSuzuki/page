@@ -21,6 +21,8 @@ website:
         file: index.qmd
       - section: "note"
         contents: note/*.qmd
+      - section: "AWS"
+        contents: AWS/*.qmd
     page-footer:
       right: "Copyright 2024, Yuta Suzuki"
     google-analytics: "G-HLCP5V0Y7N"

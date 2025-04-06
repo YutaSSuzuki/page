@@ -101,9 +101,1738 @@
     "href": "index.html#hobby",
     "title": "About",
     "section": "hobby",
-    "text": "hobby\n\nノベルゲーム\nメドレー作成\n\nアニソンメドレー、ノベルゲーメドレーを作成（個人用）\n\nアニメ\n\nガンダム、コードギアスなど\n\n漫画\n\nハヤテのごとく！、神のみぞ知るセカイ、未来日記など\n\n\nLinks : YutaSSuzuki \n: 右衛門",
+    "text": "hobby\n\nノベルゲーム\nメドレー作成\n\nアニソンメドレー、ノベルゲーメドレーを作成（個人用）\n\nアニメ\n\nガンダム、コードギアスなど\n\n漫画\n\nハヤテのごとく！、神のみぞ知るセカイ、未来日記など",
     "crumbs": [
       "HOME"
+    ]
+  },
+  {
+    "objectID": "index.html#links",
+    "href": "index.html#links",
+    "title": "About",
+    "section": "Links",
+    "text": "Links\n: YutaSSuzuki \n: 右衛門",
+    "crumbs": [
+      "HOME"
+    ]
+  },
+  {
+    "objectID": "index.html#reference",
+    "href": "index.html#reference",
+    "title": "About",
+    "section": "Reference",
+    "text": "Reference\n本Webサイトの作成にあたり以下のWebサイトを参考にした。 https://ymat2.github.io/",
+    "crumbs": [
+      "HOME"
+    ]
+  },
+  {
+    "objectID": "note/scss.html",
+    "href": "note/scss.html",
+    "title": "SCSSの書き方",
+    "section": "",
+    "text": "{}の前に親要素を書き、その中に設定を書く\nh2 {\n    background-color: red;\n}\n以下の方法で変数を設定することも可能。\n$変数名: 値;\n{}の中に子要素のタグ（class、IDなど）を書くと親要素を認識してくれる",
+    "crumbs": [
+      "note",
+      "SCSSの書き方"
+    ]
+  },
+  {
+    "objectID": "note/scss.html#基本的な書き方",
+    "href": "note/scss.html#基本的な書き方",
+    "title": "SCSSの書き方",
+    "section": "",
+    "text": "{}の前に親要素を書き、その中に設定を書く\nh2 {\n    background-color: red;\n}\n以下の方法で変数を設定することも可能。\n$変数名: 値;\n{}の中に子要素のタグ（class、IDなど）を書くと親要素を認識してくれる",
+    "crumbs": [
+      "note",
+      "SCSSの書き方"
+    ]
+  },
+  {
+    "objectID": "aws/setup.html",
+    "href": "aws/setup.html",
+    "title": "AWS初期設定",
+    "section": "",
+    "text": "AWSのアカウントを作成する。作成に必要なものは以下の通り\n\nメールアドレス\nクレジットカード\n電話番号\n\nアカウントの作成手順は以下の通り 基本的に求められる情報を入力すれば問題ない。最後のプラン選択によってはお金がかかる場合があるので注意。\n\nAWSのホームページへ移動し、左上のサインアップを完了するをクリック\nEmailアドレス、パスワード、AWSアカウント名を入力\n住所、電話番号を入力\nクレジットカードの登録\nSMSによる本人確認\nサポートプランの選択\n\n３種のプランがあるが、勉強目的での利用ならベーシックプランを選択\n\n\nアカウント作成後はAWSのホームページに再度アクセスし、左上のコンソールにサインインから先程設定した情報を入力しログインする。",
+    "crumbs": [
+      "aws",
+      "AWS初期設定"
+    ]
+  },
+  {
+    "objectID": "aws/setup.html#アカウント作成",
+    "href": "aws/setup.html#アカウント作成",
+    "title": "AWS初期設定",
+    "section": "",
+    "text": "AWSのアカウントを作成する。作成に必要なものは以下の通り\n\nメールアドレス\nクレジットカード\n電話番号\n\nアカウントの作成手順は以下の通り 基本的に求められる情報を入力すれば問題ない。最後のプラン選択によってはお金がかかる場合があるので注意。\n\nAWSのホームページへ移動し、左上のサインアップを完了するをクリック\nEmailアドレス、パスワード、AWSアカウント名を入力\n住所、電話番号を入力\nクレジットカードの登録\nSMSによる本人確認\nサポートプランの選択\n\n３種のプランがあるが、勉強目的での利用ならベーシックプランを選択\n\n\nアカウント作成後はAWSのホームページに再度アクセスし、左上のコンソールにサインインから先程設定した情報を入力しログインする。",
+    "crumbs": [
+      "aws",
+      "AWS初期設定"
+    ]
+  },
+  {
+    "objectID": "aws/setup.html#料金アラートの設定",
+    "href": "aws/setup.html#料金アラートの設定",
+    "title": "AWS初期設定",
+    "section": "料金アラートの設定",
+    "text": "料金アラートの設定\nAWSは従量課金性のサービスであるため、意図せず高額の請求が来てしまうことがある。 そこで請求額が一定額を上回った場合、指定したメールアドレスに通知をする設定を行う。\n\nAWSにログイン後 左上のアカウント&gt; Biling and Cost Managementをクリック\n左の再度バーを下へスクロールし、設定の下にある請求設定をクリック\n請求書の送信設定の編集をクリックし、Eメールで配信される PDF 請求書にチェックを入れ、更新をクリック\nAWS 無料利用枠アラートのEメールアドレスにアラートを受診するアドレスを入力\nCloudWatch 請求アラートを受信するにチェックを入れる\n更新をクリック",
+    "crumbs": [
+      "aws",
+      "AWS初期設定"
+    ]
+  },
+  {
+    "objectID": "aws/setup.html#iamユーザーの作成",
+    "href": "aws/setup.html#iamユーザーの作成",
+    "title": "AWS初期設定",
+    "section": "IAMユーザーの作成",
+    "text": "IAMユーザーの作成",
+    "crumbs": [
+      "aws",
+      "AWS初期設定"
+    ]
+  },
+  {
+    "objectID": "aws/setup.html#操作ログの記録",
+    "href": "aws/setup.html#操作ログの記録",
+    "title": "AWS初期設定",
+    "section": "操作ログの記録",
+    "text": "操作ログの記録",
+    "crumbs": [
+      "aws",
+      "AWS初期設定"
+    ]
+  },
+  {
+    "objectID": "AWS/setup.html",
+    "href": "AWS/setup.html",
+    "title": "AWS初期設定",
+    "section": "",
+    "text": "AWSのアカウントを作成する。作成に必要なものは以下の通り\n\nメールアドレス\nクレジットカード\n電話番号\n\nアカウントの作成手順は以下の通り 基本的に求められる情報を入力すれば問題ない。最後のプラン選択によってはお金がかかる場合があるので注意。\n\nAWSのホームページへ移動し、左上のサインアップを完了するをクリック\nEmailアドレス、パスワード、AWSアカウント名を入力\n住所、電話番号を入力\nクレジットカードの登録\nSMSによる本人確認\nサポートプランの選択\n\n３種のプランがあるが、勉強目的での利用ならベーシックプランを選択\n\n\nアカウント作成後はAWSのホームページに再度アクセスし、左上のコンソールにサインインから先程設定した情報を入力しログインする。",
+    "crumbs": [
+      "AWS",
+      "AWS初期設定"
+    ]
+  },
+  {
+    "objectID": "AWS/setup.html#アカウント作成",
+    "href": "AWS/setup.html#アカウント作成",
+    "title": "AWS初期設定",
+    "section": "",
+    "text": "AWSのアカウントを作成する。作成に必要なものは以下の通り\n\nメールアドレス\nクレジットカード\n電話番号\n\nアカウントの作成手順は以下の通り 基本的に求められる情報を入力すれば問題ない。最後のプラン選択によってはお金がかかる場合があるので注意。\n\nAWSのホームページへ移動し、左上のサインアップを完了するをクリック\nEmailアドレス、パスワード、AWSアカウント名を入力\n住所、電話番号を入力\nクレジットカードの登録\nSMSによる本人確認\nサポートプランの選択\n\n３種のプランがあるが、勉強目的での利用ならベーシックプランを選択\n\n\nアカウント作成後はAWSのホームページに再度アクセスし、左上のコンソールにサインインから先程設定した情報を入力しログインする。",
+    "crumbs": [
+      "AWS",
+      "AWS初期設定"
+    ]
+  },
+  {
+    "objectID": "AWS/setup.html#料金アラートの設定",
+    "href": "AWS/setup.html#料金アラートの設定",
+    "title": "AWS初期設定",
+    "section": "料金アラートの設定",
+    "text": "料金アラートの設定\nAWSは従量課金性のサービスであるため、意図せず高額の請求が来てしまうことがある。 そこで請求額が一定額を上回った場合、指定したメールアドレスに通知をする設定を行う。\n\nAWSにログイン後 左上のアカウント&gt; Biling and Cost Managementをクリック\n左の再度バーを下へスクロールし、設定の下にある請求設定をクリック\n請求書の送信設定の編集をクリックし、Eメールで配信される PDF 請求書にチェックを入れ、更新をクリック\nAWS 無料利用枠アラートのEメールアドレスにアラートを受診するアドレスを入力\nCloudWatch 請求アラートを受信するにチェックを入れる\n更新をクリック\n\n\nCloudWatchの設定\n\nRegionがバージニア北部に変更\n上の検索欄にCloudWatchと入力し、検索\nアラームの作成をクリック\nメトリクスの選択＞請求＞概算合計請求額＞USDにチェック＞メトリクス選択\nアラートの条件設定条件＞静的、より大きいを選択＞USDにアラートを出したい金額を入力＞次へ\n通知先の設定アラーム状態、新しいトピックの作成＞トピック名、アラートを受け取るアドレスの入力＞トピックの作成\n指定したアドレスに届いたメールのURLをクリックして認証\nAWSの画面に戻り、既存のトピックを選択&gt;作成したトピック名をクリック＞次へ\nアラーム名を入力し、次へをクリック\n設定した条件を確認して問題なければアラームの作成をクリック\nアラームの一覧画面へ遷移し、状態がOKになれば完了\n\n注意 * 5でアラームの感覚を設定できるが、1分単位にすると有料となる。（デフォルトは6時間） * 11で状態がOKにならない場合は時間をおいてページを更新する\n参考文献 * https://zenn.dev/myatti/articles/a4d6333ea9edf9",
+    "crumbs": [
+      "AWS",
+      "AWS初期設定"
+    ]
+  },
+  {
+    "objectID": "AWS/setup.html#iamユーザーの作成",
+    "href": "AWS/setup.html#iamユーザーの作成",
+    "title": "AWS初期設定",
+    "section": "IAMユーザーの作成",
+    "text": "IAMユーザーの作成\nAWSのベストプラクティスではIAMユーザーという一般利用用のユーザーを作成し作業をすることが望ましいとされている。 これまでの作業はルートユーザーであるため、作業用のIAMユーザーを作成する。",
+    "crumbs": [
+      "AWS",
+      "AWS初期設定"
+    ]
+  },
+  {
+    "objectID": "AWS/setup.html#操作ログの記録",
+    "href": "AWS/setup.html#操作ログの記録",
+    "title": "AWS初期設定",
+    "section": "操作ログの記録",
+    "text": "操作ログの記録",
+    "crumbs": [
+      "AWS",
+      "AWS初期設定"
+    ]
+  },
+  {
+    "objectID": "AWS/strage.html",
+    "href": "AWS/strage.html",
+    "title": "AWSストレージ",
+    "section": "",
+    "text": "AWS上で使われるストレージのこと。オブジェクトストレージに分類される。 バケットと呼ばれる場所にオブジェクト（ファイル）を格納する。 バケットのデータは異なる3箇所以上のアベイラビリティーゾーンに自動で保存される。 データは99.999999999％の耐久性が保証されている。(イレブンナイン) 料金は使用する容量や取り出し頻度で決まる。 ストレージだけでなく静的ウェブサイトのホストも行える\n\n\n\nバケット\n\nオブジェクト（ファイル）格納する場所\nバケットには全世界でユニークな名前をつける必要がある。\n\n\nオブジェクトはキーと呼ばれるパスで指し示される。 このキーの作成にバケットの名前が使われるため、ユニークな名前をつける必要がある。\n\n\n\nS3ではアクセス頻度と、ストレージの性能に応じてストレージクラスが設定されている。 ストレージクラスによって料金が異なるため、用途に応じたクラスの選択が必要\nストレージクラスとコスト\n\nS3 標準\n\n頻繁にアクセスされるデータの格納に適している\nデフォルトで選択されるストレージ、高耐久、高可用性を持つ\n\nS3 標準-低頻度アクセス\n\nアクセス頻度の低いデータの格納に適している\nデータの取り出しに料金が発生するストレージ\n\nS3 Glacier\n\nデータのアーカイブに適したストレージ\nデータの取り出しに料金がかかるのに加え、取り出すのにも時間がかかる\n\nS3 Glacier DEEP\n\n年に１、２回しか取り出さないデータのアーカイブに適したストレージ\nコストは最も低いが、取り出しに最大１２時間を要する\n\n\n\n\n\nS3はインターネットから直接接続されるため、セキュリティ対策が必要。 不特定多数のユーザーからのアクセスは拒否されている。\nアクセスコントロールとして以下の物がある。\n\nユーザーポリシー\n\nIAMユーザーに対してアクセス権限が設定できる\n\nバケットポリシー\n\nバケット単位でアクセスの権限設定ができる",
+    "crumbs": [
+      "AWS",
+      "AWSストレージ"
+    ]
+  },
+  {
+    "objectID": "AWS/strage.html#amazon-s3-amazon-sinmple-storage-service",
+    "href": "AWS/strage.html#amazon-s3-amazon-sinmple-storage-service",
+    "title": "AWSストレージ",
+    "section": "",
+    "text": "AWS上で使われるストレージのこと。オブジェクトストレージに分類される。 バケットと呼ばれる場所にオブジェクト（ファイル）を格納する。 バケットのデータは異なる3箇所以上のアベイラビリティーゾーンに自動で保存される。 データは99.999999999％の耐久性が保証されている。(イレブンナイン) 料金は使用する容量や取り出し頻度で決まる。 ストレージだけでなく静的ウェブサイトのホストも行える\n\n\n\nバケット\n\nオブジェクト（ファイル）格納する場所\nバケットには全世界でユニークな名前をつける必要がある。\n\n\nオブジェクトはキーと呼ばれるパスで指し示される。 このキーの作成にバケットの名前が使われるため、ユニークな名前をつける必要がある。\n\n\n\nS3ではアクセス頻度と、ストレージの性能に応じてストレージクラスが設定されている。 ストレージクラスによって料金が異なるため、用途に応じたクラスの選択が必要\nストレージクラスとコスト\n\nS3 標準\n\n頻繁にアクセスされるデータの格納に適している\nデフォルトで選択されるストレージ、高耐久、高可用性を持つ\n\nS3 標準-低頻度アクセス\n\nアクセス頻度の低いデータの格納に適している\nデータの取り出しに料金が発生するストレージ\n\nS3 Glacier\n\nデータのアーカイブに適したストレージ\nデータの取り出しに料金がかかるのに加え、取り出すのにも時間がかかる\n\nS3 Glacier DEEP\n\n年に１、２回しか取り出さないデータのアーカイブに適したストレージ\nコストは最も低いが、取り出しに最大１２時間を要する\n\n\n\n\n\nS3はインターネットから直接接続されるため、セキュリティ対策が必要。 不特定多数のユーザーからのアクセスは拒否されている。\nアクセスコントロールとして以下の物がある。\n\nユーザーポリシー\n\nIAMユーザーに対してアクセス権限が設定できる\n\nバケットポリシー\n\nバケット単位でアクセスの権限設定ができる",
+    "crumbs": [
+      "AWS",
+      "AWSストレージ"
+    ]
+  },
+  {
+    "objectID": "AWS/strage.html#rds",
+    "href": "AWS/strage.html#rds",
+    "title": "AWSストレージ",
+    "section": "RDS",
+    "text": "RDS",
+    "crumbs": [
+      "AWS",
+      "AWSストレージ"
+    ]
+  },
+  {
+    "objectID": "AWS/strage.html#dynamodb",
+    "href": "AWS/strage.html#dynamodb",
+    "title": "AWSストレージ",
+    "section": "DynamoDB",
+    "text": "DynamoDB",
+    "crumbs": [
+      "AWS",
+      "AWSストレージ"
+    ]
+  },
+  {
+    "objectID": "AWS/About_AWS.html#awsのメリットデメリット",
+    "href": "AWS/About_AWS.html#awsのメリットデメリット",
+    "title": "AWS概要",
+    "section": "AWSのメリット、デメリット",
+    "text": "AWSのメリット、デメリット",
+    "crumbs": [
+      "AWS",
+      "AWS概要"
+    ]
+  },
+  {
+    "objectID": "AWS/About_AWS.html#awsの用途",
+    "href": "AWS/About_AWS.html#awsの用途",
+    "title": "AWS概要",
+    "section": "AWSの用途",
+    "text": "AWSの用途",
+    "crumbs": [
+      "AWS",
+      "AWS概要"
+    ]
+  },
+  {
+    "objectID": "AWS/About_AWS.html#awsの重要単語",
+    "href": "AWS/About_AWS.html#awsの重要単語",
+    "title": "AWS概要",
+    "section": "AWSの重要単語",
+    "text": "AWSの重要単語",
+    "crumbs": [
+      "AWS",
+      "AWS概要"
+    ]
+  },
+  {
+    "objectID": "note/ubuntu.html",
+    "href": "note/ubuntu.html",
+    "title": "Linuxサーバー構築に向けた準備",
+    "section": "",
+    "text": "新しいゲーミングPCの運用に慣れてきたため、古いゲーミングPCをLinuxサーバーとして運用することにした。 Linuxサーバーとして運用をするまでの設定や準備をまとめる。",
+    "crumbs": [
+      "note",
+      "Linuxサーバー構築に向けた準備"
+    ]
+  },
+  {
+    "objectID": "note/ubuntu.html#sshの設定",
+    "href": "note/ubuntu.html#sshの設定",
+    "title": "Linuxサーバー構築に向けた準備",
+    "section": "SSHの設定",
+    "text": "SSHの設定\nssh_configを以下のように設定した。\nHost &lt;接続先PCの略称&gt;\n  Hostname &lt;Ipアドレス&gt;\n  Port &lt;sshdで設定したポート&gt;\n  User &lt;ユーザ名&gt;\n  IdentityFile ~/.ssh/&lt;秘密鍵のファイル名&gt;\nポート番号をIdentityFileの後に書くとPermission deniedになったので注意\n\nsshdの設定\n設定を始める前に/etc/ssh/sshd_configをsshd_config_orgとして同じ場所にバックアップを作成した。 コンフィグは以下のように変更した\n\nport変更\n\nデフォルトのポートは不正アクセスが多いため、22番ポートを削除し、エフェメラルポート番号から１つ選んで変更\n\nPermitRootLogin no\n\nルートログインの禁止\n\nPasswordAuthentication no\n\nパスワードでのログインを禁止する\n\nKbdInteractiveAuthentication no\n\nキーボードインタラクティブ認証の無効化\n旧チャレンジレスポンス、受け取ったパスワードとキーワードが一致するかを確かめる認証方法\n\nKerberosAuthentication no\n\nKerberos認証を無効化する\nあるPCから身元認証書を初回ログイン時に発行してもらい、２回目移行の関連するPCのへのログインには身元認証書をつかう方法\n\nGSSAPIAuthentication no\n\nGSSAPI認証を無効化する\n\nUsePAM no\n\nPAM認証の無効化",
+    "crumbs": [
+      "note",
+      "Linuxサーバー構築に向けた準備"
+    ]
+  },
+  {
+    "objectID": "note/ubuntu.html#firewallの設定",
+    "href": "note/ubuntu.html#firewallの設定",
+    "title": "Linuxサーバー構築に向けた準備",
+    "section": "Firewallの設定",
+    "text": "Firewallの設定\nsudo ufw allow ssh  SSH接続を許可する\nsudo ufw allow ポート番号  ポート番号を開放する。不要なポートを開放すると不正アクセスの温床になるため、必要なポートのみ開放する。 ポート番号/プロトコルでポート番号の特定のプロトコルのみ許可できる\nsudo ufw status  firewallの開放状況を一覧表示する",
+    "crumbs": [
+      "note",
+      "Linuxサーバー構築に向けた準備"
+    ]
+  },
+  {
+    "objectID": "note/ubuntu.html#概要",
+    "href": "note/ubuntu.html#概要",
+    "title": "Linuxサーバー構築に向けた準備",
+    "section": "",
+    "text": "新しいゲーミングPCの運用に慣れてきたため、古いゲーミングPCをLinuxサーバーとして運用することにした。 Linuxサーバーとして運用をするまでの設定や準備をまとめる。",
+    "crumbs": [
+      "note",
+      "Linuxサーバー構築に向けた準備"
+    ]
+  },
+  {
+    "objectID": "note/ubuntu.html#linuxインストールまで",
+    "href": "note/ubuntu.html#linuxインストールまで",
+    "title": "Linuxサーバー構築に向けた準備",
+    "section": "Linuxインストールまで",
+    "text": "Linuxインストールまで\n旧PCの構成 * intel4790k * DDR3 8G * Geforce 900番台 * SSD 256GB * HDD 2TB\nWindowsはSSDの方には入っていた、HDDはストレージとして運用されていた。 調べてみるとWinodowsは残してサーバー構築を行っている人が多かったため、Windowsを残してサーバー構築を行うことにした。 Windowsとデュアルブートをする場合メモリが足らなくなるため、SSDはWinodows、HDDはLinuxとして使用することにした。\nubuntuのインストールまでの準備 1. UbuntuとRufusをダンロードし、Rufusを使用してUSBにUbuntuの起動デバイスを作成（USB8GB以上） 2. 旧PCのHDDをフォーマット（エクスプローラーから右クリックでフォーマット） 3. シャットダウン状態の旧PCにUSBを刺す 4. 旧PCのBIOS起動 5. ブートディレクトリをUSBに指定して起動 6. ubuntuの指示に従いインストール\nubuntuのインストールは英語が推奨。日本語でインストールを行うとディレクトリが日本で作成される（一敗）。 インストールディスクを選ぶ項目ではWindowsと共存させるを選択した。\nubuntuインストール後はsudo apt updateを使用してアップデートを実行した。",
+    "crumbs": [
+      "note",
+      "Linuxサーバー構築に向けた準備"
+    ]
+  },
+  {
+    "objectID": "note/ubuntu.html#ipアドレスの固定",
+    "href": "note/ubuntu.html#ipアドレスの固定",
+    "title": "Linuxサーバー構築に向けた準備",
+    "section": "IPアドレスの固定",
+    "text": "IPアドレスの固定\nubuntu側とルーター側でそれぞれ設定を行った。\n\nUbuntu側の設定\nipコマンドでIPアドレスとMACアドレスを取得した。 ip aの出力例\n1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt;  ~~\n  ~~\n\n2: インターフェース名: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;  ~~\n  link/ether ＜MACアドレス＞ brd ~~ \n  inet &lt;IPアドレス&gt; brd ~~\n  ~~\n1:、2:の部分は接続している方法によって数が異なる。 上記は有線でインターネットに接続している例で、有線と無線が接続されている場合は３つになる。\n次に/etc/netplan下にある、.yamlファイルの編集を行った。 編集ファイルのバックアップ sudo cp /etc/netplan/01-network-manager-all.yaml /etc/netplan/01-network-manager-all.yaml_org\n一度このファイルの編集に失敗し、ネットワークへ接続できなくなったため、必ずバックアップは作成すること\n以下のようにyamlファイルを編集した。 尚yamlファイルはインデントに意味があるため、インデントに注意して編集すること。\nnetwork:\n   version: 2\n   renderer: networkd\n   ethernets:\n      インターフェース名:\n         addresses: [固定するIP]\n         nameservers:\n            addresses: [8.8.8.8]\n         routes:\n            - to: default\n              via:ルーターのIPアドレス\n編集後は以下のコマンドで変更を反映させた。 尚拡張子が.yamlのファイルはすべて設定ファイルとして反映されるため、注意 sudo netplan apply\nインターネットの通信確認はpingコマンドで行い、以下のような出力が出れば通信が確認できる。\n ping www.google.co.jp\n64 bytes from kix06s11-in-f3.1e100.net (142.250.207.99): icmp_seq=1 ttl=115 time=10.0 ms\nうまくいかない場合はインデントの確認、設定のIpアドレスの確認を行う。 それでもうまくいかない場合はバックアップをもとに戻しやり直す。\n参考サイト:https://note.com/ogs_digilife/n/ne30f8120b7ea\n\n\nルーター側の設定\n私の家ではONUがルーターの役割を果たしていた。 WebブラウザにルーターのIPアドレスを入力し、ユーザー名とパスワードを入力して管理画面にログインした。 その後DHCPの項目から固定したいIPアドレスと機器のMACアドレスを入力して登録を行った。\nルーターの設定方法は機器によって違うため、製品名で検索すること",
+    "crumbs": [
+      "note",
+      "Linuxサーバー構築に向けた準備"
+    ]
+  },
+  {
+    "objectID": "note/ubuntu.html#apatchのインストール",
+    "href": "note/ubuntu.html#apatchのインストール",
+    "title": "Linuxサーバー構築に向けた準備",
+    "section": "Apatchのインストール",
+    "text": "Apatchのインストール\nsudo apt install apache2 Apacheのインストール、CentOSの場合httpdとなる。以下も同様\nsudo ufw allow 'Apache' ポート80番の通信を許可し、ページの閲覧が可能なようにする。\nsudo systemctl status apache2 Apacheの状態確認、この段階ではinactiveになっている\nsudo systemctl start apache2 Apacheを起動する。起動を止めたい場合はstartをstopに変える\nsudo systemctl enable apache2 Apacheをシステムが起動した際、同時に起動できるようにしておく\nsudo systemctl restart apache2 Apacheを再起動する。Apacheのコンフィグを変えた場合にその都度使用する。",
+    "crumbs": [
+      "note",
+      "Linuxサーバー構築に向けた準備"
+    ]
+  },
+  {
+    "objectID": "note/tomcat.html",
+    "href": "note/tomcat.html",
+    "title": "Tomcat",
+    "section": "",
+    "text": "WebアプリでAPサーバーを構築するために使用されるソフト。 動的なアプリを動かすことができ、Appacheで受けたリクエストをTomcatで処理して返すために使用される。 Javaで動作し、Tomcat内でJavaがDBへ検索を行ったり、必要なテンプレートを作成する。\n参考サイト\n\nhttps://qiita.com/tanayasu1228/items/11e22a18dbfa796745b5\nhttps://tomcat.apache.org/",
+    "crumbs": [
+      "note",
+      "Tomcat"
+    ]
+  },
+  {
+    "objectID": "note/tomcat.html#概要",
+    "href": "note/tomcat.html#概要",
+    "title": "Tomcat",
+    "section": "",
+    "text": "WebアプリでAPサーバーを構築するために使用されるソフト。 動的なアプリを動かすことができ、Appacheで受けたリクエストをTomcatで処理して返すために使用される。 Javaで動作し、Tomcat内でJavaがDBへ検索を行ったり、必要なテンプレートを作成する。\n参考サイト\n\nhttps://qiita.com/tanayasu1228/items/11e22a18dbfa796745b5\nhttps://tomcat.apache.org/",
+    "crumbs": [
+      "note",
+      "Tomcat"
+    ]
+  },
+  {
+    "objectID": "note/tomcat.html#インストール",
+    "href": "note/tomcat.html#インストール",
+    "title": "Tomcat",
+    "section": "インストール",
+    "text": "インストール\n環境 * Ubuntu 22.04 * Tomcat 10.1.25（ここでインストールするもの）\n\n1. Javaのインストール\nJavaがインストールされているか確認\njava -version\nインストールされていない場合はインストール\nsudo apt install defalt-jdk\n参考サイト\nhttps://www.hostinger.com/tutorials/how-to-install-tomcat-on-ubuntu/",
+    "crumbs": [
+      "note",
+      "Tomcat"
+    ]
+  },
+  {
+    "objectID": "note/web.html",
+    "href": "note/web.html",
+    "title": "Web三層モデル",
+    "section": "",
+    "text": "Web三層モデルとは、WebアプリをWebサーバー、APサーバー、DBサーバーに分けて構築するモデルのこと。\nhttps://qiita.com/xyz666/items/387251d0aee41a25fec1",
+    "crumbs": [
+      "note",
+      "Web三層モデル"
+    ]
+  },
+  {
+    "objectID": "note/web.html#概要",
+    "href": "note/web.html#概要",
+    "title": "Web三層モデル",
+    "section": "",
+    "text": "Web三層モデルとは、WebアプリをWebサーバー、APサーバー、DBサーバーに分けて構築するモデルのこと。\nhttps://qiita.com/xyz666/items/387251d0aee41a25fec1",
+    "crumbs": [
+      "note",
+      "Web三層モデル"
+    ]
+  },
+  {
+    "objectID": "note/tomcat.html#インストール環境",
+    "href": "note/tomcat.html#インストール環境",
+    "title": "Tomcat",
+    "section": "インストール環境",
+    "text": "インストール環境\n環境 * Ubuntu 22.04 * Tomcat 10.1.25（ここでインストールするもの）",
+    "crumbs": [
+      "note",
+      "Tomcat"
+    ]
+  },
+  {
+    "objectID": "note/tomcat.html#javaのインストール",
+    "href": "note/tomcat.html#javaのインストール",
+    "title": "Tomcat",
+    "section": "1. Javaのインストール",
+    "text": "1. Javaのインストール\nJavaがインストールされているか確認\njava -version\nTomcatにはOpenJDKが必要なため、インストールされていない場合はインストール\nsudo apt install defalt-jdk\nJAVA_HOMEのパスを設定していない場合は.bashrcにJAVA_HOMEのパスを記載する。\nnano ~/.bashrc\nexport JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64\nsource ~/.bashrc\necho $JAVA_HOME\nJAVA_HOMEのパスは各自がインストールした場所へ変える。",
+    "crumbs": [
+      "note",
+      "Tomcat"
+    ]
+  },
+  {
+    "objectID": "note/tomcat.html#tomcatのインストール",
+    "href": "note/tomcat.html#tomcatのインストール",
+    "title": "Tomcat",
+    "section": "2. Tomcatのインストール",
+    "text": "2. Tomcatのインストール\n公式サイトのCoreから自分のPCにあった形式のtar.gzファイルを/tmp/にダウンロードする。\ncd /tmp\nwget https://tomcat.apache.org/download-10.cgi\nTomcat用のディレクトリを作成し、ダウンロードしたファイルを解凍する。\nsudo mkdir /opt/tomcat\ncd /opt/tomcat\nsudo tar xzvf /tmp/apache-tomcat-9.0.*tar.gz -C /opt/tomcat --strip-components=1\nTomcatのユーザーを作成し、Tomcatがファイルを実行できるように権限を変更する。\nsudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat\nsudo chown -R tomcat: /opt/tomcat\nsudo chmod -R 755 /opt/tomcat",
+    "crumbs": [
+      "note",
+      "Tomcat"
+    ]
+  },
+  {
+    "objectID": "note/tomcat.html#tomcatのサービスファイルを作成",
+    "href": "note/tomcat.html#tomcatのサービスファイルを作成",
+    "title": "Tomcat",
+    "section": "3.Tomcatのサービスファイルを作成",
+    "text": "3.Tomcatのサービスファイルを作成\nTomcatを利用するために必要な.serviceファイルを作成する。\nsudo nano /etc/systemd/system/tomcat.service\n以下の内容をコピペする。\n[Unit]\nDescription=Apache Tomcat Web Application Container\nAfter=network.target\n\n[Service]\nType=forking\n\nEnvironment=JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre\nEnvironment=CATALINA_PID=/opt/tomcat/temp/tomcat.pid\nEnvironment=CATALINA_Home=/opt/tomcat\nEnvironment=CATALINA_BASE=/opt/tomcat\nEnvironment=’CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC’\nEnvironment=’JAVA_OPTS.awt.headless=true -Djava.security.egd=file:/dev/v/urandom’\n\nExecStart=/opt/tomcat/bin/startup.sh\nExecStop=/opt/tomcat/bin/shutdown.sh\n\nUser=tomcat\nGroup=tomcat\nUMask=0007\nRestartSec=10\nRestart=always\n\n[Install]\n\nWantedBy=multi-user.target\n.serviceファイルの作成後デーモンをリロードする。\nsudo systemctl daemon-reload",
+    "crumbs": [
+      "note",
+      "Tomcat"
+    ]
+  },
+  {
+    "objectID": "note/tomcat.html#tomcatの起動",
+    "href": "note/tomcat.html#tomcatの起動",
+    "title": "Tomcat",
+    "section": "4. Tomcatの起動",
+    "text": "4. Tomcatの起動\nTomcatのステータス確認\nsudo systemctl status tomcat\nTomcatの起動\nsudo systemctl start tomcat\nTomcatの停止\nsudo systemctl stop tomcat\n参考サイト\nhttps://www.hostinger.com/tutorials/how-to-install-tomcat-on-ubuntu/",
+    "crumbs": [
+      "note",
+      "Tomcat"
+    ]
+  },
+  {
+    "objectID": "Java/about_java.html",
+    "href": "Java/about_java.html",
+    "title": "Javaの概要",
+    "section": "",
+    "text": "JVM上で動作する、オブジェクト指向のプログラミング言語 WEBアプリケーションでよく使われる。 ソースコードのコンパイルが必要な中間言語であるが、JVM上で動作するためJVMをインストールすればOSに関係なく動作する。"
+  },
+  {
+    "objectID": "Java/about_java.html#javaとは",
+    "href": "Java/about_java.html#javaとは",
+    "title": "Javaの概要",
+    "section": "",
+    "text": "JVM上で動作する、オブジェクト指向のプログラミング言語 WEBアプリケーションでよく使われる。 ソースコードのコンパイルが必要な中間言語であるが、JVM上で動作するためJVMをインストールすればOSに関係なく動作する。"
+  },
+  {
+    "objectID": "AWS/network.html#サブネット",
+    "href": "AWS/network.html#サブネット",
+    "title": "ネットワーク",
+    "section": "サブネット",
+    "text": "サブネット",
+    "crumbs": [
+      "AWS",
+      "ネットワーク"
+    ]
+  },
+  {
+    "objectID": "note/ap_web.html",
+    "href": "note/ap_web.html",
+    "title": "Webアプリ",
+    "section": "",
+    "text": "インターネットを通じて動作するアプリケーションのこと。 クライアントPCからリクエストを受け取り、サーバーが処理をすることで動作する。 クライアントPCはWebブラウザを用いてサーバーへリクエストを送る。 サーバーはリクエストに応じたHTMLをレスポンスとして返している。",
+    "crumbs": [
+      "note",
+      "Webアプリ"
+    ]
+  },
+  {
+    "objectID": "note/ap_web.html#webアプリって何",
+    "href": "note/ap_web.html#webアプリって何",
+    "title": "Webアプリ",
+    "section": "",
+    "text": "インターネットを通じて動作するアプリケーションのこと。 クライアントPCからリクエストを受け取り、サーバーが処理をすることで動作する。 クライアントPCはWebブラウザを用いてサーバーへリクエストを送る。 サーバーはリクエストに応じたHTMLをレスポンスとして返している。",
+    "crumbs": [
+      "note",
+      "Webアプリ"
+    ]
+  },
+  {
+    "objectID": "note/ap_web.html#cgi",
+    "href": "note/ap_web.html#cgi",
+    "title": "Webアプリ",
+    "section": "CGI",
+    "text": "CGI\nWebサーバーとプログラムを連携させる仕組みのこと Webサイト内での検索など、クライアントの要求によって結果が変わるもの（動的コンテンツ）は、事前にHTMLを用意する事ができない。 そこでPerlのプログラミングをWebサーバーに付け加えることで、新しくHTMLファイルを作成することで、動的コンテンツに対応できる様になった。",
+    "crumbs": [
+      "note",
+      "Webアプリ"
+    ]
+  },
+  {
+    "objectID": "note/object_programing.html",
+    "href": "note/object_programing.html",
+    "title": "オブジェクト指向概要",
+    "section": "",
+    "text": "データと手続きをまとめたものをオブジェクトとして定義し、役割ごとにオブジェクトを作成し、それらを組み上げてシステムを作る考え方のこと。 オブジェクトは属性と機能から構成されている。 属性はフィールド（変数）として定義され、機能はメソッドとして定義される。 フィールドとメソッドをあわせたものをクラスと呼ぶ。",
+    "crumbs": [
+      "note",
+      "オブジェクト指向概要"
+    ]
+  },
+  {
+    "objectID": "note/object_programing.html#オブジェクト指向って何",
+    "href": "note/object_programing.html#オブジェクト指向って何",
+    "title": "オブジェクト指向概要",
+    "section": "",
+    "text": "データと手続きをまとめたものをオブジェクトとして定義し、役割ごとにオブジェクトを作成し、それらを組み上げてシステムを作る考え方のこと。 オブジェクトは属性と機能から構成されている。 属性はフィールド（変数）として定義され、機能はメソッドとして定義される。 フィールドとメソッドをあわせたものをクラスと呼ぶ。",
+    "crumbs": [
+      "note",
+      "オブジェクト指向概要"
+    ]
+  },
+  {
+    "objectID": "note/object_programing.html#どう動くの",
+    "href": "note/object_programing.html#どう動くの",
+    "title": "オブジェクト指向概要",
+    "section": "どう動くの？",
+    "text": "どう動くの？\nクラスにデータや機能が定義されており、そのクラスを呼び出すことでメモリ領域上にインスタンスが生成される。 このインスタンスが実際の機能を持つものとして動作する。\n例 ゲームでモンスターがプレイヤーに攻撃する場面があったとする。 このときオブジェクト指向ではモンスターとプレイヤーという2種類のクラスを用意する。\nプレイヤーのクラス\n\n\nPlayer.java\n\npublic class player {\n    int hp = 200;\n\n}\n\nモンスターのクラス\n\n\nMonster.java\n\npublic class Monster {\n    int hp = 100;\n    int atk = 50;\n\n    public void attack(Player target) {\n        System.out.println(\"モンスターがプレイヤーに攻撃した！\");\n        target.hp = target.hp - this.atk;\n    }\n}\n\nプレイヤークラスにはデータとしてhp:200が設定されており、モンスターにはhp:100と、atk:50が設定されている。 モンスタークラスにはデータに加え、attackという機能が備わっている。 ここでモンスターがプレイヤーに攻撃する場面を考える。\n\n\nMain.java\n\npublic class Main {\n    public static void main(String[] args) {\n        Monster monster = new Monster();\n        Player player = new Player();\n\n        System.out.println(\"プレイヤーのHP: \" + player.hp);\n        monster.attack(player);\n        System.out.println(\"攻撃後のプレイヤーのHP: \" + player.hp);\n    }\n}\n\nプレイヤーとモンスターはクラスであり、クラスのままではインスタンスを持たないため、ゲーム上プレイヤーもモンスターも存在していない。 そこでnewを使いモンスタークラスからインスタンスを生成し、そのインスタンスを参照するmonster変数を設定した。（プレイヤーも同様） これによりゲーム上にモンスターとプレイヤーが出現した。 そしてモンスターはプレイヤーを攻撃するattack機能を持つため、 monster.attackでインスタンス内のattack機能を呼び出し、プレイヤーの体力を減らした。\n{.sh filename= \"実行結果\"} プレイヤーのHP: 200 モンスターがプレイヤーに攻撃した！ 攻撃後のプレイヤーのHP: 150\nこのようにオブジェクト指向ではデータと機能を一体化したクラスからインスタンスを生成し、システムを作り上げていく。",
+    "crumbs": [
+      "note",
+      "オブジェクト指向概要"
+    ]
+  },
+  {
+    "objectID": "note/ap_web.html#javaサーブレット",
+    "href": "note/ap_web.html#javaサーブレット",
+    "title": "Webアプリ",
+    "section": "Java/サーブレット",
+    "text": "Java/サーブレット\nCGIを活用したHTMLの作成はWebアプリの大規模、複雑化に伴ってCGIでのレスポンスに時間がかかることがボトルネックになっていった。",
+    "crumbs": [
+      "note",
+      "Webアプリ"
+    ]
+  },
+  {
+    "objectID": "note/object_programing2.html",
+    "href": "note/object_programing2.html",
+    "title": "オブジェクト指向の三大要素",
+    "section": "",
+    "text": "あるクラスを引き継いで、別のクラスを定義すること。 継承をして作られたクラスは継承元のデータやメソッドを引き継ぐことができる。 継承を使用することで新しいクラスを作る際に差分を加えるだけで良い。 また修正を行う際も継承元のクラスを修正すればすべてに反映されるため保守、仕様変更に強い。\n継承元のクラス\n\n\nPlayer.java\n\n    public class player {\n    int hp = 200;\n    int atk  = 50;\n    public void attack(Player target) {\n        System.out.println(\"プレイヤーの攻撃！\");\n        target.hp = target.hp - this.atk;\n    }\n}\n\n継承したクラス（ChatGPTにより生成）\n\n\nPlayer.java\n\npublic class Warrior extends Player {\n    int defense = 20;\n\n    public Warrior() {\n        super();\n    }\n\n    // Warrior特有のメソッド\n    public void shieldBlock() {\n        System.out.println(\"ウォリアーが盾で攻撃を防いだ！\");\n        this.hp += defense;\n    }\n\n    // 攻撃方法のオーバーライド\n    @Override\n    public void attack(Player target) {\n        System.out.println(\"ウォリアーの強力な攻撃！\");\n        target.hp = target.hp - this.atk- this.atk;\n    }\n}\n\nplayerクラスを継承したwarriorクラスを作成している。 warriorクラスではplayerクラスのデータとメソッドを引き継いでいる。 さらにwarriorクラスではplayerクラスになかったshieldBlockというメソッドが使用可能になっている。 worriorクラスではplayerクラスのattackメッソドがオーバーライドされており、 worriorクラスのattackメッソドは2回atkがhpから引かれている。",
+    "crumbs": [
+      "note",
+      "オブジェクト指向の三大要素"
+    ]
+  },
+  {
+    "objectID": "note/object_programing2.html#継承",
+    "href": "note/object_programing2.html#継承",
+    "title": "オブジェクト指向の三大要素",
+    "section": "",
+    "text": "あるクラスを引き継いで、別のクラスを定義すること。 継承をして作られたクラスは継承元のデータやメソッドを引き継ぐことができる。 継承を使用することで新しいクラスを作る際に差分を加えるだけで良い。 また修正を行う際も継承元のクラスを修正すればすべてに反映されるため保守、仕様変更に強い。\n継承元のクラス\n\n\nPlayer.java\n\n    public class player {\n    int hp = 200;\n    int atk  = 50;\n    public void attack(Player target) {\n        System.out.println(\"プレイヤーの攻撃！\");\n        target.hp = target.hp - this.atk;\n    }\n}\n\n継承したクラス（ChatGPTにより生成）\n\n\nPlayer.java\n\npublic class Warrior extends Player {\n    int defense = 20;\n\n    public Warrior() {\n        super();\n    }\n\n    // Warrior特有のメソッド\n    public void shieldBlock() {\n        System.out.println(\"ウォリアーが盾で攻撃を防いだ！\");\n        this.hp += defense;\n    }\n\n    // 攻撃方法のオーバーライド\n    @Override\n    public void attack(Player target) {\n        System.out.println(\"ウォリアーの強力な攻撃！\");\n        target.hp = target.hp - this.atk- this.atk;\n    }\n}\n\nplayerクラスを継承したwarriorクラスを作成している。 warriorクラスではplayerクラスのデータとメソッドを引き継いでいる。 さらにwarriorクラスではplayerクラスになかったshieldBlockというメソッドが使用可能になっている。 worriorクラスではplayerクラスのattackメッソドがオーバーライドされており、 worriorクラスのattackメッソドは2回atkがhpから引かれている。",
+    "crumbs": [
+      "note",
+      "オブジェクト指向の三大要素"
+    ]
+  },
+  {
+    "objectID": "note/object_programing2.html#カプセル化",
+    "href": "note/object_programing2.html#カプセル化",
+    "title": "オブジェクト指向の三大要素",
+    "section": "カプセル化",
+    "text": "カプセル化\nクラス内の内部状態を隠蔽し、外部から直接アクセスできないようにすること。 データの不整合や意図しない変更を防ぐことができる。 開発を行う際、複数人で開発をすると1人が開発したものが意図されない使われ方をする場合がある。 それを防ぐために、開発したクラスの使用範囲を決め、意図されない仕様を防ぐことができる。\n\n\nPlayer.java\n\npublic class Player {\n    // フィールドをprivateにすることで直接アクセスを防ぐ\n    private int hp;\n    private int atk;\n\n    // コンストラクタ\n    public Player(int hp, int atk) {\n        this.hp = hp;\n        this.atk = atk;\n    }\n\n    // getterメソッド\n    public int getHp() {\n        return hp;\n    }\n\n    // setterメソッド\n    public void setHp(int hp) {\n        if (hp &gt;= 0) {\n            this.hp = hp;\n        } else {\n            System.out.println(\"HPは0以上の値に設定してください。\");\n        }\n    }\n\n    // getterメソッド\n    public int getAtk() {\n        return atk;\n    }\n\n    // setterメソッド\n    public void setAtk(int atk) {\n        if (atk &gt; 0) {\n            this.atk = atk;\n        } else {\n            System.out.println(\"攻撃力は0以上の値に設定してください。\");\n        }\n    }\n\n    // 攻撃メソッド\n    public void attack(Player target) {\n        System.out.println(\"プレイヤーの攻撃！\");\n        target.setHp(target.getHp() - this.atk);\n    }\n}\n\n\n\nMain.java\n\npublic class Main {\n    public static void main(String[] args) {\n        Player player1 = new Player(200, 50);\n        Player player2 = new Player(150, 30);\n\n    }\n}\n\nPlayerのHPはPlayerクラス内でprivateによって定義されているため、他のクラスでは直接アクセスする事ができない。 privateで定義されたものにアクセスするにはゲッターを通して取得する必要がある。 そして値を更新するためにはセッターを活用する。 このような参照方式にする事によって、直接のアクセスを禁止している。\nさらにカプセル化は仕様変更にも強い。 HPを数値による代入ではなく、その他のステータスから算出する方法に変更になったとする。 PlayerクラスからHPを参照する方法では、player.hpを参照していた場所をすべて書き換える必要がある。 一方でセッターでhpを設定していれば、playerクラスのセッターを書き換えることで全てのhpを変更する事ができる。",
+    "crumbs": [
+      "note",
+      "オブジェクト指向の三大要素"
+    ]
+  },
+  {
+    "objectID": "note/object_programing2.html#ポリモーフィズム",
+    "href": "note/object_programing2.html#ポリモーフィズム",
+    "title": "オブジェクト指向の三大要素",
+    "section": "ポリモーフィズム",
+    "text": "ポリモーフィズム\nオーバーライドやオーバーロードによってメッソドを使い分けること。 継承時に継承元のメソッドをオーバーライドすることで、同じ名前で別のメッソドを定義する事ができる。 ゲームで勇者、魔術師、戦士がいたとする。 それらはすべて同じ攻撃というメソッドを持つが、それぞれの攻撃の内容は違う。 これをplayerクラス内にattackメッソドを定義し、勇者、魔術師、戦士のクラスを継承して作成する。 そして継承時にattackをオーバーライドすることで、同じattackの挙動をするが、それぞれ異なった内容の攻撃が可能になる。",
+    "crumbs": [
+      "note",
+      "オブジェクト指向の三大要素"
+    ]
+  },
+  {
+    "objectID": "note/object_programing.html#参考文献",
+    "href": "note/object_programing.html#参考文献",
+    "title": "オブジェクト指向概要",
+    "section": "参考文献",
+    "text": "参考文献\nhttps://eng-entrance.com/what-oop",
+    "crumbs": [
+      "note",
+      "オブジェクト指向概要"
+    ]
+  },
+  {
+    "objectID": "note/apache.html#apatchのインストールとコマンド",
+    "href": "note/apache.html#apatchのインストールとコマンド",
+    "title": "Apache",
+    "section": "Apatchのインストールとコマンド",
+    "text": "Apatchのインストールとコマンド\nsudo apt install apache2 Apacheのインストール、CentOSの場合httpdとなる。以下も同様\nsudo ufw allow 'Apache' ポート80番の通信を許可し、ページの閲覧が可能なようにする。\nsudo systemctl status apache2 Apacheの状態確認、この段階ではinactiveになっている\nsudo systemctl start apache2 Apacheを起動する。起動を止めたい場合はstartをstopに変える\nsudo systemctl enable apache2 Apacheをシステムが起動した際、同時に起動できるようにしておく\nsudo systemctl restart apache2 Apacheを再起動する。Apacheのコンフィグを変えた場合にその都度使用する。",
+    "crumbs": [
+      "note",
+      "Apache"
+    ]
+  },
+  {
+    "objectID": "note/apache.html#リクエストのモード選択",
+    "href": "note/apache.html#リクエストのモード選択",
+    "title": "Apache",
+    "section": "リクエストのモード選択",
+    "text": "リクエストのモード選択\nクライアントからリクエストを受ける際3つの方法からその受け方を選択できる。 * prefork * worker * event\nworkerはプロセス内にスレッドを持つ構造であり、スレッドがリクエストを処理する。 同時に処理できるリクエスト数はserverlimit × threadperchildになる。\n#ex 1\nserverlimit: 4\nthreadperchild: 25\n\n#ex2\nserverlimit: 10\nthredperchild: 10\nex1の場合4×25=100となる。 ex2も同様に上限は100である。プロセスとスレッド数のどちらを大きくするかは、システムの構成による。\n\n\n\nex1とex2の違い\n\n\nex1のメリットとデメリット * メリット * プロセスの切り替えが少なく、スループットが向上する * デメリット * １つのプロセスに障害が起こると、その中にあるスレッド全てに影響が出る。\nスレッド数はクライアントにリクエストを受けてからレスポンスを返すまで同じものが使われる。 したがってその後のAPやDBで遅延があると、スレッドが埋まりやすくなる。 上限の数の目安 = 1秒間の最大リクエスト数 × レスポンスタイム  リクエスト数は多少のブレがあるため、×1.2など多少多めに取る。",
+    "crumbs": [
+      "note",
+      "Apache"
+    ]
+  },
+  {
+    "objectID": "Java/gc.html",
+    "href": "Java/gc.html",
+    "title": "ガベージコレクション",
+    "section": "",
+    "text": "メモリの解放を行う機能のこと。 プログラムが動作する際、変数などはメモリ領域に割り当てられる。 メモリは有限であるため、どこかでメモリ領域上に割り当てられた変数を削除し、メモリを空ける（解放）する作業が必要となる。 メモリの管理はガベージコレクターというプログラムが行っており、メモリの使用状況に応じてメモリ解放の必要性を判断する。 そしてメモリ領域が圧迫され、解放が必要になった際ガベージコレクションを実行しメモリを解放する。 これまでのC言語などのプログラムはこの機能が存在せず、プログラム内でメモリの解放を指示する必要があった。 しかしJavaなど最近の言語ではガベージコレクションが搭載されており、メモリの解放をプログラムに記載する必要がなくなった。"
+  },
+  {
+    "objectID": "Java/gc.html#概要",
+    "href": "Java/gc.html#概要",
+    "title": "ガベージコレクション",
+    "section": "",
+    "text": "メモリの解放を行う機能のこと。 プログラムが動作する際、変数などはメモリ領域に割り当てられる。 メモリは有限であるため、どこかでメモリ領域上に割り当てられた変数を削除し、メモリを空ける（解放）する作業が必要となる。 メモリの管理はガベージコレクターというプログラムが行っており、メモリの使用状況に応じてメモリ解放の必要性を判断する。 そしてメモリ領域が圧迫され、解放が必要になった際ガベージコレクションを実行しメモリを解放する。 これまでのC言語などのプログラムはこの機能が存在せず、プログラム内でメモリの解放を指示する必要があった。 しかしJavaなど最近の言語ではガベージコレクションが搭載されており、メモリの解放をプログラムに記載する必要がなくなった。"
+  },
+  {
+    "objectID": "Java/gc.html#young領域とold領域",
+    "href": "Java/gc.html#young領域とold領域",
+    "title": "ガベージコレクション",
+    "section": "young領域とold領域",
+    "text": "young領域とold領域\nメモリ領域はyoung領域とold領域の２種類に分けられる。 young領域は新しいオブジェクトが割り当てられる。young領域は1つのEden領域と２つのSurvivor領域に分けられる。 young領域を対象としたガベージコレクションは数ミリ秒で終了し、頻繁に行われる。 新しいオブジェクトはEden領域に割り当てられ、ガベージコレクションを経過して残ったオブジェクトはSurvivor領域に移される。 young領域内で数回のガベージコレクションを経過して残ったオブジェクトはOld領域へと移される。"
+  },
+  {
+    "objectID": "Java/gc.html#マイナーgcとフルgc",
+    "href": "Java/gc.html#マイナーgcとフルgc",
+    "title": "ガベージコレクション",
+    "section": "マイナーGCとフルGC",
+    "text": "マイナーGCとフルGC\nガベージコレクションはyoung領域を対象としたマイナーGCと、 old領域を対象としたフルGCの２種類に分けられる。 old領域を対象としたGCは重く、数秒かかる場合がある。 このときアプリケーションは機能せず、処理が停止してしまう。 この停止が４秒を超えるとHADBでのセッションデータが持続せず、タイムアウトとなってしまうことがある。"
+  },
+  {
+    "objectID": "Java/gc.html#ガーベージコレクションのチューニング",
+    "href": "Java/gc.html#ガーベージコレクションのチューニング",
+    "title": "ガベージコレクション",
+    "section": "ガーベージコレクションのチューニング",
+    "text": "ガーベージコレクションのチューニング\n結論 フルGCの頻度を下げるため、Old領域を多めに取る。 young領域内ではEden領域をSurvivor領域の倍以上とり、マイナーGCの負担を軽減する。\nGCが頻発する場合は割り当てるメモリの総量や、young領域とold領域の割合などを調整する必要がある。 JVMではメモリの総量のことをヒープサイズとよび、以下の要素で指定を行う。\n\n-Xms256m\n\nヒープの最小サイズ\n\n-Xmx256m\n\nヒープの最大サイズ\n\n-XX:MinHeapFreeRatio=minimum\n\nフリーのヒープの最小値の割合\n\n-XX:MaxHeapFreeRatio=maximum\n\nフリーのヒープの最大値の割合\n\n\nヒープサイズが大きい場合GCでの対象が広いため、ヒープサイズとGCのスループットは反比例する。 JVMではコレクションのたびにヒープサイズを調整し、空き容量を一定範囲内に維持しようとする。 ヒープサイズを固定したい場合はxmxとxmsを同じ値にする。例ではyoung領域とold領域の合計が256MBになっている\n\n-XX:NewRatio=3\n\nyoung領域の割合、old領域を1としている。この場合oldが全体の2/3、young領域は1/3となる。デフォルトは２\n\n-XX:NewSize=size\n\nyoung領域の最小サイズ\n\n-XX:MaxNewSize=size\n\nyoung領域の最大サイズ\n\n\nyoung領域を小さくとフルGCの頻度を下げることができるため、フルGCが頻発してアプリが止まる場合はこことヒープサイズを調整すると良い。 ヒープの決め方は以下の通り。\n1 JVMに割り当てられるメモリの総量を決める 2 old領域に十分なメモリ-を割り当てる。 3 Eden領域を多めに設定する。目安は全体ヒープの1/4または1/3\n\nSurvivorRatio=6\n\nyoung領域内のEden領域とSurvivor領域の割合を決める\n\n\n例の場合はEden:Survivor = 1:6 となる。 Survivor領域は２つあるため、Eden : Survivor1 : Survivor2 = 1 : 3 : 3 。 -XX:NewRatio=3の場合young領域は全体の1/4であるため、Eden領域は全体の1/4 × 6/8 = 3/16 となる。 Survivor領域が小さいとすぐにオブジェクトがOld領域に送られるため、フルGCの頻度が増える。 一方で大きすぎる場合、マイナーGCの度に大きいSurvivor領域の検索が起こるため、マイナーGCの頻度が増える。"
+  },
+  {
+    "objectID": "note/connect.html",
+    "href": "note/connect.html",
+    "title": "三層連携",
+    "section": "",
+    "text": "ApacheからTomcatへ転送するには3種のプロトコルが存在する。いづれか1つに対応したmod_proxyを有効化する。\nsudo a2enmod proxy\nsudo a2enmod proxy_ajp #ajpプロトコルによる転送を有効化\nsudo a2enmod proxy_http\nApacheのバーチャルホストの設定\nsudo nano /etc/apache2/sites-available/yourdomain.conf\n&lt;VirtualHost *:80&gt;\n    ServerName yourdomain.com\n    ServerAlias www.yourdomain.com\n\n    ProxyRequests Off\n    ProxyPreserveHost On\n\n    &lt;Proxy *&gt;\n        Require all granted\n    &lt;/Proxy&gt;\n\n    ProxyPass / http://localhost:8009/\n    ProxyPassReverse / http://localhost:8009/\n\n    ErrorLog ${APACHE_LOG_DIR}/yourdomain_error.log\n    CustomLog ${APACHE_LOG_DIR}/yourdomain_access.log combined\n&lt;/VirtualHost&gt;\napacheのコンフィグを設定し、tomcatへ8009ポートを通した転送をする。\nsudo nano /etc/apache2/aoache2.conf \nProxyPass / ajp://localhost:8009/\nProxyPassReverse / ajp://localhost:8009/\n設定後apacheを再起動する",
+    "crumbs": [
+      "note",
+      "三層連携"
+    ]
+  },
+  {
+    "objectID": "note/connect.html#apacheの設定",
+    "href": "note/connect.html#apacheの設定",
+    "title": "三層連携",
+    "section": "",
+    "text": "ApacheからTomcatへ転送するには3種のプロトコルが存在する。いづれか1つに対応したmod_proxyを有効化する。\nsudo a2enmod proxy\nsudo a2enmod proxy_ajp #ajpプロトコルによる転送を有効化\nsudo a2enmod proxy_http\nApacheのバーチャルホストの設定\nsudo nano /etc/apache2/sites-available/yourdomain.conf\n&lt;VirtualHost *:80&gt;\n    ServerName yourdomain.com\n    ServerAlias www.yourdomain.com\n\n    ProxyRequests Off\n    ProxyPreserveHost On\n\n    &lt;Proxy *&gt;\n        Require all granted\n    &lt;/Proxy&gt;\n\n    ProxyPass / http://localhost:8009/\n    ProxyPassReverse / http://localhost:8009/\n\n    ErrorLog ${APACHE_LOG_DIR}/yourdomain_error.log\n    CustomLog ${APACHE_LOG_DIR}/yourdomain_access.log combined\n&lt;/VirtualHost&gt;\napacheのコンフィグを設定し、tomcatへ8009ポートを通した転送をする。\nsudo nano /etc/apache2/aoache2.conf \nProxyPass / ajp://localhost:8009/\nProxyPassReverse / ajp://localhost:8009/\n設定後apacheを再起動する",
+    "crumbs": [
+      "note",
+      "三層連携"
+    ]
+  },
+  {
+    "objectID": "note/connect.html#tomcatの設定",
+    "href": "note/connect.html#tomcatの設定",
+    "title": "三層連携",
+    "section": "tomcatの設定",
+    "text": "tomcatの設定\nserver.xmlを設定し、tomcatでAJPプロトコルを8009ポートで受け取り、8080のtomcatへの通信を遮断する。\n&lt;!--\n&lt;Connector port=\"8080\" protocol=\"AJP/1.3\" redirectPort=\"8443\" secretRequired=\"false\" /&gt;\n--&gt;\n\n...\n\n&lt;Connector port=\"8009\" protocol=\"AJP/1.3\" redirectPort=\"8443\" secretRequired=\"false\" /&gt;\n設定を変更したらTomcatを再起動する。 ファイヤーフォールの設定を変更し8009ポートを有効化する。\nhttp://localhostへアクセスし、tomcatの画面が表示されたらApacheからtomcatへの転送成功",
+    "crumbs": [
+      "note",
+      "三層連携"
+    ]
+  },
+  {
+    "objectID": "note/ubuntu.html#背景",
+    "href": "note/ubuntu.html#背景",
+    "title": "Linuxサーバー構築に向けた準備",
+    "section": "",
+    "text": "新しいゲーミングPCの運用に慣れてきたため、古いゲーミングPCをLinuxサーバーとして運用することにした。 Linuxサーバーとして運用をするまでの設定や準備をまとめる。",
+    "crumbs": [
+      "note",
+      "Linuxサーバー構築に向けた準備"
+    ]
+  },
+  {
+    "objectID": "web/connection.html",
+    "href": "web/connection.html",
+    "title": "3層連携",
+    "section": "",
+    "text": "/opt/tomcat/conf/connecttest.xml内に接続先のDBのURLを記入\nurl=\"jdbc:postgresql://ipアドレス:5432/DB名\"\nDB側でAPからのアクセスを許可する/database/data/pg_hba.conf\nこの中にホストごとの認証方法が設定されており、ここに記載されているアクセスしかデータベースを利用できない。 例）testdbのtestユーザーでアクセスする場合\nhost testdb test APのID/32 md5"
+  },
+  {
+    "objectID": "web/connection.html#tomatからdbへの接続",
+    "href": "web/connection.html#tomatからdbへの接続",
+    "title": "3層連携",
+    "section": "",
+    "text": "/opt/tomcat/conf/connecttest.xml内に接続先のDBのURLを記入\nurl=\"jdbc:postgresql://ipアドレス:5432/DB名\"\nDB側でAPからのアクセスを許可する/database/data/pg_hba.conf\nこの中にホストごとの認証方法が設定されており、ここに記載されているアクセスしかデータベースを利用できない。 例）testdbのtestユーザーでアクセスする場合\nhost testdb test APのID/32 md5"
+  },
+  {
+    "objectID": "oracle/object.html",
+    "href": "oracle/object.html",
+    "title": "SQLチューニング",
+    "section": "",
+    "text": "ビューとマテリアライズド・ビュー https://qiita.com/ryo-ka-notti/items/341310a6f0673fa2a7b5\nchatGPT"
+  },
+  {
+    "objectID": "oracle/object.html#参考文献",
+    "href": "oracle/object.html#参考文献",
+    "title": "SQLチューニング",
+    "section": "",
+    "text": "ビューとマテリアライズド・ビュー https://qiita.com/ryo-ka-notti/items/341310a6f0673fa2a7b5\nchatGPT"
+  },
+  {
+    "objectID": "oracle/object.html#概要",
+    "href": "oracle/object.html#概要",
+    "title": "SQLチューニング",
+    "section": "概要",
+    "text": "概要\nOracleではオブジェクトに種類があり、種類ごとに適用できる関数が違う。 各オブジェクトの概要をまとめる。 1. テーブル 2. ビュー 3. インデックス 4. シーケンス 5. シノニム 6. トリガー 7. プロシージャ 8. ファンクション 9. パッケージ 10. マテリアライズド・ビュー 11. ユーザー定義型 12. ロール 13. 同義語"
+  },
+  {
+    "objectID": "oracle/object.html#テーブル",
+    "href": "oracle/object.html#テーブル",
+    "title": "SQLチューニング",
+    "section": "テーブル",
+    "text": "テーブル\nデータを行と列で格納する基本的なデータ構造。各列にはデータ方が指定される。\n-- テーブルの作成\nCREATE TABLE employees (\n  employee_id NUMBER PRIMARY KEY,\n  first_name VARCHAR2(50),\n  last_name VARCHAR2(50),\n  hire_date DATE\n);\n\n-- テーブルにデータを挿入\nINSERT INTO employees (employee_id, first_name, last_name, hire_date)\nVALUES (1, 'John', 'Doe', TO_DATE('2023-08-01', 'YYYY-MM-DD'));"
+  },
+  {
+    "objectID": "oracle/object.html#ビューマテリアライズドビュー",
+    "href": "oracle/object.html#ビューマテリアライズドビュー",
+    "title": "SQLチューニング",
+    "section": "ビュー、マテリアライズド・ビュー",
+    "text": "ビュー、マテリアライズド・ビュー\nSELECT文で呼び出される、テーブルからデータを取得する仮想的なテーブル。 テーブルとは異なり実態を持たないため、軽い。\nマテリアライズド・ビューはビューの結果をメモリ上にキャッシュしたもの。 ビューは実行のたびにSELECT文を実行しデータを取得しているが、 マテリアライズド・ビューは実行結果を保存している。 主キーやインデックスの取得が可能だが、最新のデータ取得にはインデックス作成が必要。\nビューにはDISTINCTされていないなど制限もある。\n-- ビューの作成\nCREATE VIEW emp_view AS\nSELECT first_name, last_name, hire_date\nFROM employees\nWHERE hire_date &gt; TO_DATE('2020-01-01', 'YYYY-MM-DD');\n\n-- ビューの利用\nSELECT * FROM emp_view;\n\n\n-- マテリアライズド・ビューの作成\nCREATE MATERIALIZED VIEW emp_mv\nAS SELECT employee_id, first_name, last_name FROM employees;\n\n-- マテリアライズド・ビューのリフレッシュ\nEXEC DBMS_MVIEW.REFRESH('emp_mv');"
+  },
+  {
+    "objectID": "oracle/object.html#インデックス",
+    "href": "oracle/object.html#インデックス",
+    "title": "SQLチューニング",
+    "section": "インデックス",
+    "text": "インデックス\nテーブル内のデータ検索を高速化するためのデータ構造 データ数が多い場合にインデックスを使用するとフルスキャンよりも早く実行できる。\n-- インデックスの作成\nCREATE INDEX idx_employee_last_name ON employees (last_name);\n\n-- インデックスの削除\nDROP INDEX idx_employee_last_name;"
+  },
+  {
+    "objectID": "oracle/object.html#シーケンス",
+    "href": "oracle/object.html#シーケンス",
+    "title": "SQLチューニング",
+    "section": "シーケンス",
+    "text": "シーケンス\n1,2,3…と連続した数値を重複なく作成するために使用されるオブジェクト 通販などで注文番号を作成する際に、ユーザーごとに異なる値を採番するために用いられる。\n-- シーケンスの作成\nCREATE SEQUENCE emp_seq\nSTART WITH 1\nINCREMENT BY 1;\n\n-- シーケンスから次の値を取得\nSELECT emp_seq.NEXTVAL FROM dual;\n次の番号を取得するためには、.NEXTVALを使用しFROM句にDUAL表を使用する。 シケーンスの次の番号はメモリ上にキャッシュされているため、再起動をしたりすると採番が飛ぶ事がある。 シーケンスはロールバックしないため、トランザクション中にOracleが落ちても番号が戻ることはない。"
+  },
+  {
+    "objectID": "oracle/awr_report.html",
+    "href": "oracle/awr_report.html",
+    "title": "AWRレポート",
+    "section": "",
+    "text": "AWRスナップショットではCPU使用時間などの実行統計値を観測し、インスタンス起動後の累積統計値を表にしたものを記録している。 AWRスナップショットを2点で指定し、その間の実行統計を読みやすいように整形したHTMLファイルがAWRレポート\noracleに接続し、sqlplusスクリプトを実行することでレポートを作成できる。 レポートは以下のコマンドを実行したディレクトリで作成される。\n$ sqlplus / as sysdba\nこのコマンドでログインし、AWRレポートを作成するとプラガブルDBすべての統計情報が出力される。 AWRレポートは以下のSQL文を実行し、$ORACLE_HOME/rdbms/adminでディレクトリ内にあるawrrpt内のSQLスクリプトを実行する。\nSQL&gt; @?/rdbms/admin/awrrpt\n実行後出力形式を問われる。デフォルトはHTML\nSpecify the Report Type\n~~~~~~~~~~~~~~~~~~~~~~~\nAWR reports can be generated in the following formats.  Please enter the\nname of the format at the prompt.  Default value is 'html'.\n\n'html'          HTML format (default)\n'text'          Text format\n'active-html'   Includes Performance Hub active report\n\nreport_typeに値を入力してください:\n\n次にDBIDとインスタンスの指定がされる。awrrpt.sqlの場合今接続しているOracleインスタンスに決め打ちされる。 この次にどのスナップショットを使うか、ファイル名の指定がある。\n\n\n以下の文でスナップショットの取得が行える。\nSQL&gt; EXEC DBMS_WORKLOAD_REPOSITORY.CREATE_SNAPSHOT;\n\nPL/SQLプロシージャが正常に完了しました。\nスナップショットのIDの戻り値は以下の通り\nSQL&gt; SELECT DBMS_WORKLOAD_REPOSITORY.CREATE_SNAPSHOT() FROM DUAL;\n\nDBMS_WORKLOAD_REPOSITORY.CREATE_SNAPSHOT()\n------------------------------------------\n                                      3258"
+  },
+  {
+    "objectID": "oracle/awr_report.html#awrレポート",
+    "href": "oracle/awr_report.html#awrレポート",
+    "title": "AWRレポート",
+    "section": "",
+    "text": "AWRスナップショットではCPU使用時間などの実行統計値を観測し、インスタンス起動後の累積統計値を表にしたものを記録している。 AWRスナップショットを2点で指定し、その間の実行統計を読みやすいように整形したHTMLファイルがAWRレポート\noracleに接続し、sqlplusスクリプトを実行することでレポートを作成できる。 レポートは以下のコマンドを実行したディレクトリで作成される。\n$ sqlplus / as sysdba\nこのコマンドでログインし、AWRレポートを作成するとプラガブルDBすべての統計情報が出力される。 AWRレポートは以下のSQL文を実行し、$ORACLE_HOME/rdbms/adminでディレクトリ内にあるawrrpt内のSQLスクリプトを実行する。\nSQL&gt; @?/rdbms/admin/awrrpt\n実行後出力形式を問われる。デフォルトはHTML\nSpecify the Report Type\n~~~~~~~~~~~~~~~~~~~~~~~\nAWR reports can be generated in the following formats.  Please enter the\nname of the format at the prompt.  Default value is 'html'.\n\n'html'          HTML format (default)\n'text'          Text format\n'active-html'   Includes Performance Hub active report\n\nreport_typeに値を入力してください:\n\n次にDBIDとインスタンスの指定がされる。awrrpt.sqlの場合今接続しているOracleインスタンスに決め打ちされる。 この次にどのスナップショットを使うか、ファイル名の指定がある。\n\n\n以下の文でスナップショットの取得が行える。\nSQL&gt; EXEC DBMS_WORKLOAD_REPOSITORY.CREATE_SNAPSHOT;\n\nPL/SQLプロシージャが正常に完了しました。\nスナップショットのIDの戻り値は以下の通り\nSQL&gt; SELECT DBMS_WORKLOAD_REPOSITORY.CREATE_SNAPSHOT() FROM DUAL;\n\nDBMS_WORKLOAD_REPOSITORY.CREATE_SNAPSHOT()\n------------------------------------------\n                                      3258"
+  },
+  {
+    "objectID": "oracle/plan.html",
+    "href": "oracle/plan.html",
+    "title": "実行計画",
+    "section": "",
+    "text": "https://docs.oracle.com/cd/F19136_01/tgsql/generating-and-displaying-execution-plans.html#GUID-60E30B1C-342B-4D71-B154-C26623D6A3B1"
+  },
+  {
+    "objectID": "oracle/plan.html#参考文献",
+    "href": "oracle/plan.html#参考文献",
+    "title": "実行計画",
+    "section": "",
+    "text": "https://docs.oracle.com/cd/F19136_01/tgsql/generating-and-displaying-execution-plans.html#GUID-60E30B1C-342B-4D71-B154-C26623D6A3B1"
+  },
+  {
+    "objectID": "oracle/plan.html#実行計画",
+    "href": "oracle/plan.html#実行計画",
+    "title": "実行計画",
+    "section": "実行計画",
+    "text": "実行計画\nSQL文を実行するためにデータベースが実行する一連の操作のこと。\nSQL_ID  g9xaqjktdhbcd, child number 0\n-------------------------------------\nSELECT employee_id, last_name, first_name, department_name from\nemployees e, departments d WHERE e.department_id = d.department_id and\nlast_name like 'T%' ORDER BY last_name\n\nPlan hash value: 1219589317\n\n----------------------------------------------------------------------------------------\n| Id | Operation                    | Name        |Rows | Bytes |Cost (%CPU)| Time     |\n----------------------------------------------------------------------------------------\n|  0 | SELECT STATEMENT             |             |     |       |    5 (100)|          |\n|  1 |  NESTED LOOPS                |             |   5 |   190 |    5   (0)| 00:00:01 |\n|  2 |   TABLE ACCESS BY INDEX ROWID| EMPLOYEES   |   5 |   110 |    2   (0)| 00:00:01 |\n|* 3 |    INDEX RANGE SCAN          | EMP_NAME_IX |   5 |       |    1   (0)| 00:00:01 |\n|* 4 |   TABLE ACCESS FULL          | DEPARTMENTS |   1 |    16 |    1   (0)| 00:00:01 |\n----------------------------------------------------------------------------------------\n\nPredicate Information (identified by operation id):\n---------------------------------------------------\n\n   3 - access(\"LAST_NAME\" LIKE 'T%')\n       filter(\"LAST_NAME\" LIKE 'T%')\n   4 - filter(\"E\".\"DEPARTMENT_ID\"=\"D\".\"DEPARTMENT_ID\")\n\nWHERE句でemployeeテーブルとdepartmentテーブルをネステッドループで結合している\nemployeeテーブルへインデックススキャン、departmentテーブルにはフルスキャンを実行している\nTで始まるlast_nameでフィルターし、department_idで照合している\n\n\n実行計画の変化要因\n\nスキーマの相違\n\n2人のユーザーが同じデータベース内の異なるオブジェクトを示せば実行計画は異なる\n\nコストの相違\n\nデータ量と統計\nバインド変数\nグローバルまたはセッションレベルで設定された初期化パラメータ"
+  },
+  {
+    "objectID": "oracle/plan.html#explain文を使用した実行計画の出力",
+    "href": "oracle/plan.html#explain文を使用した実行計画の出力",
+    "title": "実行計画",
+    "section": "EXPLAIN文を使用した実行計画の出力",
+    "text": "EXPLAIN文を使用した実行計画の出力\nEXPLAN PLAN文で実行計画を出力することができる。 実行環境と実行計画環境は異なるため、ここで出力されたものが必ず実行されるものとは限らない。 EXPLAIN PLAN文が発行されると、実行計画の各ステップをPLAN TABLEに挿入する。 EXPLAIN PLAN文はDMLのため、EXPLAIN PLAN文で加えられた変更内容はコミットされない。\n\n使用例\n\nsqlplus等を利用してデータベースにアクセスする権限を持つユーザーとしてログインする\nEXPLAIN FOR 調べたいSQL文の形式で実行する。\n\nEXPLAIN PLAN FOR\nSELECT e.last_name, d.department_name, e.salary\nFROM   employees e, departments d\nWHERE  salary &lt; 3000\nAND    e.department_id = d.department_id\nORDER BY salary DESC; ```\n3. Oracle Dtabaseから提供されるスクリプトまたはパッケージを用いて最新のPLAN TABLEを出力する。\n```sql\nSELECT * FROM TABLE(DBMS_XPLAN.DISPLAY(format =&gt; 'ALL'));\n出力例 ```sql SQL&gt; SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY(format =&gt; ‘ALL’)); Plan hash value: 3556827125\n\n\n\n\n\n\n| Id | Operation | Name |Rows | Bytes |Cost (%CPU)| Time |\n\n\n\n\n| 0 | SELECT STATEMENT | | 4 | 124 | 5 (20)| 00:00:01 | | 1 | SORT ORDER BY | | 4 | 124 | 5 (20)| 00:00:01 | |* 2 | HASH JOIN | | 4 | 124 | 4 (0)| 00:00:01 | |* 3 | TABLE ACCESS FULL| EMPLOYEES | 4 | 60 | 2 (0)| 00:00:01 | | 4 | TABLE ACCESS FULL| DEPARTMENTS | 27 | 432 | 2 (0)| 00:00:01 |"
+  },
+  {
+    "objectID": "oracle/plan.html#query-block-name-object-alias-identified-by-operation-id",
+    "href": "oracle/plan.html#query-block-name-object-alias-identified-by-operation-id",
+    "title": "実行計画",
+    "section": "Query Block Name / Object Alias (identified by operation id):",
+    "text": "Query Block Name / Object Alias (identified by operation id):\n1 - SEL$1 3 - SEL$1 / E@SEL$1 4 - SEL$1 / D@SEL$1"
+  },
+  {
+    "objectID": "oracle/plan.html#predicate-information-identified-by-operation-id",
+    "href": "oracle/plan.html#predicate-information-identified-by-operation-id",
+    "title": "実行計画",
+    "section": "Predicate Information (identified by operation id):",
+    "text": "Predicate Information (identified by operation id):\n2 - access(“E”.”DEPARTMENT_ID”=“D”.”DEPARTMENT_ID”) 3 - filter(“SALARY”&lt;3000)"
+  },
+  {
+    "objectID": "oracle/plan.html#column-projection-information-identified-by-operation-id",
+    "href": "oracle/plan.html#column-projection-information-identified-by-operation-id",
+    "title": "実行計画",
+    "section": "Column Projection Information (identified by operation id):",
+    "text": "Column Projection Information (identified by operation id):\n1 - (#keys=1) INTERNAL_FUNCTION(“E”.”SALARY”)[22], “E”.”LAST_NAME”[VARCHAR2,25], “D”.”DEPARTMENT_NAME”[VARCHAR2,30] 2 - (#keys=1) “E”.”LAST_NAME”[VARCHAR2,25], “SALARY”[NUMBER,22], “D”.”DEPARTMENT_NAME”[VARCHAR2,30], “D”.”DEPARTMENT_NAME”[VARCHAR2,30] 3 - “E”.”LAST_NAME”[VARCHAR2,25], “SALARY”[NUMBER,22], “E”.”DEPARTMENT_ID”[NUMBER,22] 4 - “D”.”DEPARTMENT_ID”[NUMBER,22], “D”.”DEPARTMENT_NAME”[VARCHAR2,30]"
+  },
+  {
+    "objectID": "oracle/plan.html#note",
+    "href": "oracle/plan.html#note",
+    "title": "実行計画",
+    "section": "Note",
+    "text": "Note\n\nthis is an adaptive plan\n\n```\n計画はこの内データから実行される。実行順序は以下の通り\n\nID３のEMPLOYEEテーブルのフルスキャン\nID２にその結果を返す\nハッシュ結合の次の子に進み、ID４を処理する\nDEPARTMENTテーブルをフルスキャンし、ID２に返す\n２つの表がハッシュ結合され、ID１へ結果が返される\nソートを行いSELECTデータをクライアントへ返す\n\nPLAN_TABLEの各項目の詳細は以下のURLを参照 https://docs.oracle.com/cd/F19136_01/tgsql/optimizer-ref.html#GUID-7957B335-D36A-42BF-96BB-FF47FFBA4DFD"
+  },
+  {
+    "objectID": "oracle/sql_performance.html",
+    "href": "oracle/sql_performance.html",
+    "title": "SQL処理方式",
+    "section": "",
+    "text": "Oracleの公式DOCS https://docs.oracle.com/cd/F19136_01/tgsql/introduction-to-sql-tuning.html#GUID-B653E5F3-F078-4BBC-9516-B892960046A2\n最適化の補足説明 https://kemboooo.hatenablog.com/entry/2023/05/13/145554\nDMLとDDLの違いの説明 https://qiita.com/zhao-xy/items/204c902dde45bf206ff5"
+  },
+  {
+    "objectID": "oracle/sql_performance.html#参考文献",
+    "href": "oracle/sql_performance.html#参考文献",
+    "title": "SQL処理方式",
+    "section": "",
+    "text": "Oracleの公式DOCS https://docs.oracle.com/cd/F19136_01/tgsql/introduction-to-sql-tuning.html#GUID-B653E5F3-F078-4BBC-9516-B892960046A2\n最適化の補足説明 https://kemboooo.hatenablog.com/entry/2023/05/13/145554\nDMLとDDLの違いの説明 https://qiita.com/zhao-xy/items/204c902dde45bf206ff5"
+  },
+  {
+    "objectID": "oracle/sql_performance.html#sqlの処理方式",
+    "href": "oracle/sql_performance.html#sqlの処理方式",
+    "title": "SQL処理方式",
+    "section": "SQLの処理方式",
+    "text": "SQLの処理方式\nSQLは以下の手順を経て実行される。 1の手順の後2,3をスキップして実行されるものをソフトパース、 2,3を経て実行されるものをハードパースという。\n\nSQL文の解析\n\n構文チェック\nセマンティックスチェック\n共有プールチェック\n\n最適化\n行ソース生成\n実行"
+  },
+  {
+    "objectID": "oracle/sql_performance.html#ソフトパース",
+    "href": "oracle/sql_performance.html#ソフトパース",
+    "title": "SQL処理方式",
+    "section": "ソフトパース",
+    "text": "ソフトパース\nSQL文の解釈を伴わない実行方法のこと。 SQLの実行までに最適化と行ソース生成を行わないため、実行速度が早くなる。\n\n1-1 構文チェック\nSQL文内にスペルがないかをチェックする。 下記の例ではFROMをFORMとスペルミスしている。\nSQL&gt; SELECT * FORM employees;\nSELECT * FORM employees\n         *\nERROR at line 1:\nORA-00923: FROM keyword not found where expected\n\n\n1-2 セマンティクスチェック\n文内のオブジェクト及び列が存在するかなど、文の意味が有効化チェックする。 下記の例では存在しないテーブルを指定することでエラーが生じている。\nSQL&gt; SELECT * FROM nonexistent_table;\nSELECT * FROM nonexistent_table\n              *\nERROR at line 1:\nORA-00942: table or view does not exist\n\n\n1-3 共有プールチェック\nSQL文のハードパースが不要か判定している。 SQL文は各文ごとにSQLIDとしてハッシュ値が発行され、共有プールに格納される。 SQL文が発行された場合、その文のハッシュ値を共有SQL領域内で検索し、既に解析済みか判定する。 解析済みの場合最適化と行ソース生成をスキップしてSQL文が実行される。\n共有プール内に同じハッシュがある場合、セマンティクスシェック、環境チェックを行い同じ意味の文であるかを解析する。 同じ意味であるかは構文の一致だけではなく、文の記法や内容による。 例えば以下のSQL文を２人のユーザーが実行する場合、異なる意味のSQLとしてハード解析が行われる。\nCREATE TABLE my_table ( some_col INTEGER );\nSELECT * FROM my_table;\nこれはSELECT文が同じであっても、別々のmy_tableとして解釈されるためである。 一方で以下の例の場合１文目は異なる文として認識されるが、２文目は同じ文として認識される。\nSELECT my_name FROM my_tabele where = \"Tom\";\nSELECT my_name FROM my_tabele where = :1;"
+  },
+  {
+    "objectID": "oracle/sql_performance.html#ハードパース",
+    "href": "oracle/sql_performance.html#ハードパース",
+    "title": "SQL処理方式",
+    "section": "ハードパース",
+    "text": "ハードパース\nSQL文の解釈を伴う実行方法のこと。 すべてのSQLは１度必ずハードパースが行われる。 ソフトパースより時間がかかるため、可能な限りハードパースは減らしたい。\n\n2 SQLの最適化\nオプティマイザが複数の実行計画を作成し、その中から最もコストの小さい実行計画を選択して行ソース生成に渡す。 DML（データ操作を行う言語）とDDL（データ定義を行う言語）でそれぞれ実行手順が異なる。 DMLは最適化が行われれるが、DDLは一部例外を除いて基本的に最適化が行われない。\n\n\n3 行ソース生成\nオプティマイザから受け取った最適な実行計画を下に、SQLの実行に使用するデータ構造（行ソースツリー）を出力する。 行ソースツリーには以下のものが含まれる。 * SQL文によって参照される表の順序 * 外部表はDEPT表、内部表はEMP表など * SQL分で言及される各表のアクセス方法 * DEPT表へのアクセスはINDEX UNIQUE SCAN、EMP表はINDEX RANGE SCANなど * SQL文の結合操作の影響を受ける表の結合方法 * ネステッドループ結合など * フィルタ、ソートまたは集計などのデータ操作 * DEPTNO=10でフィルタするなど"
+  },
+  {
+    "objectID": "oracle/optimize.html",
+    "href": "oracle/optimize.html",
+    "title": "オプティマイザ",
+    "section": "",
+    "text": "オプティマイザ統計はデータベースに格納されたデータの状態を示すサマリ情報で、統計情報とも呼ばれる。 この情報は実行計画の作成に必要となる。 この情報は自動で収集される場合と手動で収集される場合がある。 統計情報を正しく更新しないと、最適な実行計画が立案されないためパフォーマンスの低下につながる。 しかし更新も無駄に行うとパフォーマンスの低下につながるため、システムの特性から最適な頻度を選ぶ必要がある。"
+  },
+  {
+    "objectID": "oracle/optimize.html#オプティマイザの概要",
+    "href": "oracle/optimize.html#オプティマイザの概要",
+    "title": "オプティマイザ",
+    "section": "",
+    "text": "オプティマイザ統計はデータベースに格納されたデータの状態を示すサマリ情報で、統計情報とも呼ばれる。 この情報は実行計画の作成に必要となる。 この情報は自動で収集される場合と手動で収集される場合がある。 統計情報を正しく更新しないと、最適な実行計画が立案されないためパフォーマンスの低下につながる。 しかし更新も無駄に行うとパフォーマンスの低下につながるため、システムの特性から最適な頻度を選ぶ必要がある。"
+  },
+  {
+    "objectID": "oracle/optimize.html#オプティマイザ統計の収集",
+    "href": "oracle/optimize.html#オプティマイザ統計の収集",
+    "title": "オプティマイザ",
+    "section": "オプティマイザ統計の収集",
+    "text": "オプティマイザ統計の収集\nある時間や更新時などに自動で更新される自動更新と、任意のタイミングで行う手動更新がある。\nOracleの手動更新は以下のコマンドで行える。\n   DBMS_STATS.GATHER_TABLE_STATS('SCHEMA_NAME', 'TABLE_NAME');\nインデックスを作成した場合、データの大幅な変更があった場合は更新を行う必要がある。"
+  },
+  {
+    "objectID": "note/reinstall_ubuntu.html",
+    "href": "note/reinstall_ubuntu.html",
+    "title": "Ubuntuの再構築",
+    "section": "",
+    "text": "ubuntuが突然重くなり、フォルダーを開くのに10秒以上かかる様になった。 topコマンドやgnome-system-monitorを用いてリソースの使用率を見ても10％以下でリソースの以上消費はない。 前日にTomcatを入れ直したことが原因かと思い、プロセスを停止したが状況が変わらない。 またupdateをしても状況が変わらなかった。 これらの状況から原因究明が困難と判断し、ubuntuを入れ直すことを決意した。",
+    "crumbs": [
+      "note",
+      "Ubuntuの再構築"
+    ]
+  },
+  {
+    "objectID": "note/reinstall_ubuntu.html#背景",
+    "href": "note/reinstall_ubuntu.html#背景",
+    "title": "Ubuntuの再構築",
+    "section": "",
+    "text": "ubuntuが突然重くなり、フォルダーを開くのに10秒以上かかる様になった。 topコマンドやgnome-system-monitorを用いてリソースの使用率を見ても10％以下でリソースの以上消費はない。 前日にTomcatを入れ直したことが原因かと思い、プロセスを停止したが状況が変わらない。 またupdateをしても状況が変わらなかった。 これらの状況から原因究明が困難と判断し、ubuntuを入れ直すことを決意した。",
+    "crumbs": [
+      "note",
+      "Ubuntuの再構築"
+    ]
+  },
+  {
+    "objectID": "note/reinstall_ubuntu.html#手順",
+    "href": "note/reinstall_ubuntu.html#手順",
+    "title": "Ubuntuの再構築",
+    "section": "手順",
+    "text": "手順\n\nUSBからubuntuを再インストール\nIPアドレスの固定\nSSHの設定\nFierWallの設定\nApacheのインストール\nTomcat9のインストール",
+    "crumbs": [
+      "note",
+      "Ubuntuの再構築"
+    ]
+  },
+  {
+    "objectID": "note/memory.html",
+    "href": "note/memory.html",
+    "title": "メモリー",
+    "section": "",
+    "text": "https://qiita.com/kunihirotanaka/items/70d43d48757aea79de2d",
+    "crumbs": [
+      "note",
+      "メモリー"
+    ]
+  },
+  {
+    "objectID": "note/memory.html#参考文献",
+    "href": "note/memory.html#参考文献",
+    "title": "メモリー",
+    "section": "",
+    "text": "https://qiita.com/kunihirotanaka/items/70d43d48757aea79de2d",
+    "crumbs": [
+      "note",
+      "メモリー"
+    ]
+  },
+  {
+    "objectID": "note/memory.html#種類",
+    "href": "note/memory.html#種類",
+    "title": "メモリー",
+    "section": "種類",
+    "text": "種類\n\nFree Memory\n\n使用されてないメモリー\n\nUsed Memory\n\nプログラムやカーネルが現在使用しているメモリ\n\nCached Memory\n\nディスクから読み込んだファイルやデータが一時的に保存される領域。アクセス速度を向上させるため、頻繁に使用されるファイルを保存する\n\nBuffer Momory\n\nファイルシステムに書き込み操作をするために使用される領域、書き込み処理の効率化のために一時的にメモリを保持する\n\nHDD\n\nMemory領域が足りない場合に使用される領域。メモリーとHDDではメモリのほうが速度が早いため、HDDを使うとHDDがボトルネックとなり、処理速度が落ちる\nHDDをメモリが使用することをスワップといい、基本的には避けたほうがいい",
+    "crumbs": [
+      "note",
+      "メモリー"
+    ]
+  },
+  {
+    "objectID": "note/memory.html#メモリとキャッシュ",
+    "href": "note/memory.html#メモリとキャッシュ",
+    "title": "メモリー",
+    "section": "メモリとキャッシュ",
+    "text": "メモリとキャッシュ\n\nusedメモリーが増える場合はfreeメモリーが減る\n空きメモリがある限りキャッシュは増加する\n空きメモリがないと使用中のメモリ増加に応じてキャッシュが減る\nキャッシュに割り当てるメモリがなくなるとI/Oパフォーマンスが低下する\n使用中のメモリが大きくなるとあふれる部分をスワップへ書き込む",
+    "crumbs": [
+      "note",
+      "メモリー"
+    ]
+  },
+  {
+    "objectID": "toukei/election.html#この記事を書く背景",
+    "href": "toukei/election.html#この記事を書く背景",
+    "title": "選挙速報の原理",
+    "section": "この記事を書く背景",
+    "text": "この記事を書く背景\n最近統計検定2級を受験したが、その中で選挙速報で調べる人数や当選確実が出るかを判定する問題があった。 これまで統計をなんとなくで使っていた私としては、面白く勉強になる内容だったため、さらなる理解のため原理をまとめようと思った。"
+  },
+  {
+    "objectID": "toukei/election.html#統計検定に関する簡単なイメージ",
+    "href": "toukei/election.html#統計検定に関する簡単なイメージ",
+    "title": "選挙速報の原理",
+    "section": "統計検定に関する簡単なイメージ",
+    "text": "統計検定に関する簡単なイメージ\n統計検定と聞くとこんな図形を思い浮かべてみがまえると思う。 私もそうだったし、何度も挫折したので、簡単に説明をしようと思う。\n\n\n\n正規分布\n\n\nまずコイントスを考える。 １つのコインを使ってコイントスを100回行う。 この結果表が99回でた。 このとき「このコインは普通のコインと同じ、表が2分の１で出るコインである。」と言ったとき、この発言は信用できるだろうか？ おそらく「信用できない」ということになるだろう。 なぜならばもし2分の１で表がでるのならば、今起きたことは奇跡的な確率であることを知っているからだ。\nこのように今起きたこと（99回表）がある確率（2分の1で表）のもとで発生する確率が非常に低い場合、 前提とした確率（2分の1で表）が間違っていたと考えるのが普通である。\n統計検定ではこの考え方を応用する。 この考え方では今起きたことがどの程度の確率になるかわかればいい。 そして統計学には正規分布という、どこがどのくらいの確率で起こるかが分かっている分布がある。（確率をまとめたものが付表）\n\n\n\nどこでどの程度の確率になるか分かっている正規分布\n\n\nそしてこの正規分布は、「多くの標本（調査する数）を採取する」という条件を満たせば作成できる（中心極限定理）。 したがって統計検定では多くの標本を採取し、そこから正規分布上で今の標本内の確率がどの程度なのかを調べ、 それが現実的に起こり得るか否かで、事前に立てた仮説が間違っているかを判断している。"
+  },
+  {
+    "objectID": "note/memory.html#メモリ不足",
+    "href": "note/memory.html#メモリ不足",
+    "title": "メモリー",
+    "section": "メモリ不足",
+    "text": "メモリ不足",
+    "crumbs": [
+      "note",
+      "メモリー"
+    ]
+  },
+  {
+    "objectID": "note/front_back.html",
+    "href": "note/front_back.html",
+    "title": "フロントエンド＿バックエンド",
+    "section": "",
+    "text": "https://aws.amazon.com/jp/compare/the-difference-between-frontend-and-backend/",
+    "crumbs": [
+      "note",
+      "フロントエンド＿バックエンド"
+    ]
+  },
+  {
+    "objectID": "note/front_back.html#参考文献",
+    "href": "note/front_back.html#参考文献",
+    "title": "フロントエンド＿バックエンド",
+    "section": "",
+    "text": "https://aws.amazon.com/jp/compare/the-difference-between-frontend-and-backend/",
+    "crumbs": [
+      "note",
+      "フロントエンド＿バックエンド"
+    ]
+  },
+  {
+    "objectID": "note/front_back.html#概要",
+    "href": "note/front_back.html#概要",
+    "title": "フロントエンド＿バックエンド",
+    "section": "概要",
+    "text": "概要\nシステムを開発領域に基づいて分割したときの呼び方 フロントエンドはユーザに表示されるもので、ボタン、テキストなどが該当する。 バックエンドはサーバー側の処理でユーザーは見ることができない。フロントエンドからのリクエストを元に処理を行い、結果をフロントエンドに返す。 システムを2つに分けることで、バックエンドで更新などが起こっていても、見かけ上は何も起こっていないように見せることができる。",
+    "crumbs": [
+      "note",
+      "フロントエンド＿バックエンド"
+    ]
+  },
+  {
+    "objectID": "note/front_back.html#フロントエンド",
+    "href": "note/front_back.html#フロントエンド",
+    "title": "フロントエンド＿バックエンド",
+    "section": "フロントエンド",
+    "text": "フロントエンド\nHTMLやCSSなどを用いてユーザーが見やすい画面を作成する。 フロントエンドではユーザーエクスペリエンスが重視されるため、開発手法がバックエンドと異なる。 開発では簡単にいかの手順で開発される。 画面設計→画面部品の定義→CSSなどによる装飾 GoogleChoromeではF12キーを押すことで画面がどのように作られているか見ることができる。",
+    "crumbs": [
+      "note",
+      "フロントエンド＿バックエンド"
+    ]
+  },
+  {
+    "objectID": "note/front_back.html#バックエンド",
+    "href": "note/front_back.html#バックエンド",
+    "title": "フロントエンド＿バックエンド",
+    "section": "バックエンド",
+    "text": "バックエンド\nPythonやSQLなどを用いてデータの処理を実装する。 ユーザーからのリクエストに応じて、データの更新やグラフの作成を行い、 それをフロントエンドに返す。 システム開発ではウォータフォール、アジャイルなどの開発手法が用いられる。",
+    "crumbs": [
+      "note",
+      "フロントエンド＿バックエンド"
+    ]
+  },
+  {
+    "objectID": "note/front_back.html#トラブルシュート",
+    "href": "note/front_back.html#トラブルシュート",
+    "title": "フロントエンド＿バックエンド",
+    "section": "トラブルシュート",
+    "text": "トラブルシュート\nウェブページを見た際、「なんかおかしい」など問題があれば、どちらに問題があるかを以下の",
+    "crumbs": [
+      "note",
+      "フロントエンド＿バックエンド"
+    ]
+  },
+  {
+    "objectID": "midle/apache.html#apatchのインストールとコマンド",
+    "href": "midle/apache.html#apatchのインストールとコマンド",
+    "title": "Apache",
+    "section": "Apatchのインストールとコマンド",
+    "text": "Apatchのインストールとコマンド\nsudo apt install apache2 Apacheのインストール、CentOSの場合httpdとなる。以下も同様\nsudo ufw allow 'Apache' ポート80番の通信を許可し、ページの閲覧が可能なようにする。\nsudo systemctl status apache2 Apacheの状態確認、この段階ではinactiveになっている\nsudo systemctl start apache2 Apacheを起動する。起動を止めたい場合はstartをstopに変える\nsudo systemctl enable apache2 Apacheをシステムが起動した際、同時に起動できるようにしておく\nsudo systemctl restart apache2 Apacheを再起動する。Apacheのコンフィグを変えた場合にその都度使用する。"
+  },
+  {
+    "objectID": "midle/apache.html#リクエストのモード選択",
+    "href": "midle/apache.html#リクエストのモード選択",
+    "title": "Apache",
+    "section": "リクエストのモード選択",
+    "text": "リクエストのモード選択\nクライアントからリクエストを受ける際3つの方法からその受け方を選択できる。 * prefork * worker * event\nworkerはプロセス内にスレッドを持つ構造であり、スレッドがリクエストを処理する。 同時に処理できるリクエスト数はserverlimit × threadperchildになる。\n#ex 1\nserverlimit: 4\nthreadperchild: 25\n\n#ex2\nserverlimit: 10\nthredperchild: 10\nex1の場合4×25=100となる。 ex2も同様に上限は100である。プロセスとスレッド数のどちらを大きくするかは、システムの構成による。\n\n\n\nex1とex2の違い\n\n\nex1のメリットとデメリット * メリット * プロセスの切り替えが少なく、スループットが向上する * デメリット * １つのプロセスに障害が起こると、その中にあるスレッド全てに影響が出る。\nスレッド数はクライアントにリクエストを受けてからレスポンスを返すまで同じものが使われる。 したがってその後のAPやDBで遅延があると、スレッドが埋まりやすくなる。 上限の数の目安 = 1秒間の最大リクエスト数 × レスポンスタイム  リクエスト数は多少のブレがあるため、×1.2など多少多めに取る。"
+  },
+  {
+    "objectID": "midle/tomcat.html",
+    "href": "midle/tomcat.html",
+    "title": "Tomcat",
+    "section": "",
+    "text": "WebアプリでAPサーバーを構築するために使用されるソフト。 動的なアプリを動かすことができ、Appacheで受けたリクエストをTomcatで処理して返すために使用される。 Javaで動作し、Tomcat内でJavaがDBへ検索を行ったり、必要なテンプレートを作成する。\n参考サイト\n\nhttps://qiita.com/tanayasu1228/items/11e22a18dbfa796745b5\nhttps://tomcat.apache.org/"
+  },
+  {
+    "objectID": "midle/tomcat.html#概要",
+    "href": "midle/tomcat.html#概要",
+    "title": "Tomcat",
+    "section": "",
+    "text": "WebアプリでAPサーバーを構築するために使用されるソフト。 動的なアプリを動かすことができ、Appacheで受けたリクエストをTomcatで処理して返すために使用される。 Javaで動作し、Tomcat内でJavaがDBへ検索を行ったり、必要なテンプレートを作成する。\n参考サイト\n\nhttps://qiita.com/tanayasu1228/items/11e22a18dbfa796745b5\nhttps://tomcat.apache.org/"
+  },
+  {
+    "objectID": "midle/tomcat.html#インストール環境",
+    "href": "midle/tomcat.html#インストール環境",
+    "title": "Tomcat",
+    "section": "インストール環境",
+    "text": "インストール環境\n環境 * Ubuntu 22.04 * Tomcat 10.1.25（ここでインストールするもの）"
+  },
+  {
+    "objectID": "midle/tomcat.html#javaのインストール",
+    "href": "midle/tomcat.html#javaのインストール",
+    "title": "Tomcat",
+    "section": "1. Javaのインストール",
+    "text": "1. Javaのインストール\nJavaがインストールされているか確認\njava -version\nTomcatにはOpenJDKが必要なため、インストールされていない場合はインストール\nsudo apt install defalt-jdk\nJAVA_HOMEのパスを設定していない場合は.bashrcにJAVA_HOMEのパスを記載する。\nnano ~/.bashrc\nexport JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64\nsource ~/.bashrc\necho $JAVA_HOME\nJAVA_HOMEのパスは各自がインストールした場所へ変える。"
+  },
+  {
+    "objectID": "midle/tomcat.html#tomcatのインストール",
+    "href": "midle/tomcat.html#tomcatのインストール",
+    "title": "Tomcat",
+    "section": "2. Tomcatのインストール",
+    "text": "2. Tomcatのインストール\n公式サイトのCoreから自分のPCにあった形式のtar.gzファイルを/tmp/にダウンロードする。\ncd /tmp\nwget https://tomcat.apache.org/download-10.cgi\nTomcat用のディレクトリを作成し、ダウンロードしたファイルを解凍する。\nsudo mkdir /opt/tomcat\ncd /opt/tomcat\nsudo tar xzvf /tmp/apache-tomcat-9.0.*tar.gz -C /opt/tomcat --strip-components=1\nTomcatのユーザーを作成し、Tomcatがファイルを実行できるように権限を変更する。\nsudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat\nsudo chown -R tomcat: /opt/tomcat\nsudo chmod -R 755 /opt/tomcat"
+  },
+  {
+    "objectID": "midle/tomcat.html#tomcatのサービスファイルを作成",
+    "href": "midle/tomcat.html#tomcatのサービスファイルを作成",
+    "title": "Tomcat",
+    "section": "3.Tomcatのサービスファイルを作成",
+    "text": "3.Tomcatのサービスファイルを作成\nTomcatを利用するために必要な.serviceファイルを作成する。\nsudo nano /etc/systemd/system/tomcat.service\n以下の内容をコピペする。\n[Unit]\nDescription=Apache Tomcat Web Application Container\nAfter=network.target\n\n[Service]\nType=forking\n\nEnvironment=JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre\nEnvironment=CATALINA_PID=/opt/tomcat/temp/tomcat.pid\nEnvironment=CATALINA_Home=/opt/tomcat\nEnvironment=CATALINA_BASE=/opt/tomcat\nEnvironment=’CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC’\nEnvironment=’JAVA_OPTS.awt.headless=true -Djava.security.egd=file:/dev/v/urandom’\n\nExecStart=/opt/tomcat/bin/startup.sh\nExecStop=/opt/tomcat/bin/shutdown.sh\n\nUser=tomcat\nGroup=tomcat\nUMask=0007\nRestartSec=10\nRestart=always\n\n[Install]\n\nWantedBy=multi-user.target\n.serviceファイルの作成後デーモンをリロードする。\nsudo systemctl daemon-reload"
+  },
+  {
+    "objectID": "midle/tomcat.html#tomcatの起動",
+    "href": "midle/tomcat.html#tomcatの起動",
+    "title": "Tomcat",
+    "section": "4. Tomcatの起動",
+    "text": "4. Tomcatの起動\nTomcatのステータス確認\nsudo systemctl status tomcat\nTomcatの起動\nsudo systemctl start tomcat\nTomcatの停止\nsudo systemctl stop tomcat\n参考サイト\nhttps://www.hostinger.com/tutorials/how-to-install-tomcat-on-ubuntu/"
+  },
+  {
+    "objectID": "AWS/strage_type.html",
+    "href": "AWS/strage_type.html",
+    "title": "ブロックストレスとオブジェクトストレージ",
+    "section": "",
+    "text": "頻繁に読み書きをおこなうデータベース 従来のストレージ。HDD等のストレージをブロック単位で分割し、データを格納する。 １ブロックの４KBのディスクに10KBを書き込む場合は３ブロック使用するイメージ\n\n\n\nEBS\n\n100GB程度まで使用可能で、EC2に直接アタッチされるストレージ",
+    "crumbs": [
+      "AWS",
+      "ブロックストレスとオブジェクトストレージ"
+    ]
+  },
+  {
+    "objectID": "AWS/strage_type.html#ブロックストレージ",
+    "href": "AWS/strage_type.html#ブロックストレージ",
+    "title": "ブロックストレスとオブジェクトストレージ",
+    "section": "",
+    "text": "頻繁に読み書きをおこなうデータベース 従来のストレージ。HDD等のストレージをブロック単位で分割し、データを格納する。 １ブロックの４KBのディスクに10KBを書き込む場合は３ブロック使用するイメージ\n\n\n\nEBS\n\n100GB程度まで使用可能で、EC2に直接アタッチされるストレージ",
+    "crumbs": [
+      "AWS",
+      "ブロックストレスとオブジェクトストレージ"
+    ]
+  },
+  {
+    "objectID": "AWS/strage_type.html#オブジェクトストレージ",
+    "href": "AWS/strage_type.html#オブジェクトストレージ",
+    "title": "ブロックストレスとオブジェクトストレージ",
+    "section": "オブジェクトストレージ",
+    "text": "オブジェクトストレージ\nクラウドで利用されるストレージ、データが常に増加する。 ディレクトリのような階層構造はなく、ストレージプールというオブジェクトの入れ物のみが作成され、メタデータによって管理される。 ファイル単位の保存の保存なので、ピンポイントでのアクセスが可能。\n\nAWSでのサービス\n\nS3\n\n保存容量が無制限。保管したオブジェクトの分だけ料金が発生\nバケットという単位でストレージプールを作成し、オブジェクトという単位でデータを保管する",
+    "crumbs": [
+      "AWS",
+      "ブロックストレスとオブジェクトストレージ"
+    ]
+  },
+  {
+    "objectID": "AWS/s3_secrity.html",
+    "href": "AWS/s3_secrity.html",
+    "title": "S3アクセス制御",
+    "section": "",
+    "text": "https://qiita.com/K5K/items/ef6a02aee760b128a25b\nhttps://morizyun.github.io/infrastructure/aws-s3-bucket-policy.html",
+    "crumbs": [
+      "AWS",
+      "S3アクセス制御"
+    ]
+  },
+  {
+    "objectID": "AWS/s3_secrity.html#参考文献",
+    "href": "AWS/s3_secrity.html#参考文献",
+    "title": "S3アクセス制御",
+    "section": "",
+    "text": "https://qiita.com/K5K/items/ef6a02aee760b128a25b\nhttps://morizyun.github.io/infrastructure/aws-s3-bucket-policy.html",
+    "crumbs": [
+      "AWS",
+      "S3アクセス制御"
+    ]
+  },
+  {
+    "objectID": "AWS/s3_secrity.html#aclアクセスコントロールリスト",
+    "href": "AWS/s3_secrity.html#aclアクセスコントロールリスト",
+    "title": "S3アクセス制御",
+    "section": "ACL（アクセスコントロールリスト）",
+    "text": "ACL（アクセスコントロールリスト）\nバケット、オブジェクトに対してアクセス権を制御できる。 オフにするとバケットポリシーだけでアクセス制御を行う。 AWSマネジメントコンソールからアクセス許可＞アクセスコントロールリストで設定する。",
+    "crumbs": [
+      "AWS",
+      "S3アクセス制御"
+    ]
+  },
+  {
+    "objectID": "AWS/s3_secrity.html#バケットポリシー",
+    "href": "AWS/s3_secrity.html#バケットポリシー",
+    "title": "S3アクセス制御",
+    "section": "バケットポリシー",
+    "text": "バケットポリシー\nバケットに対し、ユーザーごとのアップロードやダウンロードなどの操作など、複雑なアクセス制御を実現できる。 バケットに対するアクセス制御を施す場合基本的にこれを使用する。 JSON形式で設定する。以下はその一例で、すべてのアクセスを許可する。\n{\n  \"Version\":\"2012-10-17\",\n  \"Statement\":[\n    {\n      \"Sid\":\"AddPerm\",\n      \"Effect\":\"Allow\",\n      \"Principal\": \"*\",\n      \"Action\":[\"s3:GetObject\"],\n      \"Resource\":[\"arn:aws:s3:::example-bucket/*\"]\n    }\n  ]\n}\n\nversion：2012-10-17でポリシー変数を扱うことができる。\nPrincipal:AWSアカウントID,IAMユーザーならARNで指定\nEffect：許可する場合はAllow、拒否するならDenyを指定\nAction：許可するアクション。s3:GetObjectは読み込み権限\nResource：取り扱うオブジェクトのARN。arn:aws:s3:::example-bucket/*で許可対象のバケットを指定\nCondition：その他の細かい設定",
+    "crumbs": [
+      "AWS",
+      "S3アクセス制御"
+    ]
+  },
+  {
+    "objectID": "AWS/s3_secrity.html#iam",
+    "href": "AWS/s3_secrity.html#iam",
+    "title": "S3アクセス制御",
+    "section": "IAM",
+    "text": "IAM\nユーザー視点でアクセス制御をする場合に使う。 バケットポリシーと同様にActionで操作を、Resourceで対象のバケットやオブジェクトを指定する。",
+    "crumbs": [
+      "AWS",
+      "S3アクセス制御"
+    ]
+  },
+  {
+    "objectID": "AWS/s3_secrity.html#パブリックブロックアクセス",
+    "href": "AWS/s3_secrity.html#パブリックブロックアクセス",
+    "title": "S3アクセス制御",
+    "section": "パブリックブロックアクセス",
+    "text": "パブリックブロックアクセス\nパブリックに公開することを防止する時に有効化する。デフォルトでは有効になっている。 S3はインターネット上で公開する事ができるが、静的ウェブホスティングの有効化以外に、 パブリックブロックアクセスの許可が必要。 その他にも上記のもので１つでも拒否が設定されている場合はアクセスができない。",
+    "crumbs": [
+      "AWS",
+      "S3アクセス制御"
+    ]
+  },
+  {
+    "objectID": "shell/bash_command.html",
+    "href": "shell/bash_command.html",
+    "title": "bashコマンド",
+    "section": "",
+    "text": "Ctrl A 行頭移動\nCtrl E 行末移動\nCtrl W 直前単語を削除\nCtrl U カーソル左から行頭まで削除\nCtrl K カーソル一から末尾までの行を削除 Ctrl Aと組み合わせることで、全削除ができる\nCtrl Y 直前に削除した中身をペースト"
+  },
+  {
+    "objectID": "shell/bash_command.html#ctrlを使ったショートカット",
+    "href": "shell/bash_command.html#ctrlを使ったショートカット",
+    "title": "bashコマンド",
+    "section": "",
+    "text": "Ctrl A 行頭移動\nCtrl E 行末移動\nCtrl W 直前単語を削除\nCtrl U カーソル左から行頭まで削除\nCtrl K カーソル一から末尾までの行を削除 Ctrl Aと組み合わせることで、全削除ができる\nCtrl Y 直前に削除した中身をペースト"
+  },
+  {
+    "objectID": "shell/bash_command.html#便利なコマンド",
+    "href": "shell/bash_command.html#便利なコマンド",
+    "title": "bashコマンド",
+    "section": "便利なコマンド",
+    "text": "便利なコマンド\nhistory コマンド履歴を出力\nfind ファイルを検索 find 検索ディレクトリ -name \"ファイル名\"  find 検索先 -size \"±ファイル容量\"　検索先で指定したファイルサイズ以上、以下のファイル、ディレクトリを取得\ngrep ファイル内の文字列を検索 grep [オプション] \"検索文字列\" 対象ファイル  便利なオプション -n マッチした行の行番号を表示 -i 大文字小文字を区別せずに検索 -r ディレクトリ内のすべてのファイルを再帰的に検索 -l ファイル名だけを表示 historyやcatとパイプ演算子を組み合わせて使用すると、あるのはわかるけどどこにあるかわからない時に便利"
+  },
+  {
+    "objectID": "oracle/optimize.html#オプティマイザ統計の中身",
+    "href": "oracle/optimize.html#オプティマイザ統計の中身",
+    "title": "オプティマイザ",
+    "section": "オプティマイザ統計の中身",
+    "text": "オプティマイザ統計の中身\n\nテーブルレベルの統計\n\n行数\nブロッk数う\n空きスペース\n\nカラムレベルの統計\n\nデータ分布\nNULL値の割合\nヒストグラム\n\nインデックス統計\n\nインデックスの行数\nクラスタリング因子\n選択制"
+  },
+  {
+    "objectID": "oracle/sql_chuning.html",
+    "href": "oracle/sql_chuning.html",
+    "title": "SQLチューニング",
+    "section": "",
+    "text": "https://docs.oracle.com/cd/F19136_01/tgsql/index.html#GUID-8DFAF463-3DDD-46B4-951D-88BE057571C9"
+  },
+  {
+    "objectID": "oracle/sql_chuning.html#参考文献",
+    "href": "oracle/sql_chuning.html#参考文献",
+    "title": "SQLチューニング",
+    "section": "",
+    "text": "https://docs.oracle.com/cd/F19136_01/tgsql/index.html#GUID-8DFAF463-3DDD-46B4-951D-88BE057571C9"
+  },
+  {
+    "objectID": "oracle/sql_chuning.html#sqlチューニングの概要",
+    "href": "oracle/sql_chuning.html#sqlチューニングの概要",
+    "title": "SQLチューニング",
+    "section": "SQLチューニングの概要",
+    "text": "SQLチューニングの概要\nDBを対象とした、レスポンスまでのスループットを向上させる試みのこと。 アプリケーションなどでDBを含むアプリを作成する際、ユーザーがリクエスト（操作）をしてから、 レスポンス（画面遷移などの操作の結果出力されるもの）までの目標時間が決められる。 もしくはシステムの安定稼働のため、リソースの利用量を抑える必要がある。 それらが目標に収まらない場合は、チューニングと呼ばれる調整が必要になる。 SQLチューニングではSQLの実行計画や、処理方法を見直しを行う。"
+  },
+  {
+    "objectID": "oracle/about_sql.html",
+    "href": "oracle/about_sql.html",
+    "title": "SQL概要",
+    "section": "",
+    "text": "https://qiita.com/CyberMergina/items/f889519e6be19c46f5f4"
+  },
+  {
+    "objectID": "oracle/about_sql.html#参考文献",
+    "href": "oracle/about_sql.html#参考文献",
+    "title": "SQL概要",
+    "section": "",
+    "text": "https://qiita.com/CyberMergina/items/f889519e6be19c46f5f4"
+  },
+  {
+    "objectID": "oracle/about_sql.html#sqlとは",
+    "href": "oracle/about_sql.html#sqlとは",
+    "title": "SQL概要",
+    "section": "SQLとは",
+    "text": "SQLとは\nSQL（Structured Query Language）はデータベースを管理、操作するための標準的なプログラム言語のこと。 リレーショナルデータベースで使用され、それを管理するための機能を追加したものがOracleやMySQLなどのミドルウェア。 SQLを使う場合はこのミドルウェアを通して活用する。"
+  },
+  {
+    "objectID": "oracle/about_sql.html#sqlの操作方法の種類",
+    "href": "oracle/about_sql.html#sqlの操作方法の種類",
+    "title": "SQL概要",
+    "section": "SQLの操作方法の種類",
+    "text": "SQLの操作方法の種類\nSQLにはDB使用者か、DB提供者かの視点で複数種類の操作方法に分類される。\n\nDB使用者の命令：DML、TCL\nDML(Data Manipulation Language) データ操作言語とも言い、データの閲覧、削除などができる。 CRUD（SELECT、INSERT、UPDATE、DELETE）というSQLで代表的な、命令はこれに分類される\nTCL(Transaction Control Language) トランザクション（複数の処理を１つの処理として実行するときの単位）制御言語ともいう。 COMMITやROLLBACKなどが該当する。\n\n\nDB提供者視点の命令：DDLとDCL\nDDL（Data Definition Language） データ定義言語ともいう。 テーブルの作成、削除、列の追加などができる。 CREATE,ALTER,DROP,TRUNCATEなどが分類される。\nDCL（Data Control Language） データ制御言語ともいう。 誰にテーブルの操作を許可するかなど、権限の設定を行うことができる。 GRANTやREVOKEなどがこれに当たる。"
+  },
+  {
+    "objectID": "shell/about_shell.html",
+    "href": "shell/about_shell.html",
+    "title": "シェルスクリプト",
+    "section": "",
+    "text": "https://qiita.com/osw_nuco/items/a5d7173c1e443030875f"
+  },
+  {
+    "objectID": "shell/about_shell.html#参考文献",
+    "href": "shell/about_shell.html#参考文献",
+    "title": "シェルスクリプト",
+    "section": "",
+    "text": "https://qiita.com/osw_nuco/items/a5d7173c1e443030875f"
+  },
+  {
+    "objectID": "shell/about_shell.html#シェルスクリプト概要",
+    "href": "shell/about_shell.html#シェルスクリプト概要",
+    "title": "シェルスクリプト",
+    "section": "シェルスクリプト概要",
+    "text": "シェルスクリプト概要\nBashなどのターミナルで使用するコマンドを複数並べて、まとめて実行できるようにしたもの。 ログの解析や、収集、ファイル操作などに向いており、簡単な解析に使える。 一方実行時間が遅く、複雑な行列処理には向かない。"
+  },
+  {
+    "objectID": "AWS/iam.html",
+    "href": "AWS/iam.html",
+    "title": "IAM",
+    "section": "",
+    "text": "IAMポリシー\n\nユーザーなどへのアクセス権限を付与するための設定JSONドキュメント\n許可、拒否を設定する\n\nIAMユーザー\n\n個人としてAWS内のリソースにアクセスする\nルートユーザーは該当しない\n管理者権限：IAMの操作権限がある\nパワーユーザー：IAM以外のすべてのAWS機能を使える、管理タスクはやらせたくないが、開発したい場合使用する\n\nIAMユーザーグループ\n\nIAMユーザーをまとめて権限設定する\n\nIAMロール\n\nAWSサービスに対しアクセス権限を付与する\nEC2がS3にアクセスしてデータを取る場合は、EC２からS3にアクセスする権限をIAMポリシーとして設定したロールの設定が必要\n\n\nルートユーザーのみの操作\n\n課金情報へのアクセス\n他のAWSアカウントへのRoute53のドメイン譲渡\nAWSサポートのサービスのキャンセル\nAWSアカウントの停止\n一括請求（コンソリでテッドビリング）の設定\n脆弱性診断フォームの提出\n逆引きDNS申請",
+    "crumbs": [
+      "AWS",
+      "IAM"
+    ]
+  },
+  {
+    "objectID": "AWS/iam.html#主要素",
+    "href": "AWS/iam.html#主要素",
+    "title": "IAM",
+    "section": "",
+    "text": "IAMポリシー\n\nユーザーなどへのアクセス権限を付与するための設定JSONドキュメント\n許可、拒否を設定する\n\nIAMユーザー\n\n個人としてAWS内のリソースにアクセスする\nルートユーザーは該当しない\n管理者権限：IAMの操作権限がある\nパワーユーザー：IAM以外のすべてのAWS機能を使える、管理タスクはやらせたくないが、開発したい場合使用する\n\nIAMユーザーグループ\n\nIAMユーザーをまとめて権限設定する\n\nIAMロール\n\nAWSサービスに対しアクセス権限を付与する\nEC2がS3にアクセスしてデータを取る場合は、EC２からS3にアクセスする権限をIAMポリシーとして設定したロールの設定が必要\n\n\nルートユーザーのみの操作\n\n課金情報へのアクセス\n他のAWSアカウントへのRoute53のドメイン譲渡\nAWSサポートのサービスのキャンセル\nAWSアカウントの停止\n一括請求（コンソリでテッドビリング）の設定\n脆弱性診断フォームの提出\n逆引きDNS申請",
+    "crumbs": [
+      "AWS",
+      "IAM"
+    ]
+  },
+  {
+    "objectID": "AWS/iam.html#用語",
+    "href": "AWS/iam.html#用語",
+    "title": "IAM",
+    "section": "用語",
+    "text": "用語\nIAMリソース IAMで管理されるリソース全体のこと\nIAMアイデンティティー ユーザー、グループ、ロールのみ、AWSで認証されてグループ化に使用されるオブジェクト\nIAMエンティティ ユーザー及びロール、IAMリソースオブジェクト\nプリンシパル 上記とほぼ同じだが、ポリシー上で設定される場合はプリンシパルと呼ばれる",
+    "crumbs": [
+      "AWS",
+      "IAM"
+    ]
+  },
+  {
+    "objectID": "AWS/memo.html",
+    "href": "AWS/memo.html",
+    "title": "SAAのメモ",
+    "section": "",
+    "text": "ECS\n\nAWSでDocker形式でアプリ開発を行う環境を提供する\n\nEKS\n\nAWSでKubernetesで開発を行う環境を提供する\n\n\n\n\n\nEC2起動モード\n\nEC2インスタンスで上記２つのサービスを実行する\nサーバーレベルの細かな設定が可能\n\nFargate\n\nクラスター管理が不要\nインスタンスの選択等細かい設定が不要\n数秒で数万個のコンテナを起動できる",
+    "crumbs": [
+      "AWS",
+      "SAAのメモ"
+    ]
+  },
+  {
+    "objectID": "AWS/memo.html#ecsとeks",
+    "href": "AWS/memo.html#ecsとeks",
+    "title": "SAAのメモ",
+    "section": "",
+    "text": "ECS\n\nAWSでDocker形式でアプリ開発を行う環境を提供する\n\nEKS\n\nAWSでKubernetesで開発を行う環境を提供する\n\n\n\n\n\nEC2起動モード\n\nEC2インスタンスで上記２つのサービスを実行する\nサーバーレベルの細かな設定が可能\n\nFargate\n\nクラスター管理が不要\nインスタンスの選択等細かい設定が不要\n数秒で数万個のコンテナを起動できる",
+    "crumbs": [
+      "AWS",
+      "SAAのメモ"
+    ]
+  },
+  {
+    "objectID": "AWS/memo.html#オーケストレーションサービス",
+    "href": "AWS/memo.html#オーケストレーションサービス",
+    "title": "SAAのメモ",
+    "section": "オーケストレーションサービス",
+    "text": "オーケストレーションサービス\n\nAWS Step Functions\n\nLamdaやその他のサービスをビジネスプロセスとして配列できるサーバレスのワークフロー作成、管理サービス\n人の手によるアクションを追加することも可能\n\nSimple WorkFlow(SWF）\n\n連続したステップがあるバックグラウンドジョブを構築、実行、スケールできる\n旧型のStep Functions\n\nSQS\n\nポーリング、Pull型通知をする場合はこれを使用\n処理の追跡は不可能",
+    "crumbs": [
+      "AWS",
+      "SAAのメモ"
+    ]
+  },
+  {
+    "objectID": "AWS/memo.html#タグ",
+    "href": "AWS/memo.html#タグ",
+    "title": "SAAのメモ",
+    "section": "タグ",
+    "text": "タグ",
+    "crumbs": [
+      "AWS",
+      "SAAのメモ"
+    ]
+  },
+  {
+    "objectID": "AWS/memo.html#cnameレコードとエイリアスレコード",
+    "href": "AWS/memo.html#cnameレコードとエイリアスレコード",
+    "title": "SAAのメモ",
+    "section": "CNAMEレコードとエイリアスレコード",
+    "text": "CNAMEレコードとエイリアスレコード\nドメイン名からIPアドレスを受け取って通信する場合、S3とRoute53を使用する。 * Aレコードとはドメイン名に対するIPV4アドレスを指定するリソースレコード、同じドメイン名に対して複数の記述が可能\n\nCNAMEレコード\n\nCNAMEで登録した値がRoute53に送られた場合、CNAMEに紐づくレコードを返却する\nクライアントは返却されたレコードで再度IPアドレスを問い合わせる\n\nALIASレコード\n\nAレコードのALIASがあればそれをAWS内でS3に問い合わせし、IPアドレスをクライアントに返す\n\nNSレコード\n\n外部で購入したドメインを登録する\n\nMXレコード\n\nメールサーバを指定",
+    "crumbs": [
+      "AWS",
+      "SAAのメモ"
+    ]
+  },
+  {
+    "objectID": "AWS/memo.html#インスタンスの分類",
+    "href": "AWS/memo.html#インスタンスの分類",
+    "title": "SAAのメモ",
+    "section": "インスタンスの分類",
+    "text": "インスタンスの分類\n\n汎用\n\nA1、M5、T3\n\nコンピューティング最適化\n\nC5,C6g\n\nメモリ最適化\n\nX1,R5、ハイメモリ、Z1d\n\nストレージ最適化\n\nH1,D2,I3,I3en\n\n高速コンピューティング\n\nP3、Inf1、G4、F1",
+    "crumbs": [
+      "AWS",
+      "SAAのメモ"
+    ]
+  },
+  {
+    "objectID": "AWS/memo.html#directory-service",
+    "href": "AWS/memo.html#directory-service",
+    "title": "SAAのメモ",
+    "section": "Directory Service",
+    "text": "Directory Service\n\nSimple AD\n\n小規模向けの簡易AD\n\nAD Connector\n\nオンプレミス環境のADとIAMを統合\n\nManaged Microsoft AD\n\nmicrosodft ADとの互換性のあるADを作成",
+    "crumbs": [
+      "AWS",
+      "SAAのメモ"
+    ]
+  },
+  {
+    "objectID": "AWS/memo.html#api-gateway",
+    "href": "AWS/memo.html#api-gateway",
+    "title": "SAAのメモ",
+    "section": "API Gateway",
+    "text": "API Gateway\nHTTP APIまたはREST APIを使用してRESTful（安全）、WebSocket(対話型) APIを作成可能\nリクエストの受け口としてGatewayがあり、後続の処理を呼び出す。 サーバレスかつ、DDosなどへの保護機能あり",
+    "crumbs": [
+      "AWS",
+      "SAAのメモ"
+    ]
+  },
+  {
+    "objectID": "AWS/memo.html#静的ホスティングの手順",
+    "href": "AWS/memo.html#静的ホスティングの手順",
+    "title": "SAAのメモ",
+    "section": "静的ホスティングの手順",
+    "text": "静的ホスティングの手順\n\nブロックパブリック・アクセスの無効化\nバケットポリシーで読み取り許可を設定\nIndex.htmlを配置\n静的ホスティングの画面で有効化\n\n　 ## リアルタイムデータ解析\n\nEMR\n\nApache Spark Streamingを構成することで、Kinesisからのストリーミングデータをリアルタイムに分析できる\n\nKinesis Data Streams",
+    "crumbs": [
+      "AWS",
+      "SAAのメモ"
+    ]
+  },
+  {
+    "objectID": "midle/connection.html",
+    "href": "midle/connection.html",
+    "title": "3層連携",
+    "section": "",
+    "text": "/opt/tomcat/conf/connecttest.xml内に接続先のDBのURLを記入\nurl=\"jdbc:postgresql://ipアドレス:5432/DB名\"\nDB側でAPからのアクセスを許可する/database/data/pg_hba.conf\nこの中にホストごとの認証方法が設定されており、ここに記載されているアクセスしかデータベースを利用できない。 例）testdbのtestユーザーでアクセスする場合\nhost testdb test APのID/32 md5"
+  },
+  {
+    "objectID": "midle/connection.html#tomatからdbへの接続",
+    "href": "midle/connection.html#tomatからdbへの接続",
+    "title": "3層連携",
+    "section": "",
+    "text": "/opt/tomcat/conf/connecttest.xml内に接続先のDBのURLを記入\nurl=\"jdbc:postgresql://ipアドレス:5432/DB名\"\nDB側でAPからのアクセスを許可する/database/data/pg_hba.conf\nこの中にホストごとの認証方法が設定されており、ここに記載されているアクセスしかデータベースを利用できない。 例）testdbのtestユーザーでアクセスする場合\nhost testdb test APのID/32 md5"
+  },
+  {
+    "objectID": "midle/ap_web.html",
+    "href": "midle/ap_web.html",
+    "title": "Webアプリ",
+    "section": "",
+    "text": "インターネットを通じて動作するアプリケーションのこと。 クライアントPCからリクエストを受け取り、サーバーが処理をすることで動作する。 クライアントPCはWebブラウザを用いてサーバーへリクエストを送る。 サーバーはリクエストに応じたHTMLをレスポンスとして返している。"
+  },
+  {
+    "objectID": "midle/ap_web.html#webアプリって何",
+    "href": "midle/ap_web.html#webアプリって何",
+    "title": "Webアプリ",
+    "section": "",
+    "text": "インターネットを通じて動作するアプリケーションのこと。 クライアントPCからリクエストを受け取り、サーバーが処理をすることで動作する。 クライアントPCはWebブラウザを用いてサーバーへリクエストを送る。 サーバーはリクエストに応じたHTMLをレスポンスとして返している。"
+  },
+  {
+    "objectID": "midle/ap_web.html#cgi",
+    "href": "midle/ap_web.html#cgi",
+    "title": "Webアプリ",
+    "section": "CGI",
+    "text": "CGI\nWebサーバーとプログラムを連携させる仕組みのこと Webサイト内での検索など、クライアントの要求によって結果が変わるもの（動的コンテンツ）は、事前にHTMLを用意する事ができない。 そこでPerlのプログラミングをWebサーバーに付け加えることで、新しくHTMLファイルを作成することで、動的コンテンツに対応できる様になった。"
+  },
+  {
+    "objectID": "midle/ap_web.html#javaサーブレット",
+    "href": "midle/ap_web.html#javaサーブレット",
+    "title": "Webアプリ",
+    "section": "Java/サーブレット",
+    "text": "Java/サーブレット\nCGIを活用したHTMLの作成はWebアプリの大規模、複雑化に伴ってCGIでのレスポンスに時間がかかることがボトルネックになっていった。"
+  },
+  {
+    "objectID": "midle/web.html",
+    "href": "midle/web.html",
+    "title": "Web三層モデル",
+    "section": "",
+    "text": "https://qiita.com/kamihork/items/49e2a363da7d840a4149 https://qiita.com/thirai67/items/24517ce80d402bb152cf"
+  },
+  {
+    "objectID": "midle/web.html#参考文献",
+    "href": "midle/web.html#参考文献",
+    "title": "Web三層モデル",
+    "section": "",
+    "text": "https://qiita.com/kamihork/items/49e2a363da7d840a4149 https://qiita.com/thirai67/items/24517ce80d402bb152cf"
+  },
+  {
+    "objectID": "midle/web.html#概要",
+    "href": "midle/web.html#概要",
+    "title": "Web三層モデル",
+    "section": "概要",
+    "text": "概要\nWeb三層モデルとは、WebアプリをWebサーバー、APサーバー、DBサーバーに分けて構築するモデルのこと。 一般的に各層ごとにサーバーを用意し、Webサーバーを外部に公開し、AP、DBサーバーはWebサーバ、もしくは内部からのアクセスのみ許可する。 これによって外部処理と内部処理を分けることができ、アプリの処理方式や顧客データなど、利用者に見せたくない情報を隠すことができる。 なおWeb三層を実装するのに必要な機能はLinuxなどのOSには搭載されていないため、Web、AP、DBに必要な機能をまとめたソフトウェアをインストールする必要がある。 そしてWeb、AP、DBを実装するのに必要なソフトウェアの総称をミドルウェアと呼ぶ。"
+  },
+  {
+    "objectID": "midle/web.html#webサーバ",
+    "href": "midle/web.html#webサーバ",
+    "title": "Web三層モデル",
+    "section": "Webサーバ",
+    "text": "Webサーバ\n外部ネットからアクセスを受け、HTMLを返す。 Webページにアクセスをする場合、Webサーバに向けて表示するページを要求する。 この要求をリクエストと呼び、それに対しWebサーバからページを返されることをレスポンスと呼ぶ。 Webサーバを実装するためのソフトウェアとして ApacheやNginxが存在する。 Webアプリを作成する場合は、Apacheなどをインストールしその中で指定の場所に返却用のhtmlファイルを配置する。 利用者は配置したhtmlファイルに対してリクエストを行うことで画面の閲覧が可能になる。\n\nWebサーバの役割\n静的コンテンツを返却することと、APサーバへ処理を要求することの2つがある。 静的コンテンツとはWebサイトのトップ画面などの事前に用意されたものを示す。 Webサーバでは利用者全員に共通する画面を事前に用意しておき、それを利用者から要求があった際に返却する。 しかしこの方法では人それぞれ異なる画面を表示することができない。 例えばAmazonなどで検索を行い、それによって表示される画面は人によって異なる。 このような画面を利用者ごとの要求に応じて表示するには、画面を要求に応じて作る必要がある。 画面を作る処理をWebサーバで行うことはできないため、「要求に応じた画面を作って」という要求を次のAPサーバへ送る。\n\n\n主要なWebサーバのミドルウェア\n\nApach(アパッチ)\n20年間利用されているWebサーバのOSS（オープンソースソフトウェアで、誰でも無料で使える） 長年使用されているため、信頼性が高い。また機能拡張も用意である。 マルチプロセスモデルを採用しており、接続ごとにプロセスをコピーするため、重い処理が他のプロセスに影響を与えず重い処理が得意。 一方でメモリの使用量が多くなりやすいデメリットがあり、接続数が少ない場合に向いている。\n\n\nNginx(エンジンエックス)\n同時接続数が1万台以上を超えるとサーバが処理しきれなくなる問題があり、大量の同時接続や配信に耐えられるように設計された。 Apacheよりも同時接続が多く、Apacheの10~100倍程度の同時接続を処理できる。 また大量のアクセスを複数のサーバに分散して処理する負荷分散の機能を持つ。 処理方式はイベント駆動であり、１つのスレッドでループを使いを行うため、処理の上限数は多い。 しかし1つの処理が遅れるとその後の処理も遅れるため、重い処理には向かない。"
+  },
+  {
+    "objectID": "midle/web.html#apサーバの役割",
+    "href": "midle/web.html#apサーバの役割",
+    "title": "Web三層モデル",
+    "section": "APサーバの役割",
+    "text": "APサーバの役割\nWebサーバから受けた要求に応じて画面の作成またはプログラムを処理する。 検索結果の画面を作成するにはデータが蓄積されたDBに対し、検索処理を実行し、その結果をHTMLに含める必要がある。 APサーバでは「DBから検索を行う」などのプログラムを用意し、それをWebサーバからの要求に応じて実行し、画面を作成する。 ミドルウェアとしてTomcatなどが用いられる。\nなお要求に応じて作られる画面は、事前に用意された静的コンテンツと対比し、動的コンテンツと呼ばれる。"
+  },
+  {
+    "objectID": "midle/web.html#dbサーバの役割",
+    "href": "midle/web.html#dbサーバの役割",
+    "title": "Web三層モデル",
+    "section": "DBサーバの役割",
+    "text": "DBサーバの役割\nデータ保管を行う。 データの管理とデータの操作を行う機能を持ち、SQLというプログラム言語を用いてそれらを行う。 DBにはデータの更新や削除など、保管したデータに対し変更が行われる。 この際利用者によってデータの内容が異なると問題が生じるため、 更新が行われた場合はそれ以降は利用者全員が更新されたあとのものを使用するといった特性を持つ。"
+  },
+  {
+    "objectID": "note/ci_cd.html",
+    "href": "note/ci_cd.html",
+    "title": "CI/CD",
+    "section": "",
+    "text": "https://qiita.com/hiroaki-u/items/ac0c1fb00b78af208af8",
+    "crumbs": [
+      "note",
+      "CI/CD"
+    ]
+  },
+  {
+    "objectID": "note/ci_cd.html#参考文献",
+    "href": "note/ci_cd.html#参考文献",
+    "title": "CI/CD",
+    "section": "",
+    "text": "https://qiita.com/hiroaki-u/items/ac0c1fb00b78af208af8",
+    "crumbs": [
+      "note",
+      "CI/CD"
+    ]
+  },
+  {
+    "objectID": "note/ci_cd.html#概要",
+    "href": "note/ci_cd.html#概要",
+    "title": "CI/CD",
+    "section": "概要",
+    "text": "概要\nソフトウェアの変更を常にテストして自動で本番環境にリリース可能な状態にしておく、ソフトウェア開発の手法。 引用元：https://codezine.jp/article/detail/11083 CIは「Continuous Integration」、CDは「Continuous Deliveryまたは Development」の意味 システム開発では作成したコードをコミットしてシステムに統合、テスト、デプロイを繰り返す必要がある。 これらの操作を手動で行うと非効率かつミスが起こるため、これらを自動で行うのがCI/CD",
+    "crumbs": [
+      "note",
+      "CI/CD"
+    ]
+  },
+  {
+    "objectID": "note/ci_cd.html#awsにおけるcicdの技術要素",
+    "href": "note/ci_cd.html#awsにおけるcicdの技術要素",
+    "title": "CI/CD",
+    "section": "AWSにおけるCI/CDの技術要素",
+    "text": "AWSにおけるCI/CDの技術要素\nAWSではCI/CDとしてCodeシリーズが挙げられる。いかがそのCodeシリーズ * Code Commit * Code Build * Code Deploy * Code Pipeline\nこれらに加え、EventBridgeとS3などを活用する。以下は1例\n\nCodeCommitでマージが行われる\nEventBridgeがマージを景気にCodePipelineへ情報を送る\nCodePipelineはS3にソースアーティファクト（パイプライン内で処理されるファイル）を送信する。\nCodePiplineはCodeDeployへ処理を依頼し、アーティファクトファイルをデプロイ先に移動させる\n\nこのようにコミットをするだけでその後の処理を自動で行ってくれるため、 変更をすぐに反映して結果を確認する事ができ、システム開発の速度向上が行える。",
+    "crumbs": [
+      "note",
+      "CI/CD"
+    ]
+  },
+  {
+    "objectID": "jmeter/jmeter.html",
+    "href": "jmeter/jmeter.html",
+    "title": "JMeter概要",
+    "section": "",
+    "text": "JMeter公式サイト"
+  },
+  {
+    "objectID": "jmeter/jmeter.html#参考文献",
+    "href": "jmeter/jmeter.html#参考文献",
+    "title": "JMeter概要",
+    "section": "",
+    "text": "JMeter公式サイト"
+  },
+  {
+    "objectID": "jmeter/jmeter.html#jmeter概要",
+    "href": "jmeter/jmeter.html#jmeter概要",
+    "title": "JMeter概要",
+    "section": "JMeter概要",
+    "text": "JMeter概要\nシステムの性能試験で活用される負荷掛けツール、正式名称はApache JMeter 複数人から利用されるシステムは同時アクセスなどの負荷がかかり、負荷に耐えきれずに性能問題を起こすことがある。 例えばWebサイトの表示が遅い、エラーでアクセスできないなどが性能問題の一例である。 そこでシステムをリリースする前に、負荷に耐えきれるかの検証が必要になる。 このときに大量のアクセスによる負荷掛けを再現するツールがJMeterである。"
+  },
+  {
+    "objectID": "jmeter/jmeter.html#インストール方法",
+    "href": "jmeter/jmeter.html#インストール方法",
+    "title": "JMeter概要",
+    "section": "インストール方法",
+    "text": "インストール方法\nJMeterはWindows上のJAVAで動き、インストールの必要がない。 以下はインストール手順\n\nOpenJDKのインストール\nJMeterはJAVAで動作するため、JAVAをインストールする必要がある。 JAVAはOracleが所持する有償のものと、OpenJDKというオープンソースの物がある。 個人で使う場合はどちらでも良いが、企業の場合OracleのJAVAを使うと全社員数分のユーザー料金を請求されるので注意。 ここではOpenJDKのインストールを例に説明する。 OpenJDKのサイトにアクセスし、zipファイルをダウンロードする。 リンクと画像は2025年1月時点で最新のもの。適宜バージョンは確認して適したものをダウンロードすること。 \nOpenJDKをCFiles下などに展開する。 環境変数を設定し、JAVA_HOMEとbinへのパスを追記する必要がある。 以下の手順で環境変数の設定画面へ移行 設定＞システム＞バージョン情報、システムの詳細設定を押下＞環境変数\nJAVA_HOMEの追加 システム環境変数の新規を押下＞変数名：JAVA_HOME、変数値：OpenJDKまでのパスを追記\nJAVAのパスの追加 システム環境変数のPathを選択し、編集を押下＞新規を押下＞%JAVA_HOME%\\binを追記 ついでに、解答したJMeterのbinまでのパスも追加しておくと、コマンドプロンプトからjmeterコマンドをどこでも使えるので便利\n\n\nJMeterを公式サイトからダウンロードする\nJMeterにアクセスし、Binariesをダウンロードする。.zipが楽 ダウンロード後ファイルをデスクトップなどに解答する。 サーバーで複数ユーザーなどで使う場合はCドライブ直下でも可\n\n\n\nJMeterダウンロード画面\n\n\nここまでやってapache-jmeter-バージョン\\bin\\jmeter.batをダブルクリックして以下の画面が出れば成功\n\n\n\nJMeter画面\n\n\n\n\nその他便利設定\n\napache-jmeter-バージョン、CSV、結果、グラフ格納用のディレクトリ作成\nJMeter.batのバックアップ作成\n\n日本語可などJMeter.batを直接編集するため\n\nJMeter.batを編集\n\nset JMETER_LANGUAGE=-Duser.language=“ja” -Duser.region=“JP”"
+  },
+  {
+    "objectID": "jmeter/jmeter.html#使用方法",
+    "href": "jmeter/jmeter.html#使用方法",
+    "title": "JMeter概要",
+    "section": "使用方法",
+    "text": "使用方法\nJMeterでは負荷掛けをするためのスクリプトをシナリオと呼び、ブラウザ上の画面を操作してシナリオを作成していく。ls"
+  },
+  {
+    "objectID": "AWS/springboot_prometheus_cloudwatch.html",
+    "href": "AWS/springboot_prometheus_cloudwatch.html",
+    "title": "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順",
+    "section": "",
+    "text": "本記事の手順はChatGPT 4oでコードを作成して実機検証を行いました また本記事の作成はChatGPT 4oで原案を作成し、一部修正を行っています 誤った内容が含まれている可能性があるため、重要な情報は確認するようにしてください。",
+    "crumbs": [
+      "AWS",
+      "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_prometheus_cloudwatch.html#概要",
+    "href": "AWS/springboot_prometheus_cloudwatch.html#概要",
+    "title": "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順",
+    "section": "概要",
+    "text": "概要\n本ドキュメントでは、Amazon EC2 上に構築した Spring Boot アプリケーションのメトリクスを Prometheus 経由で収集し、CloudWatch Logs/メトリクスに連携することで可視化する手順をまとめます。\n対象とするメトリクスは以下の通りです：\n\nTomcat スレッド関連メトリクス\nJVM メモリ、GC、スレッド関連メトリクス",
+    "crumbs": [
+      "AWS",
+      "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_prometheus_cloudwatch.html#事前準備",
+    "href": "AWS/springboot_prometheus_cloudwatch.html#事前準備",
+    "title": "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順",
+    "section": "事前準備",
+    "text": "事前準備\n\nEC2を起動する\nIAMロールでcloudwatchを実行するためのロールを作成し、EC2にアタッチする\nEC2のセキュリティグループのインバウンドルールで、カスタムTCPの8080、9090ポートへのアクセスを許可する\n\nSpringBootActuatorの設定と、prometheusの設定完了の確認に使用する。",
+    "crumbs": [
+      "AWS",
+      "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_prometheus_cloudwatch.html#spring-boot-actuator-の設定",
+    "href": "AWS/springboot_prometheus_cloudwatch.html#spring-boot-actuator-の設定",
+    "title": "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順",
+    "section": "Spring Boot Actuator の設定",
+    "text": "Spring Boot Actuator の設定\n以下からSpring Boot Actuatorのサンプルアプリをダウンロードする。\nサンプルアプリ(https://github.com/YutaSSuzuki/sample/blob/main/springboot-helloworld-2.7.4.zip)をEC2内に配置し、解凍する。 サンプルアプリの構成(Maven)\nspringboot-helloworld-2.7.4/\n├── pom.xml\n└── src/\n    └── main/\n        ├── java/\n        │   └── com/\n        │       └── example/\n        │           └── demo/\n        │               ├── DemoApplication.java\n        │               └── HelloController.java\n        └── resources/\n            └── application.properties\nSpringBootActuatorを有効化するため、pom.xmlに依存関係を追記する xmlは&lt;&gt;&lt;/&gt;でひとかたまりであり、dependenciesの中に配置をしないとエラーになるため注意。\n&lt;dependency&gt;\n  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;\n  &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;\n&lt;/dependency&gt;\n&lt;dependency&gt;\n  &lt;groupId&gt;io.micrometer&lt;/groupId&gt;\n  &lt;artifactId&gt;micrometer-registry-prometheus&lt;/artifactId&gt;\n&lt;/dependency&gt;\napplication.properties に以下を追記し、Prometheus 向けメトリクス出力を有効化します。 include=*とするとすべての情報が公開され、セキュリティ的に問題のある内容まで公開されるため、必要な要素のみ有効化すること。 prometheusはデフォルトで9090ポートを利用しているため注意。\n# Actuator で Prometheus のみ公開\nmanagement.endpoints.web.exposure.include=prometheus\n\n# Prometheus エンドポイントを有効にする\nmanagement.endpoint.prometheus.enabled=true\n\n# Tomcat のスレッドプールメトリクスを有効にするための設定\nmanagement.server.port=8080\nmanagement.server.base-path=/actuator\nmanagement.metrics.export.prometheus.enabled=true\n\n# Tomcat の JMX ベースメトリクスを有効にする\nserver.tomcat.mbeanregistry.enabled=true\njarを作成し、デプロイする。下記コマンドはサンプルアプリを解凍したディレクトリで実施すること。\nmvn clean package\njava -jar target/springboot-helloworld-2.7.4-0.0.1-SNAPSHOT.jar\n\n確認作業：Spring Boot Actuator のメトリクス出力\nSpring Boot アプリを再起動後、アプリが機能していることを確認する。 http://EC2のipアドレス:8080/helloにアクセスし、「Hello from Spring Boot 2.7.4」が表示されればOK\nSpring Boot アプリを再起動後、次のエンドポイントが有効になっていることを確認します：\ncurl -s http://localhost:8080/actuator/prometheus | grep jvm\ncurl -s http://localhost:8080/actuator/prometheus | grep tomcat\n以下のような出力が出ればOK\n# HELP jvm_gc_live_data_size_bytes Size of long-lived heap memory pool after reclamation\n# TYPE jvm_gc_live_data_size_bytes gauge\njvm_gc_live_data_size_bytes 0.0\n\n...",
+    "crumbs": [
+      "AWS",
+      "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_prometheus_cloudwatch.html#prometheus-の設定",
+    "href": "AWS/springboot_prometheus_cloudwatch.html#prometheus-の設定",
+    "title": "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順",
+    "section": "Prometheus の設定",
+    "text": "Prometheus の設定\nprometheus(https://prometheus.io/download/)のインストール\nwget prometheusのサイトからインストールしたいものをコピペ\ntar -xzvf ダウンロードしたprometheusのパス\ncd prometheus-*\nprometheus.yml に以下の設定を追加します。 Cloudwatchの無料枠での監視の最短感覚が5分であるため、scrapeの感覚を5分で設定 SpringBootActuatorのエンドポイントを変更している場合はtargetのポート番号を変更する。\nglobal:\n  scrape_interval: 300s\n\nscrape_configs:\n  - job_name: 'springboot'\n    metrics_path: '/actuator/prometheus'\n    static_configs:\n      - targets: ['localhost:8080']\nPrometheus を起動します。\n./prometheus --config.file=prometheus.yml &\n\n確認作業：Prometheus がメトリクスを収集できていること\nブラウザで以下にアクセス：\nhttp://&lt;EC2のパブリックIP&gt;:9090/targets\n\nspringboot job が UP 状態\nhttp://localhost:8080/actuator/prometheus が表示されていることを確認\n\n取得間隔が5分と長いため、少し待つ\n\nブラウザ上でGraphを押下し、jvmなど検索してヒットするかを確認",
+    "crumbs": [
+      "AWS",
+      "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_prometheus_cloudwatch.html#cloudwatch-の設定",
+    "href": "AWS/springboot_prometheus_cloudwatch.html#cloudwatch-の設定",
+    "title": "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順",
+    "section": "CloudWatch の設定",
+    "text": "CloudWatch の設定\nEC2 インスタンスに CloudWatch Agent をインストールして起動するには、以下の手順を実行します。\n```bash\n# 1. CloudWatch Agent のインストール\nsudo yum install -y amazon-cloudwatch-agent\n\n# 2. CloudWatch Agent のステータス確認\nsudo systemctl status amazon-cloudwatch-agent\n```\n/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json に以下を設定： インストール直後はファイルが無いため、作成する。 “prometheus_config_path”: にPrometheus.ymlのパスを記載する ハマる要素が多いため、末尾のハマったポイントを確認。\n{\n  \"agent\": {\n    \"region\": \"ap-northeast-1\"\n  },\n  \"logs\": {\n    \"metrics_collected\": {\n      \"prometheus\": {\n        \"cluster_name\": \"springboot-app\",\n        \"log_group_name\": \"SpringBootPromMetrics\",\n        \"prometheus_config_path\": \"prometheus.ymlのパス\",\n        \"emf_processor\": {\n          \"metric_namespace\": \"SpringBootMetrics\",\n          \"metric_unit\": {\n            \"tomcat_threads_busy\": \"Count\",\n            \"tomcat_threads_current\": \"Count\",\n            \"tomcat_threads_config_max\": \"Count\"\n          },\n          \"metric_declaration\": [\n            {\n              \"source_labels\": [\"job\"],\n              \"label_matcher\": \"^springboot$\",\n              \"dimensions\": [[\"instance\"]],\n              \"metric_selectors\": [\n                \"^tomcat_threads_busy_threads$\",\n                \"^tomcat_threads_current_threads$\",\n                \"^tomcat_threads_config_max_threads$\",\n                \"^jvm_memory_used_bytes$\",\n                \"^jvm_memory_max_bytes$\",\n                \"^jvm_memory_committed_bytes$\",\n                \"^jvm_gc_live_data_size_bytes$\",\n                \"^jvm_gc_pause_seconds_count$\",\n                \"^jvm_gc_pause_seconds_sum$\",\n                \"^jvm_threads_live_threads$\",\n                \"^jvm_threads_daemon_threads$\"\n              ]\n            }\n          ]\n        }\n      }\n    }\n  }\n}\nCloudWatch Agent の再起動：\nsudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \\\n  -a fetch-config -m ec2 \\\n  -c file:/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json -s\n\n確認作業：ロググループが作成されていること\n\nCloudWatch → ロググループ → SpringBootPromMetrics が表示されていること\nspringboot ストリームに JVM や Tomcat メトリクスが JSON 形式で出力されていること\nCloudwatchの画面でログにチェックを入れるとグラフが表示されること",
+    "crumbs": [
+      "AWS",
+      "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_prometheus_cloudwatch.html#cloudwatch-による可視化",
+    "href": "AWS/springboot_prometheus_cloudwatch.html#cloudwatch-による可視化",
+    "title": "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順",
+    "section": "CloudWatch による可視化",
+    "text": "CloudWatch による可視化\nCloudWatch メトリクス画面から以下を確認：\n\n名前空間：SpringBootMetrics\nディメンション：instance\nメトリクス名：\n\njvm_memory_used_bytes\n\ntomcat_threads_busy_threads などが表示されていること\n\n\n\n確認作業：CloudWatch メトリクスが可視化できること\n\nCloudWatch → メトリクス → SpringBootMetrics を選択\n任意のメトリクスにチェックを入れ、グラフに表示されるか確認",
+    "crumbs": [
+      "AWS",
+      "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_prometheus_cloudwatch.html#ハマったポイント",
+    "href": "AWS/springboot_prometheus_cloudwatch.html#ハマったポイント",
+    "title": "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順",
+    "section": "ハマったポイント",
+    "text": "ハマったポイント\n\nspringbootactuator\n\npom.xmlに依存関係を記載する際、末尾に記載してエラーが発生\n\n対策：&lt;&gt;&lt;/&gt;の塊を確認して、内部に収まるように記載する\n\n\n\n\nprometheus\n\nprometheus.ymlの編集時、末尾に記載してprometheus起動時にエラー\n\nconfig等の項目は1ファイルに1つだけのため、内容を修正\n\n\n\n\ncloudwatchagent\n\n“source_labels”: [“job”]でlabel_matcherがprometheus.ymlで定義したjob名と異なる\n\n対策：job名を合わせる\n\n“dimensions”: [[“instance”]]を[[“instance”,“name”]]と記載\n\n対策：Cloudwatchのロググループからログを確認し、“dimensions”に”name”がないため、“name”を削除\n\n“metric_selectors”にエンドポイントの出力と異なる名前を記載\n\n対策：エンドポイントのログからメトリクスの名前を確認して修正",
+    "crumbs": [
+      "AWS",
+      "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+    ]
+  },
+  {
+    "objectID": "AWS/visualize.html",
+    "href": "AWS/visualize.html",
+    "title": "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順",
+    "section": "",
+    "text": "本記事の手順はChatGPT 4oでコードを作成して実機検証を行いました&gt; また本記事の作成はChatGPT 4oで原案を作成し、一部修正を行っていますbr&gt; 誤った内容が含まれている可能性があるため、重要な情報は確認するようにしてください。\n本ドキュメントでは、Amazon EC2 上に構築した Spring Boot アプリケーションのメトリクスを Prometheus 経由で収集し、CloudWatch Logs/メトリクスに連携することで可視化する手順をまとめます。\n対象とするメトリクスは以下の通りです：\n\nTomcat スレッド関連メトリクス\nJVM メモリ、GC、スレッド関連メトリクス",
+    "crumbs": [
+      "AWS",
+      "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+    ]
+  },
+  {
+    "objectID": "AWS/visualize.html#概要",
+    "href": "AWS/visualize.html#概要",
+    "title": "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順",
+    "section": "",
+    "text": "本記事の手順はChatGPT 4oでコードを作成して実機検証を行いました&gt; また本記事の作成はChatGPT 4oで原案を作成し、一部修正を行っていますbr&gt; 誤った内容が含まれている可能性があるため、重要な情報は確認するようにしてください。\n本ドキュメントでは、Amazon EC2 上に構築した Spring Boot アプリケーションのメトリクスを Prometheus 経由で収集し、CloudWatch Logs/メトリクスに連携することで可視化する手順をまとめます。\n対象とするメトリクスは以下の通りです：\n\nTomcat スレッド関連メトリクス\nJVM メモリ、GC、スレッド関連メトリクス",
+    "crumbs": [
+      "AWS",
+      "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+    ]
+  },
+  {
+    "objectID": "AWS/visualize.html#spring-boot-actuator-の設定",
+    "href": "AWS/visualize.html#spring-boot-actuator-の設定",
+    "title": "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順",
+    "section": "Spring Boot Actuator の設定",
+    "text": "Spring Boot Actuator の設定\napplication.properties に以下を追記し、Prometheus 向けメトリクス出力を有効化します。\nmanagement.endpoints.web.exposure.include=prometheus\nmanagement.endpoint.prometheus.enabled=true\nmanagement.metrics.export.prometheus.enabled=true\ncurl -s http://localhost:8080/actuator/prometheus | grep jvm curl -s http://localhost:8080/actuator/prometheus | grep tomcat",
+    "crumbs": [
+      "AWS",
+      "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+    ]
+  },
+  {
+    "objectID": "note/performance.html",
+    "href": "note/performance.html",
+    "title": "性能測定",
+    "section": "",
+    "text": "サーバーを運用する際はミドルウェアのログだけでなく、物理的なリソースの性能の把握が必要となる。 Linuxnには性能把握を行うためのコマンドが複数存在しているが、処理が軽いものから重いものまで複数存在する。",
+    "crumbs": [
+      "note",
+      "性能測定"
+    ]
+  },
+  {
+    "objectID": "note/performance.html#概要",
+    "href": "note/performance.html#概要",
+    "title": "性能測定",
+    "section": "",
+    "text": "サーバーを運用する際はミドルウェアのログだけでなく、物理的なリソースの性能の把握が必要となる。 Linuxnには性能把握を行うためのコマンドが複数存在しているが、処理が軽いものから重いものまで複数存在する。",
+    "crumbs": [
+      "note",
+      "性能測定"
     ]
   }
 ]

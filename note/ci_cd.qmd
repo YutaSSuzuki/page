@@ -1,0 +1,33 @@
+---
+title: "CI/CD"
+format: html
+---
+
+## 参考文献
+https://qiita.com/hiroaki-u/items/ac0c1fb00b78af208af8
+
+## 概要
+
+ソフトウェアの変更を常にテストして自動で本番環境にリリース可能な状態にしておく、ソフトウェア開発の手法。<br>
+引用元：https://codezine.jp/article/detail/11083<br>
+CIは「Continuous Integration」、CDは「Continuous Deliveryまたは Development」の意味<br>
+システム開発では作成したコードをコミットしてシステムに統合、テスト、デプロイを繰り返す必要がある。<br>
+これらの操作を手動で行うと非効率かつミスが起こるため、これらを自動で行うのがCI/CD
+
+## AWSにおけるCI/CDの技術要素
+
+AWSではCI/CDとしてCodeシリーズが挙げられる。いかがそのCodeシリーズ<br>
+* Code Commit
+* Code Build
+* Code Deploy
+* Code Pipeline
+
+これらに加え、EventBridgeとS3などを活用する。以下は1例<br>
+
+1. CodeCommitでマージが行われる
+2. EventBridgeがマージを景気にCodePipelineへ情報を送る
+3. CodePipelineはS3にソースアーティファクト（パイプライン内で処理されるファイル）を送信する。
+4. CodePiplineはCodeDeployへ処理を依頼し、アーティファクトファイルをデプロイ先に移動させる
+
+このようにコミットをするだけでその後の処理を自動で行ってくれるため、<br>
+変更をすぐに反映して結果を確認する事ができ、システム開発の速度向上が行える。

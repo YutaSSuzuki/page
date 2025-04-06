@@ -1,0 +1,281 @@
+---
+title: "Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順"
+format: html
+toc: true
+toc-depth: 2
+---
+
+本記事の手順はChatGPT 4oでコードを作成して実機検証を行いました<br>
+また本記事の作成はChatGPT 4oで原案を作成し、一部修正を行っています<br>
+誤った内容が含まれている可能性があるため、重要な情報は確認するようにしてください。
+
+## 概要
+
+本ドキュメントでは、Amazon EC2 上に構築した Spring Boot アプリケーションのメトリクスを Prometheus 経由で収集し、CloudWatch Logs/メトリクスに連携することで可視化する手順をまとめます。
+
+対象とするメトリクスは以下の通りです：
+
+- Tomcat スレッド関連メトリクス
+- JVM メモリ、GC、スレッド関連メトリクス
+
+---
+
+## 事前準備
+1. EC2を起動する
+2. IAMロールでcloudwatchを実行するためのロールを作成し、EC2にアタッチする
+3. EC2のセキュリティグループのインバウンドルールで、カスタムTCPの8080、9090ポートへのアクセスを許可する
+   1. SpringBootActuatorの設定と、prometheusの設定完了の確認に使用する。
+
+## Spring Boot Actuator の設定
+
+以下からSpring Boot Actuatorのサンプルアプリをダウンロードする。<br>
+
+サンプルアプリ(https://github.com/YutaSSuzuki/sample/blob/main/springboot-helloworld-2.7.4.zip)をEC2内に配置し、解凍する。<br>
+サンプルアプリの構成(Maven)
+``` css
+springboot-helloworld-2.7.4/
+├── pom.xml
+└── src/
+    └── main/
+        ├── java/
+        │   └── com/
+        │       └── example/
+        │           └── demo/
+        │               ├── DemoApplication.java
+        │               └── HelloController.java
+        └── resources/
+            └── application.properties
+```
+
+SpringBootActuatorを有効化するため、`pom.xml`に依存関係を追記する<br>
+xmlは<></>でひとかたまりであり、dependenciesの中に配置をしないとエラーになるため注意。
+
+```xml
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+<dependency>
+  <groupId>io.micrometer</groupId>
+  <artifactId>micrometer-registry-prometheus</artifactId>
+</dependency>
+```
+
+`application.properties` に以下を追記し、Prometheus 向けメトリクス出力を有効化します。<br>
+**`include=*`とするとすべての情報が公開され、セキュリティ的に問題のある内容まで公開されるため、必要な要素のみ有効化すること。**<br>
+prometheusはデフォルトで9090ポートを利用しているため注意。
+
+```properties
+# Actuator で Prometheus のみ公開
+management.endpoints.web.exposure.include=prometheus
+
+# Prometheus エンドポイントを有効にする
+management.endpoint.prometheus.enabled=true
+
+# Tomcat のスレッドプールメトリクスを有効にするための設定
+management.server.port=8080
+management.server.base-path=/actuator
+management.metrics.export.prometheus.enabled=true
+
+# Tomcat の JMX ベースメトリクスを有効にする
+server.tomcat.mbeanregistry.enabled=true
+```
+
+jarを作成し、デプロイする。下記コマンドはサンプルアプリを解凍したディレクトリで実施すること。
+
+``` bash 
+mvn clean package
+java -jar target/springboot-helloworld-2.7.4-0.0.1-SNAPSHOT.jar
+```
+
+### 確認作業：Spring Boot Actuator のメトリクス出力
+
+Spring Boot アプリを再起動後、アプリが機能していることを確認する。<br>
+`http://EC2のipアドレス:8080/hello`にアクセスし、「Hello from Spring Boot 2.7.4」が表示されればOK
+
+
+Spring Boot アプリを再起動後、次のエンドポイントが有効になっていることを確認します：
+
+```bash
+curl -s http://localhost:8080/actuator/prometheus | grep jvm
+curl -s http://localhost:8080/actuator/prometheus | grep tomcat
+```
+
+以下のような出力が出ればOK
+``` bash
+# HELP jvm_gc_live_data_size_bytes Size of long-lived heap memory pool after reclamation
+# TYPE jvm_gc_live_data_size_bytes gauge
+jvm_gc_live_data_size_bytes 0.0
+
+...
+```
+
+---
+
+## Prometheus の設定
+
+prometheus(https://prometheus.io/download/)のインストール
+
+``` bash
+wget prometheusのサイトからインストールしたいものをコピペ
+tar -xzvf ダウンロードしたprometheusのパス
+cd prometheus-*
+```
+
+
+`prometheus.yml` に以下の設定を追加します。<br>
+Cloudwatchの無料枠での監視の最短感覚が5分であるため、scrapeの感覚を5分で設定<br>
+SpringBootActuatorのエンドポイントを変更している場合はtargetのポート番号を変更する。<br>
+
+
+```yml
+global:
+  scrape_interval: 300s
+
+scrape_configs:
+  - job_name: 'springboot'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['localhost:8080']
+```
+
+Prometheus を起動します。
+
+```bash
+./prometheus --config.file=prometheus.yml &
+```
+
+### 確認作業：Prometheus がメトリクスを収集できていること
+
+ブラウザで以下にアクセス：
+
+```
+http://<EC2のパブリックIP>:9090/targets
+```
+
+
+
+- `springboot` job が `UP` 状態
+- `http://localhost:8080/actuator/prometheus` が表示されていることを確認
+  - 取得間隔が5分と長いため、少し待つ
+- ブラウザ上でGraphを押下し、`jvm`など検索してヒットするかを確認
+
+---
+
+
+
+## CloudWatch の設定
+
+EC2 インスタンスに CloudWatch Agent をインストールして起動するには、以下の手順を実行します。
+
+    ```bash
+    # 1. CloudWatch Agent のインストール
+    sudo yum install -y amazon-cloudwatch-agent
+
+    # 2. CloudWatch Agent のステータス確認
+    sudo systemctl status amazon-cloudwatch-agent
+    ```
+
+`/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json` に以下を設定：<br>
+インストール直後はファイルが無いため、作成する。<br>
+"prometheus_config_path": にPrometheus.ymlのパスを記載する<br>
+ハマる要素が多いため、末尾のハマったポイントを確認。
+
+```json
+{
+  "agent": {
+    "region": "ap-northeast-1"
+  },
+  "logs": {
+    "metrics_collected": {
+      "prometheus": {
+        "cluster_name": "springboot-app",
+        "log_group_name": "SpringBootPromMetrics",
+        "prometheus_config_path": "prometheus.ymlのパス",
+        "emf_processor": {
+          "metric_namespace": "SpringBootMetrics",
+          "metric_unit": {
+            "tomcat_threads_busy": "Count",
+            "tomcat_threads_current": "Count",
+            "tomcat_threads_config_max": "Count"
+          },
+          "metric_declaration": [
+            {
+              "source_labels": ["job"],
+              "label_matcher": "^springboot$",
+              "dimensions": [["instance"]],
+              "metric_selectors": [
+                "^tomcat_threads_busy_threads$",
+                "^tomcat_threads_current_threads$",
+                "^tomcat_threads_config_max_threads$",
+                "^jvm_memory_used_bytes$",
+                "^jvm_memory_max_bytes$",
+                "^jvm_memory_committed_bytes$",
+                "^jvm_gc_live_data_size_bytes$",
+                "^jvm_gc_pause_seconds_count$",
+                "^jvm_gc_pause_seconds_sum$",
+                "^jvm_threads_live_threads$",
+                "^jvm_threads_daemon_threads$"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```
+
+CloudWatch Agent の再起動：<br>
+
+
+```bash
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
+  -a fetch-config -m ec2 \
+  -c file:/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json -s
+```
+
+### 確認作業：ロググループが作成されていること
+
+- CloudWatch → ロググループ → `SpringBootPromMetrics` が表示されていること
+- `springboot` ストリームに JVM や Tomcat メトリクスが JSON 形式で出力されていること
+- Cloudwatchの画面でログにチェックを入れるとグラフが表示されること
+
+---
+
+## CloudWatch による可視化
+
+CloudWatch メトリクス画面から以下を確認：
+
+- 名前空間：`SpringBootMetrics`
+- ディメンション：`instance`
+- メトリクス名：  
+  - `jvm_memory_used_bytes`  
+  - `tomcat_threads_busy_threads` などが表示されていること
+
+### 確認作業：CloudWatch メトリクスが可視化できること
+
+1. CloudWatch → メトリクス → `SpringBootMetrics` を選択
+2. 任意のメトリクスにチェックを入れ、グラフに表示されるか確認
+
+## ハマったポイント
+
+### springbootactuator
+
+- pom.xmlに依存関係を記載する際、末尾に記載してエラーが発生
+  - 対策：<></>の塊を確認して、内部に収まるように記載する
+
+
+### prometheus
+
+- prometheus.ymlの編集時、末尾に記載してprometheus起動時にエラー
+  - config等の項目は1ファイルに1つだけのため、内容を修正
+  
+### cloudwatchagent
+
+- "source_labels": ["job"]でlabel_matcherがprometheus.ymlで定義したjob名と異なる
+  - 対策：job名を合わせる
+- "dimensions": [["instance"]]を[["instance","name"]]と記載
+  - 対策：Cloudwatchのロググループからログを確認し、"dimensions"に"name"がないため、"name"を削除
+-  "metric_selectors"にエンドポイントの出力と異なる名前を記載
+   -  対策：エンドポイントのログからメトリクスの名前を確認して修正

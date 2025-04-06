@@ -1,0 +1,41 @@
+---
+title: "SQL概要"
+format: html
+---
+
+## 参考文献
+
+https://qiita.com/CyberMergina/items/f889519e6be19c46f5f4
+
+## SQLとは
+
+SQL（Structured Query Language）はデータベースを管理、操作するための標準的なプログラム言語のこと。<br>
+リレーショナルデータベースで使用され、それを管理するための機能を追加したものがOracleやMySQLなどのミドルウェア。<br>
+SQLを使う場合はこのミドルウェアを通して活用する。<br>
+
+## SQLの操作方法の種類
+
+SQLにはDB使用者か、DB提供者かの視点で複数種類の操作方法に分類される。
+
+### DB使用者の命令：DML、TCL
+
+**DML(Data Manipulation Language)**<br>
+データ操作言語とも言い、データの閲覧、削除などができる。<br>
+CRUD（`SELECT`、`INSERT`、`UPDATE`、`DELETE`）というSQLで代表的な、命令はこれに分類される
+
+**TCL(Transaction Control Language)**<br>
+トランザクション（複数の処理を１つの処理として実行するときの単位）制御言語ともいう。<br>
+`COMMIT`や`ROLLBACK`などが該当する。
+
+### DB提供者視点の命令：DDLとDCL
+
+**DDL（Data Definition Language）**<br>
+データ定義言語ともいう。<br>
+テーブルの作成、削除、列の追加などができる。<br>
+`CREATE`,`ALTER`,`DROP`,`TRUNCATE`などが分類される。
+
+**DCL（Data Control Language）**<br>
+データ制御言語ともいう。<br>
+誰にテーブルの操作を許可するかなど、権限の設定を行うことができる。<br>
+`GRANT`や`REVOKE`などがこれに当たる。
+

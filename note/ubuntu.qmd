@@ -153,22 +153,3 @@ SSH接続を許可する
 `sudo ufw status` <br>
 firewallの開放状況を一覧表示する
 
-## Apatchのインストール
-
-`sudo apt install apache2`<br>
-Apacheのインストール、CentOSの場合httpdとなる。以下も同様
-
-`sudo ufw allow 'Apache'`<br>
-ポート80番の通信を許可し、ページの閲覧が可能なようにする。
-
-`sudo systemctl status apache2`<br>
-Apacheの状態確認、この段階ではinactiveになっている
-
-`sudo systemctl start apache2`<br>
-Apacheを起動する。起動を止めたい場合は`start`を`stop`に変える
-
-`sudo systemctl enable apache2`
-Apacheをシステムが起動した際、同時に起動できるようにしておく
-
-`sudo systemctl restart apache2`<br>
-Apacheを再起動する。Apacheのコンフィグを変えた場合にその都度使用する。

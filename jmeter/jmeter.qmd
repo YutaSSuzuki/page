@@ -1,0 +1,69 @@
+---
+title: "JMeter概要"
+format: html
+---
+
+## 参考文献
+[JMeter公式サイト](https://jmeter.apache.org/)
+
+## JMeter概要
+
+システムの性能試験で活用される負荷掛けツール、正式名称はApache JMeter<br>
+複数人から利用されるシステムは同時アクセスなどの負荷がかかり、負荷に耐えきれずに性能問題を起こすことがある。<br>
+例えばWebサイトの表示が遅い、エラーでアクセスできないなどが性能問題の一例である。<br>
+そこでシステムをリリースする前に、負荷に耐えきれるかの検証が必要になる。<br>
+このときに大量のアクセスによる負荷掛けを再現するツールがJMeterである。<br>
+
+## インストール方法
+
+JMeterはWindows上のJAVAで動き、インストールの必要がない。<br>
+以下はインストール手順<br>
+
+### OpenJDKのインストール
+
+JMeterはJAVAで動作するため、JAVAをインストールする必要がある。<br>
+JAVAはOracleが所持する有償のものと、OpenJDKというオープンソースの物がある。<br>
+個人で使う場合はどちらでも良いが、企業の場合OracleのJAVAを使うと全社員数分のユーザー料金を請求されるので注意。<br>
+ここではOpenJDKのインストールを例に説明する。<br>
+[OpenJDK](https://jdk.java.net/23/)のサイトにアクセスし、zipファイルをダウンロードする。<br>
+リンクと画像は2025年1月時点で最新のもの。適宜バージョンは確認して適したものをダウンロードすること。<br>
+![OpenJDKのダウンロードサイト](/static/openJDK.png)
+
+OpenJDKをC\Program Files下などに展開する。<br>
+環境変数を設定し、JAVA_HOMEとbinへのパスを追記する必要がある。<br>
+以下の手順で環境変数の設定画面へ移行<br>
+設定＞システム＞バージョン情報、システムの詳細設定を押下＞環境変数<br>
+
+JAVA_HOMEの追加<br>
+システム環境変数の新規を押下＞変数名：JAVA_HOME、変数値：OpenJDKまでのパスを追記<br>
+
+JAVAのパスの追加<br>
+システム環境変数のPathを選択し、編集を押下＞新規を押下＞`%JAVA_HOME%\bin`を追記<br>
+ついでに、解答したJMeterのbinまでのパスも追加しておくと、コマンドプロンプトから`jmeter`コマンドをどこでも使えるので便利
+
+
+### JMeterを公式サイトからダウンロードする
+
+[JMeter](https://jmeter.apache.org/download_jmeter.cgi)にアクセスし、Binariesをダウンロードする。.zipが楽<br>
+ダウンロード後ファイルをデスクトップなどに解答する。<br>
+サーバーで複数ユーザーなどで使う場合はCドライブ直下でも可<br>
+
+
+![JMeterダウンロード画面](/static/jmeter_download.png)
+
+
+ここまでやって`apache-jmeter-バージョン\bin\jmeter.bat`をダブルクリックして以下の画面が出れば成功
+
+![JMeter画面](/static/jmeter_home.png)
+
+### その他便利設定
+
+1. apache-jmeter-バージョン\にシナリオ、CSV、結果、グラフ格納用のディレクトリ作成
+2. JMeter.batのバックアップ作成
+   1. 日本語可などJMeter.batを直接編集するため
+3. JMeter.batを編集
+   1. set JMETER_LANGUAGE=-Duser.language="ja" -Duser.region="JP"
+
+## 使用方法
+
+JMeterでは負荷掛けをするためのスクリプトをシナリオと呼び、ブラウザ上の画面を操作してシナリオを作成していく。<br>ls

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Yuta Suzuki - クラウドを活用したPCの引っ越し</title>
+<title>Yuta Suzuki - SQL処理方式</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,90 +105,12 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">クラウドを活用したPCの引っ越し</h1>
-        </a>     
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../"><img src="../static/favicon.png" height="28" vertical-align="text-bottom"> Yuta Suzuki</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HOME</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">note</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../note/replace_pc.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">クラウドを活用したPCの引っ越し</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../note/scss.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SCSSの書き方</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">AWS</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../AWS/setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AWS初期設定</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -162,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">クラウドを活用したPCの引っ越し</h1>
+<h1 class="title">SQL処理方式</h1>
 </div>
 
 
@@ -179,107 +135,69 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="背景" class="level2">
-<h2 class="anchored" data-anchor-id="背景">背景</h2>
-<p>使用していたゲーミングPCが10才を迎え、性能と動作が怪しくなったたため、新しいゲーミングPCを購入した。<br> それに伴いデータ移行の必要性が出たのだが、古いPCはデータ構造が汚くそのまま移行したくない。<br> 古いPCはLinux PCとして運用する予定だったため、ストレージを外して付け直しするのも面倒だった。<br> 移行用のHDD等を買うにしても、この少しの間しか使わないものにお金をかけたくない。<br> このような状況下で、GoogleDriveでは１ヶ月間無料で容量を２Tまでアップできることを知った。<br> そこでクラウドを活用したデータ移行を試みた。</p>
+<section id="参考文献" class="level2">
+<h2 class="anchored" data-anchor-id="参考文献">参考文献</h2>
+<p>Oracleの公式DOCS<br> https://docs.oracle.com/cd/F19136_01/tgsql/introduction-to-sql-tuning.html#GUID-B653E5F3-F078-4BBC-9516-B892960046A2</p>
+<p>最適化の補足説明<br> https://kemboooo.hatenablog.com/entry/2023/05/13/145554</p>
+<p>DMLとDDLの違いの説明<br> https://qiita.com/zhao-xy/items/204c902dde45bf206ff5</p>
 </section>
-<section id="準備" class="level2">
-<h2 class="anchored" data-anchor-id="準備">準備</h2>
-<p>主に２種類の準備を行った。</p>
-<ul>
-<li>データの選別</li>
-<li>インストールするソフトのリストアップ</li>
-</ul>
-<section id="データの選別" class="level3">
-<h3 class="anchored" data-anchor-id="データの選別">データの選別</h3>
-<p>再取得が不可能もしくは、時間がかかるデータを中心に以下のデータをクラウドにアップロードした。</p>
-<ul>
-<li>約500曲以上の音楽データ</li>
-<li>音楽、動画の編集データ</li>
-<li>写真</li>
-<li>ノベルゲームのセーブデータ
-<ul>
-<li>ゲームによってセーブデータの場所が異なるため、データのパスをインストールするソフトのリストに記載した。</li>
-</ul></li>
-</ul>
-<p>以上のデータ(合計100G程度)を光回線の有線接続を使って1時間程度でアップロードを行った。</p>
-</section>
-<section id="インストールするソフトのリストアップ" class="level3">
-<h3 class="anchored" data-anchor-id="インストールするソフトのリストアップ">インストールするソフトのリストアップ</h3>
-<p>新PCは何もソフトが入っていない状態から始める予定であった。<br> いれる予定のフリーソフトなどをMarkdownファイルにまとめ、GitHub上にアップロードしてセットアップの効率化を図った。<br> またおすすめのフリーソフトはyoutubeなどで調べた。</p>
-<p>参考になった動画</p>
-<ul>
-<li>https://www.youtube.com/<span class="citation" data-cites="pragraa/videos">@pragraa/videos</span></li>
-<li>https://www.youtube.com/watch?v=WJGhky4Ikkw</li>
-</ul>
-</section>
-</section>
-<section id="移行" class="level2">
-<h2 class="anchored" data-anchor-id="移行">移行</h2>
-<p>全体として４時間程度で終了した。<br> 流れは以下の通り</p>
+<section id="sqlの処理方式" class="level2">
+<h2 class="anchored" data-anchor-id="sqlの処理方式">SQLの処理方式</h2>
+<p>SQLは以下の手順を経て実行される。<br> 1の手順の後2,3をスキップして実行されるものを<strong>ソフトパース</strong>、<br> 2,3を経て実行されるものを<strong>ハードパース</strong>という。</p>
 <ol type="1">
-<li>PCの初期設定（ユーザー登録など）</li>
-<li>chormeのインストール</li>
-<li>GoogleDriveからアップロードしたデータをダウンロード</li>
-<li>Adobeなどのソフトのインストール</li>
-<li>編集ファイルをAdobeで開き、編集できることを確認</li>
-<li>セーブデータをゲームファイル内に挿入し、起動確認</li>
-</ol>
-<p>2までは問題なく進んだが、3の部分で合計30分程度の時間がかかった。<br> 6は問題なく、前回の続きからゲームを起動する事ができた。<br></p>
-</section>
-<section id="移行時のトラブル" class="level2">
-<h2 class="anchored" data-anchor-id="移行時のトラブル">移行時のトラブル</h2>
-<p>移行工程5で一部の曲が編集ソフト上でリンク切れになる問題が発生した。<br> 原因の曲を調べると、ダウンロードして展開したファイルの3割で文字化けが発生していた。<br> それらの曲のリンクを指定したところ、曲が認識されるようになった。<br> 曲のファイルが文字化けしたことでAdobeのソフトが認識できなくなったと考えられる。<br></p>
-<section id="対策" class="level3">
-<h3 class="anchored" data-anchor-id="対策">対策</h3>
-<p><a href="https://7-zip.opensource.jp/">7zip</a>をインストールし、ディレクトリの解凍を7zipで行った。<br> 7zipでの解凍で文字化けを5%程度まで抑える事ができた。<br> Win11の標準解凍では30%程度文字化けがあったため、7zipの方が望ましいと考えられる。<br> 文字化けしたファイルは全ファイルの解凍後10個程度であったため、個別でリンクを指定した。<br></p>
-</section>
-<section id="後日談" class="level3">
-<h3 class="anchored" data-anchor-id="後日談">後日談</h3>
-<p>後日対応するファイルを確認したところ、文字化けが治っていたため、時間経過で解決する問題だったのかもしれない。<br></p>
-<p>問題の原因を調べたところ、２つの原因があることがわかった。</p>
-<ul>
-<li>文字コードの違い
-<ul>
-<li>Windowsでは「Shift-JIS」が、Macでは「UTF-8」が使われているため、異なるOSでデータをやり取りすると文字化けを起こす</li>
-</ul></li>
-<li>解凍ソフトの問題
-<ul>
-<li>原因は不明だが、Windows標準の解凍ソフトと、「LhacaPlus」というソフトでの解凍で文字化けが起こることがあるらしい</li>
-</ul></li>
-</ul>
-<p>今回はWin10とwin11のソフト交換であり、7zipを使ったが、10程度のファイルで文字化けが起こった。<br> 問題の完全解決には至っていないが、２つの問題に対しては「7zip」か「Explzh」の活用が有効なもよう</p>
-<p>参考サイト</p>
-<ul>
-<li><a href="https://cadvance-review.netsbizlife.com/windows11%E3%81%A7zip%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E5%90%8D%E3%82%84zip%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D%E3%81%8C%E6%96%87%E5%AD%97%E5%8C%96%E3%81%91%E3%81%97%E3%81%9F%E6%99%82/">WindowsでZIPフォルダ名やZIPファイル名が文字化けした時の対処方法</a></li>
-<li><a href="https://recoverit.wondershare.jp/file-repair/unzipped-zip-files-are-garbled.html">Zipファイルを解凍すると文字化けになった！その原因と対処法は？</a></li>
-</ul>
-</section>
-</section>
-<section id="反省" class="level2">
-<h2 class="anchored" data-anchor-id="反省">反省</h2>
-<p>以下の点で反省事項がある。</p>
+<li>SQL文の解析
 <ol type="1">
-<li>休憩時間を取らなかった</li>
-<li>新PCへの移行手順をまとめていなかった</li>
-<li>インストールするソフトのリンクを用意していなかった</li>
-<li>ディレクトリ設定法を調べて置かなかった</li>
+<li>構文チェック</li>
+<li>セマンティックスチェック</li>
+<li>共有プールチェック</li>
+</ol></li>
+<li>最適化</li>
+<li>行ソース生成</li>
+<li>実行</li>
 </ol>
-<section id="休憩時間について" class="level3">
-<h3 class="anchored" data-anchor-id="休憩時間について">休憩時間について</h3>
-<p>PCの初期設定ではやることが多く、思った以上に時間と気力が奪われる。<br> ここの作業は簡単なのだが、それをいくつもやると疲れが溜まってくる。<br> そして疲れにより作業効率が極端に落ちたため、１時間に１回の休憩は必要であった。</p>
 </section>
-<section id="移行手順書の必要性について" class="level3">
-<h3 class="anchored" data-anchor-id="移行手順書の必要性について">移行手順書の必要性について</h3>
-<p>可能な限り思考を減らすために必要。<br> 移行時にはやるべきことが多く、疲れが溜まりやすいため疲れないようにする必要がある。<br> インストールするソフトを決めるだけでは、どれからインストールするかを考えてしまい、時間と体力の無駄につながった。</p>
+<section id="ソフトパース" class="level2">
+<h2 class="anchored" data-anchor-id="ソフトパース">ソフトパース</h2>
+<p>SQL文の解釈を伴わない実行方法のこと。<br> SQLの実行までに最適化と行ソース生成を行わないため、実行速度が早くなる。<br></p>
+<section id="構文チェック" class="level3">
+<h3 class="anchored" data-anchor-id="構文チェック">1-1 構文チェック</h3>
+<p>SQL文内にスペルがないかをチェックする。<br> 下記の例ではFROMをFORMとスペルミスしている。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>SQL<span class="op">&gt;</span> <span class="kw">SELECT</span> <span class="op">*</span> FORM employees;</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> FORM employees</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="op">*</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ERROR <span class="kw">at</span> line <span class="dv">1</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ORA<span class="op">-</span><span class="dv">00923</span>: <span class="kw">FROM</span> keyword <span class="kw">not</span> found <span class="kw">where</span> expected</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="インストールするソフトのリンク準備" class="level3">
-<h3 class="anchored" data-anchor-id="インストールするソフトのリンク準備">インストールするソフトのリンク準備</h3>
-<p>思考を減らすために必要。<br> 一部のソフトは偽のリンクなどがあるため、正しいリンクか確認するのに負担がかかった。<br> またソフトのリンクを探すだけでも手間なので、事前にマークダウンにまとめておくべきだった。</p>
+<section id="セマンティクスチェック" class="level3">
+<h3 class="anchored" data-anchor-id="セマンティクスチェック">1-2 セマンティクスチェック</h3>
+<p>文内のオブジェクト及び列が存在するかなど、文の意味が有効化チェックする。<br> 下記の例では存在しないテーブルを指定することでエラーが生じている。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SQL<span class="op">&gt;</span> <span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> nonexistent_table;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> nonexistent_table</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>              <span class="op">*</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>ERROR <span class="kw">at</span> line <span class="dv">1</span>:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ORA<span class="op">-</span><span class="dv">00942</span>: <span class="kw">table</span> <span class="kw">or</span> <span class="kw">view</span> does <span class="kw">not</span> exist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="ディレクトリ設定について" class="level3">
-<h3 class="anchored" data-anchor-id="ディレクトリ設定について">ディレクトリ設定について</h3>
-<p>インストール時の負荷軽減に必要。<br> インストールする際曲はDドライブに置くなど、データ構造は事前に決めてあった。<br> しかしwin11では標準設定でCドライブへのインストールになる仕様だった。<br> そのためitunesなどはCドライブにインストールされ、曲もその中に入れられる事があった。<br> それらを修正するのに時間がかかったため、ソフト等がインストール、ダウンロードされる場所の設定方法をまとめておくべきだった。</p>
+<section id="共有プールチェック" class="level3">
+<h3 class="anchored" data-anchor-id="共有プールチェック">1-3 共有プールチェック</h3>
+<p>SQL文のハードパースが不要か判定している。<br> SQL文は各文ごとにSQLIDとしてハッシュ値が発行され、共有プールに格納される。<br> SQL文が発行された場合、その文のハッシュ値を共有SQL領域内で検索し、既に解析済みか判定する。<br> 解析済みの場合最適化と行ソース生成をスキップしてSQL文が実行される。</p>
+<p>共有プール内に同じハッシュがある場合、セマンティクスシェック、環境チェックを行い同じ意味の文であるかを解析する。<br> 同じ意味であるかは構文の一致だけではなく、文の記法や内容による。<br> 例えば以下のSQL文を２人のユーザーが実行する場合、異なる意味のSQLとしてハード解析が行われる。</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> my_table ( some_col <span class="dt">INTEGER</span> );</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> my_table;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>これはSELECT文が同じであっても、別々のmy_tableとして解釈されるためである。<br> 一方で以下の例の場合１文目は異なる文として認識されるが、２文目は同じ文として認識される。</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> my_name <span class="kw">FROM</span> my_tabele <span class="kw">where</span> <span class="op">=</span> <span class="ot">"Tom"</span>;</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> my_name <span class="kw">FROM</span> my_tabele <span class="kw">where</span> <span class="op">=</span> <span class="ch">:1</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ハードパース" class="level2">
+<h2 class="anchored" data-anchor-id="ハードパース">ハードパース</h2>
+<p>SQL文の解釈を伴う実行方法のこと。<br> すべてのSQLは１度必ずハードパースが行われる。<br> ソフトパースより時間がかかるため、可能な限りハードパースは減らしたい。</p>
+<section id="sqlの最適化" class="level3">
+<h3 class="anchored" data-anchor-id="sqlの最適化">2 SQLの最適化</h3>
+<p>オプティマイザが複数の実行計画を作成し、その中から最もコストの小さい実行計画を選択して行ソース生成に渡す。<br> DML（データ操作を行う言語）とDDL（データ定義を行う言語）でそれぞれ実行手順が異なる。<br> <strong>DMLは最適化が行われれる</strong>が、DDLは一部例外を除いて基本的に最適化が行われない。</p>
+</section>
+<section id="行ソース生成" class="level3">
+<h3 class="anchored" data-anchor-id="行ソース生成">3 行ソース生成</h3>
+<p>オプティマイザから受け取った最適な実行計画を下に、SQLの実行に使用するデータ構造（行ソースツリー）を出力する。<br> 行ソースツリーには以下のものが含まれる。<br> * SQL文によって参照される表の順序 * 外部表はDEPT表、内部表はEMP表など * SQL分で言及される各表のアクセス方法 * DEPT表へのアクセスはINDEX UNIQUE SCAN、EMP表はINDEX RANGE SCANなど * SQL文の結合操作の影響を受ける表の結合方法 * ネステッドループ結合など * フィルタ、ソートまたは集計などのデータ操作 * DEPTNO=10でフィルタするなど</p>
 
 
 </section>

@@ -1,0 +1,111 @@
+---
+title: "SQLチューニング"
+format: html
+---
+
+## 参考文献
+
+ビューとマテリアライズド・ビュー<br>
+https://qiita.com/ryo-ka-notti/items/341310a6f0673fa2a7b5
+
+chatGPT
+
+
+## 概要
+
+Oracleではオブジェクトに種類があり、種類ごとに適用できる関数が違う。<br>
+各オブジェクトの概要をまとめる。<br>
+1. テーブル
+2. ビュー
+3. インデックス
+4. シーケンス
+5. シノニム
+6. トリガー
+7. プロシージャ
+8. ファンクション
+9. パッケージ
+10. マテリアライズド・ビュー
+11. ユーザー定義型
+12. ロール
+13. 同義語
+
+## テーブル
+
+データを行と列で格納する基本的なデータ構造。各列にはデータ方が指定される。
+
+``` sql
+-- テーブルの作成
+CREATE TABLE employees (
+  employee_id NUMBER PRIMARY KEY,
+  first_name VARCHAR2(50),
+  last_name VARCHAR2(50),
+  hire_date DATE
+);
+
+-- テーブルにデータを挿入
+INSERT INTO employees (employee_id, first_name, last_name, hire_date)
+VALUES (1, 'John', 'Doe', TO_DATE('2023-08-01', 'YYYY-MM-DD'));
+
+```
+
+## ビュー、マテリアライズド・ビュー
+
+SELECT文で呼び出される、テーブルからデータを取得する仮想的なテーブル。<br>
+テーブルとは異なり実態を持たないため、軽い。<br>
+
+マテリアライズド・ビューはビューの結果をメモリ上にキャッシュしたもの。<br>
+ビューは実行のたびにSELECT文を実行しデータを取得しているが、<br>
+マテリアライズド・ビューは実行結果を保存している。<br>
+主キーやインデックスの取得が可能だが、最新のデータ取得にはインデックス作成が必要。<br>
+
+ビューにはDISTINCTされていないなど制限もある。<br>
+```sql
+-- ビューの作成
+CREATE VIEW emp_view AS
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE hire_date > TO_DATE('2020-01-01', 'YYYY-MM-DD');
+
+-- ビューの利用
+SELECT * FROM emp_view;
+
+
+-- マテリアライズド・ビューの作成
+CREATE MATERIALIZED VIEW emp_mv
+AS SELECT employee_id, first_name, last_name FROM employees;
+
+-- マテリアライズド・ビューのリフレッシュ
+EXEC DBMS_MVIEW.REFRESH('emp_mv');
+```
+
+## インデックス
+
+テーブル内のデータ検索を高速化するためのデータ構造<br>
+データ数が多い場合にインデックスを使用するとフルスキャンよりも早く実行できる。<br>
+
+``` sql
+-- インデックスの作成
+CREATE INDEX idx_employee_last_name ON employees (last_name);
+
+-- インデックスの削除
+DROP INDEX idx_employee_last_name;
+```
+
+## シーケンス
+
+1,2,3...と連続した数値を重複なく作成するために使用されるオブジェクト<br>
+通販などで注文番号を作成する際に、ユーザーごとに異なる値を採番するために用いられる。<br>
+
+``` sql
+-- シーケンスの作成
+CREATE SEQUENCE emp_seq
+START WITH 1
+INCREMENT BY 1;
+
+-- シーケンスから次の値を取得
+SELECT emp_seq.NEXTVAL FROM dual;
+```
+次の番号を取得するためには、.NEXTVALを使用しFROM句にDUAL表を使用する。<br>
+シケーンスの次の番号はメモリ上にキャッシュされているため、再起動をしたりすると採番が飛ぶ事がある。<br>
+シーケンスはロールバックしないため、トランザクション中にOracleが落ちても番号が戻ることはない。
+
