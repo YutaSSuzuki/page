@@ -1,0 +1,111 @@
+---
+title: "Hinemosインストール要件と準備"
+format: html
+---
+
+## 概要
+
+本ドキュメントでは、Hinemosマネージャーをインストールするために必要な構成要素・要件・事前準備について整理する。
+
+---
+
+## 1. 対象バージョン
+
+- Hinemos 7.1
+- OS: RHEL 8.6 / CentOS 7 / Amazon Linux 2（一部は動作保証外）
+- Java: OpenJDK 1.8
+- DB: PostgreSQL（Hinemosバンドル含む）
+
+---
+
+## 2. 必要な構成要素
+
+| 項目              | 説明 |
+|-------------------|------|
+| OS                | RHEL8.6推奨。SELinuxは無効化すること。 |
+| Java              | OpenJDK 1.8（HinemosはJava 17では動作しない） |
+| PostgreSQL        | Hinemosマネージャーのデータストア（バンドル版含む） |
+| Hinemosマネージャー | 管理対象の収集・可視化・通知を行う中心システム |
+| Hinemosクライアント | 管理操作用GUIツール（Windows/macOS/Linux対応） |
+| Hinemosエージェント | 管理対象ノードに導入する収集用エージェント（任意） |
+
+---
+
+## 3. ポート要件
+
+| 用途               | ポート番号 | 備考 |
+|--------------------|------------|------|
+| Web管理画面（Tomcat） | 8080       | CloudWatch/ブラウザ接続用 |
+| PostgreSQL          | 5432       | 内部DB用（Hinemos Manager同一ホスト） |
+| Hinemos Agent通信   | 24005      | AgentとManagerの間で通信 |
+
+---
+
+## 4. セキュリティグループ設定（AWS想定）
+
+| ポート | プロトコル | ソース               | 用途             |
+|--------|------------|----------------------|------------------|
+| 22     | TCP        | 任意のアクセス元IP   | SSHログイン      |
+| 8080   | TCP        | 管理PCのIPアドレス   | Webクライアント接続 |
+| 24005  | TCP        | 管理対象ノードのIP   | Hinemos Agent通信用 |
+
+---
+
+## 5. 事前準備手順（RHEL 8.6想定）
+
+```bash
+# SELinuxの無効化
+sudo setenforce 0
+sudo sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/selinux/config
+
+# Java 1.8 のインストール
+sudo dnf install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel
+
+# unzip等の補助ユーティリティ
+sudo dnf install -y unzip wget net-tools nmap-ncat
+
+# swapの設定（必要に応じて）
+sudo dd if=/dev/zero of=/var/swapfile bs=1M count=2048
+sudo chmod 600 /var/swapfile
+sudo mkswap /var/swapfile
+sudo swapon /var/swapfile
+```
+
+---
+
+## 6. HinemosインストールRPMの入手
+
+以下より Hinemos 7.1 の各種インストーラをダウンロード：
+
+- https://www.hinemos.info/download
+
+| 種別             | ファイル名例 |
+|------------------|--------------|
+| Hinemos Manager  | `hinemos-7.1-manager-*.rpm` |
+| Hinemos Web      | `hinemos-7.1-web-*.rpm`     |
+| Hinemos Agent    | `hinemos-7.1-agent-*.rpm`   |
+
+---
+
+## 7. インストール順序の概要
+
+1. Java環境の確認
+2. Hinemos Manager のインストール
+3. PostgreSQL が起動していることを確認（または内包DBを使用）
+4. Hinemos Web（Tomcat）のインストール
+5. サービス起動とポート確認
+6. Hinemos Client から接続して動作確認
+
+---
+
+## 8. 備考
+
+- クライアント（Windows）に Hinemos Client を導入し、Manager に接続できるようにする
+- JMX監視やジョブ監視などの追加設定はインストール後に行う
+
+---
+
+## 参考リンク
+
+- Hinemos公式サイト：https://www.hinemos.info/
+- インストールガイド（PDF）：https://www.hinemos.info/download/manual

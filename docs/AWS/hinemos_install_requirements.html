@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Yuta Suzuki - Web三層モデル</title>
+<title>Yuta Suzuki - Hinemosインストール要件と準備</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -81,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Web三層モデル</h1>
+          <h1 class="quarto-secondary-nav-title">Hinemosインストール要件と準備</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -113,23 +147,59 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">note</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../note/ap_web.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Webアプリ</span></a>
+  <a href="../note/ci_cd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CI/CD</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">三層連携</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/front_back.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">フロントエンド＿バックエンド</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">メモリー</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../note/object_programing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">オブジェクト指向</span></a>
+ <span class="menu-text">オブジェクト指向概要</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/object_programing2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">オブジェクト指向の三大要素</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/performance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">性能測定</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/reinstall_ubuntu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ubuntuの再構築</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -146,37 +216,37 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../note/tomcat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tomcat</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../note/ubuntu.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linuxサーバー構築に向けた準備</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../note/web.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Web三層モデル</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">AWS</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../AWS/About_AWS.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AWS概要</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/hinemos_install_requirements.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Hinemosインストール要件と準備</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/iam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IAM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -187,8 +257,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../AWS/memo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SAAのメモ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../AWS/network.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ネットワーク</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/s3_secrity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">S3アクセス制御</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -205,8 +287,38 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../AWS/springboot_hinemos_monitoring_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spring BootアプリをHinemosで監視するための設定手順</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/springboot_prometheus_cloudwatch.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/ssm_rdp_connection_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SSM接続</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../AWS/strage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AWSストレージ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/strage_type.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ブロックストレスとオブジェクトストレージ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/vpc_internet_access_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VPC構築</span></a>
   </div>
 </li>
       </ul>
@@ -222,7 +334,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Web三層モデル</h1>
+<h1 class="title d-none d-lg-block">Hinemosインストール要件と準備</h1>
 </div>
 
 
@@ -241,8 +353,205 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="概要" class="level2">
 <h2 class="anchored" data-anchor-id="概要">概要</h2>
-<p>Web三層モデルとは、WebアプリをWebサーバー、APサーバー、DBサーバーに分けて構築するモデルのこと。<br></p>
-<p>https://qiita.com/xyz666/items/387251d0aee41a25fec1</p>
+<p>本ドキュメントでは、Hinemosマネージャーをインストールするために必要な構成要素・要件・事前準備について整理する。</p>
+<hr>
+</section>
+<section id="対象バージョン" class="level2">
+<h2 class="anchored" data-anchor-id="対象バージョン">1. 対象バージョン</h2>
+<ul>
+<li>Hinemos 7.1</li>
+<li>OS: RHEL 8.6 / CentOS 7 / Amazon Linux 2（一部は動作保証外）</li>
+<li>Java: OpenJDK 1.8</li>
+<li>DB: PostgreSQL（Hinemosバンドル含む）</li>
+</ul>
+<hr>
+</section>
+<section id="必要な構成要素" class="level2">
+<h2 class="anchored" data-anchor-id="必要な構成要素">2. 必要な構成要素</h2>
+<table class="table">
+<colgroup>
+<col style="width: 76%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OS</td>
+<td>RHEL8.6推奨。SELinuxは無効化すること。</td>
+</tr>
+<tr class="even">
+<td>Java</td>
+<td>OpenJDK 1.8（HinemosはJava 17では動作しない）</td>
+</tr>
+<tr class="odd">
+<td>PostgreSQL</td>
+<td>Hinemosマネージャーのデータストア（バンドル版含む）</td>
+</tr>
+<tr class="even">
+<td>Hinemosマネージャー</td>
+<td>管理対象の収集・可視化・通知を行う中心システム</td>
+</tr>
+<tr class="odd">
+<td>Hinemosクライアント</td>
+<td>管理操作用GUIツール（Windows/macOS/Linux対応）</td>
+</tr>
+<tr class="even">
+<td>Hinemosエージェント</td>
+<td>管理対象ノードに導入する収集用エージェント（任意）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="ポート要件" class="level2">
+<h2 class="anchored" data-anchor-id="ポート要件">3. ポート要件</h2>
+<table class="table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 31%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>用途</th>
+<th>ポート番号</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Web管理画面（Tomcat）</td>
+<td>8080</td>
+<td>CloudWatch/ブラウザ接続用</td>
+</tr>
+<tr class="even">
+<td>PostgreSQL</td>
+<td>5432</td>
+<td>内部DB用（Hinemos Manager同一ホスト）</td>
+</tr>
+<tr class="odd">
+<td>Hinemos Agent通信</td>
+<td>24005</td>
+<td>AgentとManagerの間で通信</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="セキュリティグループ設定aws想定" class="level2">
+<h2 class="anchored" data-anchor-id="セキュリティグループ設定aws想定">4. セキュリティグループ設定（AWS想定）</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>ポート</th>
+<th>プロトコル</th>
+<th>ソース</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>22</td>
+<td>TCP</td>
+<td>任意のアクセス元IP</td>
+<td>SSHログイン</td>
+</tr>
+<tr class="even">
+<td>8080</td>
+<td>TCP</td>
+<td>管理PCのIPアドレス</td>
+<td>Webクライアント接続</td>
+</tr>
+<tr class="odd">
+<td>24005</td>
+<td>TCP</td>
+<td>管理対象ノードのIP</td>
+<td>Hinemos Agent通信用</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="事前準備手順rhel-8.6想定" class="level2">
+<h2 class="anchored" data-anchor-id="事前準備手順rhel-8.6想定">5. 事前準備手順（RHEL 8.6想定）</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SELinuxの無効化</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> setenforce 0</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sed <span class="at">-i</span> <span class="st">'s/^SELINUX=.*/SELINUX=disabled/'</span> /etc/selinux/config</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Java 1.8 のインストール</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install <span class="at">-y</span> java-1.8.0-openjdk java-1.8.0-openjdk-devel</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># unzip等の補助ユーティリティ</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install <span class="at">-y</span> unzip wget net-tools nmap-ncat</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># swapの設定（必要に応じて）</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dd if=/dev/zero of=/var/swapfile bs=1M count=2048</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod 600 /var/swapfile</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkswap /var/swapfile</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> swapon /var/swapfile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="hinemosインストールrpmの入手" class="level2">
+<h2 class="anchored" data-anchor-id="hinemosインストールrpmの入手">6. HinemosインストールRPMの入手</h2>
+<p>以下より Hinemos 7.1 の各種インストーラをダウンロード：</p>
+<ul>
+<li>https://www.hinemos.info/download</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>種別</th>
+<th>ファイル名例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hinemos Manager</td>
+<td><code>hinemos-7.1-manager-*.rpm</code></td>
+</tr>
+<tr class="even">
+<td>Hinemos Web</td>
+<td><code>hinemos-7.1-web-*.rpm</code></td>
+</tr>
+<tr class="odd">
+<td>Hinemos Agent</td>
+<td><code>hinemos-7.1-agent-*.rpm</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="インストール順序の概要" class="level2">
+<h2 class="anchored" data-anchor-id="インストール順序の概要">7. インストール順序の概要</h2>
+<ol type="1">
+<li>Java環境の確認</li>
+<li>Hinemos Manager のインストール</li>
+<li>PostgreSQL が起動していることを確認（または内包DBを使用）</li>
+<li>Hinemos Web（Tomcat）のインストール</li>
+<li>サービス起動とポート確認</li>
+<li>Hinemos Client から接続して動作確認</li>
+</ol>
+<hr>
+</section>
+<section id="備考" class="level2">
+<h2 class="anchored" data-anchor-id="備考">8. 備考</h2>
+<ul>
+<li>クライアント（Windows）に Hinemos Client を導入し、Manager に接続できるようにする</li>
+<li>JMX監視やジョブ監視などの追加設定はインストール後に行う</li>
+</ul>
+<hr>
+</section>
+<section id="参考リンク" class="level2">
+<h2 class="anchored" data-anchor-id="参考リンク">参考リンク</h2>
+<ul>
+<li>Hinemos公式サイト：https://www.hinemos.info/</li>
+<li>インストールガイド（PDF）：https://www.hinemos.info/download/manual</li>
+</ul>
 
 
 </section>

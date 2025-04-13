@@ -1,0 +1,123 @@
+---
+title: "Spring BootアプリをHinemosで監視するための設定手順"
+format: html
+---
+
+## 概要
+
+本ドキュメントでは、Spring Bootで構築されたサンプルアプリケーションをHinemosでJMX監視するために、**Spring Boot側で実施すべき設定手順**を記載する。
+
+---
+
+## 1. 前提条件
+
+- Spring Boot バージョン：2.7.4
+- 起動方法：`mvn spring-boot:run` または `java -jar`
+- Hinemosサーバーから監視対象（Spring Boot）へのネットワーク疎通が可能
+- Java 8（OpenJDK 1.8）を使用している
+- EC2などのクラウド環境の場合、ポート開放（JMX）を実施済み
+
+---
+
+## 2. JMXを有効にしてSpring Bootを起動
+
+Spring BootをJMX対応で起動するには、以下のJVMオプションを設定する。
+
+```bash
+export MAVEN_OPTS="-Dcom.sun.management.jmxremote \
+-Dcom.sun.management.jmxremote.port=9010 \
+-Dcom.sun.management.jmxremote.authenticate=false \
+-Dcom.sun.management.jmxremote.ssl=false \
+-Dcom.sun.management.jmxremote.rmi.port=9010 \
+-Djava.rmi.server.hostname=$(hostname -I | awk '{print $1}')"
+```
+
+その後、以下のように起動する。
+
+```bash
+mvn spring-boot:run
+```
+
+または `.jar` を起動する場合は以下のようにする。
+
+```bash
+java $MAVEN_OPTS -jar target/springboot-helloworld-2.7.4.jar
+```
+
+---
+
+## 3. ポート開放（必要に応じて）
+
+セキュリティグループやfirewalldで **ポート9010を開放**しておく必要がある。
+
+### AWSセキュリティグループ例
+
+| タイプ | プロトコル | ポート範囲 | ソースIP |
+|--------|------------|------------|----------|
+| カスタムTCP | TCP | 9010 | HinemosサーバーのIP（例：172.31.37.79） |
+
+---
+
+## 4. 動作確認コマンド
+
+Hinemosサーバー側から以下のコマンドで疎通を確認する。
+
+```bash
+nc -vz <SpringBootサーバーのIP> 9010
+```
+
+成功すると：
+
+```
+Connection to <IP> 9010 port [tcp/*] succeeded!
+```
+
+---
+
+## 5. 起動確認（JMXが効いているか）
+
+```bash
+ss -lntp | grep 9010
+```
+
+出力例：
+
+```
+LISTEN 0      50     *:9010    *:*    users:(("java",pid=12345,...))
+```
+
+---
+
+## 6. トラブルシューティング
+
+| 症状 | 原因と対策 |
+|------|------------|
+| `nc` が TIMEOUT | セキュリティグループやファイアウォールが未開放 |
+| `nc` が Connection refused | Spring BootがJMXポートでLISTENしていない（MAVEN_OPTS不足） |
+| `ss | grep 9010` に何も出ない | Spring Boot再起動 or 起動スクリプトの見直し |
+
+---
+
+## 7. 参考：起動スクリプト例（start.sh）
+
+```bash
+#!/bin/bash
+export MAVEN_OPTS="-Dcom.sun.management.jmxremote \
+-Dcom.sun.management.jmxremote.port=9010 \
+-Dcom.sun.management.jmxremote.authenticate=false \
+-Dcom.sun.management.jmxremote.ssl=false \
+-Dcom.sun.management.jmxremote.rmi.port=9010 \
+-Djava.rmi.server.hostname=$(hostname -I | awk '{print $1}')"
+mvn spring-boot:run
+```
+
+---
+
+## 8. 監視対象にする準備が完了したら
+
+Hinemosクライアントで次の設定を行う：
+
+- ノード登録
+- JMXタブでホスト/IP・ポートを指定
+- `JMX Monitor` でMBeanを指定して監視設定を作成
+

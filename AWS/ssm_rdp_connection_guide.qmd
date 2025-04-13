@@ -1,0 +1,120 @@
+---
+title: "SSM接続"
+format: html
+---
+
+## AWS SSM 経由で Windows EC2 に RDP 接続する手順書（備忘用）
+
+本記事はChatGPT4oを用いて作成を行いました。<br>
+内容に誤りがある可能性があるため、各自で確認の上使用してください。
+
+---
+
+### 📘 目的
+AWS Systems Manager (SSM) を使って Windows EC2 に RDP 接続する手順をまとめる。
+
+### SSM接続とは
+
+AWSのSystems Manager (SSM)という機能を利用して、EC2へ接続する方法のこと。<br>
+セキュリティ的な要件から、インターネットにEC2を公開したくないときに便利。<br>
+この要件を満たす別の方法として、踏み台サーバーを構築し、踏み台サーバーからEC2へ接続する方法がある。<br>
+しかしこの場合踏み台とEC2で２つのサーバーが必要となる。<br>
+SSM接続はこの欠点がなく、１つのパブリックIPを持たないEC2に対し、AWSのサービスを経由してアクセスできる。
+
+---
+
+
+## ✅ 構成要素と準備
+
+### 1. EC2 インスタンス（Windows）側の設定
+
+- [ ] Windows ベースの EC2 インスタンスを起動
+- [ ] EC2 の IAM ロール `AmazonSSMManagedInstanceCore` ポリシーを付与
+- [ ] セキュリティグループの Outbound に TCP:443 を許可（デフォルトで許可されている）
+- [ ] Internet Gateway (`igw-xxxxx`)、または NAT Gateway 経由でインターネットに出られるようにする
+- [ ] SSM Agent がデフォルトインストールされており、動作中
+  - ただし新しいAMIの場合SSM Agentが機能しない場合があるので注意（これでハマった）
+  - 最後まで設定を行いSSM接続ができない場合はEC2のAMIを古いものに変更すると良い
+
+### 2. VPC 設定
+
+- [ ] IGW もしくはNATゲートウェイが VPC に接続されている
+- [ ] EC2 の所属するサブネットが IGWもしくはNATゲートウェイ にルーティングされている
+- [ ] DNS 解決が有効（AmazonProvidedDNS）
+- [ ] VPCにSSM接続用のエンドポイントを作成する
+
+### VPCエンドポイントの作成手順
+
+3つのエンドポイントが必要なため、3つ作成を行う。<br>
+以下はSSM接続を行うのに必要なエンドポイントであり、cloudwatchlogs等を使う場合は追加でエンドポイントが必要になる。
+
+1. エンドポイント用のセキュリティグループを作成する（ある場合は不要）
+   1. HTTPSの接続ができるようにインバウンドルールを設定する
+2. VPCのページから「エンドポイント作成」をクリック
+3. AWSのサービスを選択し、以下を選択する
+   1. ssmmessages
+   2. ec2messagae
+   3. ssm
+4. エンドポイントを作成するVPCを選択する。サブネットにEC2を配置する場合はサブネットも指定する
+5. エンドポイント用のセキュリティグループを選択する
+6. 「エンドポイントの作成」を選択する
+   1. ここでエラーが出る場合はVPCのDNSホスト名を有効化する
+   2. 参考：https://zenn.dev/pontan1001/articles/e307b6fc5444fe
+
+### 3. ローカルPC 側（Windows）
+
+- [ ] AWS CLI v2 をインストール：https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html
+- [ ] Session Manager Plugin をインストール：https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
+- [ ] `aws configure` で IAMユーザーのアクセスキー/シークレットキーを登録
+  - MFA使用時は `aws sts get-session-token` を使い `.aws/credentials` に一時的に登録するか、環境変数に設定
+
+---
+
+## 🧾 実行手順
+
+### ステップ 1: ポートフォワーディングセッションを開始（CMD/PowerShell）
+
+``` powershell
+aws ssm start-session `
+  --target i-xxxxxxxxxxxxxxxxx `
+  --document-name AWS-StartPortForwardingSession `
+  --parameters '{"portNumber":["3389"],"localPortNumber":["56789"]}'
+
+```
+
+- `i-xxxxxxxxx`：接続対象のインスタンスID
+- `56789`：任意のローカルポート（空いていればOK）
+
+
+### ステップ 2: RDP 接続
+
+1. AWSの画面から接続するEC2の「接続」をクリックし、RDP用のパスワードを取得する
+   1. パスワードの複合にはEC2起動時に設定した.pemを使う
+2. Windows のリモートデスクトップ（`mstsc`）を起動
+3. 接続先に `127.0.0.1:56789` を入力
+   1. :以降はステップ１で選択したポート番号を入力
+4. ユーザー名は `Administrator`
+5. パスワードは EC2 起動後に `.pem` を用いて復号して取得
+
+---
+
+## ✅ 補足
+
+- SSMセッションを張っているターミナルは開いたままにしておくこと
+- セッション終了は Ctrl+C で中断
+- CloudTrail でセッションログの監査も可能
+
+---
+
+## 🔐 セキュリティの利点
+
+- ポート3389（RDP）を開放せずに接続できる
+- IAM + SSM の権限制御で細かく管理可能
+- セッションログが CloudTrail に記録され、監査が容易
+
+---
+
+## 🎁 参考リンク
+
+- [SSM ポートフォワーディング公式ドキュメント](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-port-forwarding.html)
+- [Session Manager Plugin のインストール](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html)

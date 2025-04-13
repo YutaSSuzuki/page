@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Yuta Suzuki - Apache</title>
+<title>Yuta Suzuki - SSM接続</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Apache</h1>
+          <h1 class="quarto-secondary-nav-title">SSM接続</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -147,29 +147,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">note</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../note/ap_web.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Webアプリ</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../note/apache.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Apache</span></a>
+  <a href="../note/ci_cd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CI/CD</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../note/connect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">三層連携</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/front_back.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">フロントエンド＿バックエンド</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -192,6 +192,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../note/performance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">性能測定</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../note/reinstall_ubuntu.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Ubuntuの再構築</span></a>
   </div>
@@ -210,37 +216,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../note/tomcat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tomcat</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../note/ubuntu.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linuxサーバー構築に向けた準備</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../note/web.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Web三層モデル</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">AWS</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../AWS/About_AWS.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AWS概要</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/hinemos_install_requirements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hinemosインストール要件と準備</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/iam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IAM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -251,8 +257,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../AWS/memo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SAAのメモ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../AWS/network.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ネットワーク</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/s3_secrity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">S3アクセス制御</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -269,8 +287,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../AWS/springboot_hinemos_monitoring_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spring BootアプリをHinemosで監視するための設定手順</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/springboot_prometheus_cloudwatch.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/ssm_rdp_connection_guide.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">SSM接続</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../AWS/strage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AWSストレージ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/strage_type.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ブロックストレスとオブジェクトストレージ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/vpc_internet_access_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VPC構築</span></a>
   </div>
 </li>
       </ul>
@@ -286,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Apache</h1>
+<h1 class="title d-none d-lg-block">SSM接続</h1>
 </div>
 
 
@@ -303,38 +351,137 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="概要" class="level2">
-<h2 class="anchored" data-anchor-id="概要">概要</h2>
+<section id="aws-ssm-経由で-windows-ec2-に-rdp-接続する手順書備忘用" class="level2">
+<h2 class="anchored" data-anchor-id="aws-ssm-経由で-windows-ec2-に-rdp-接続する手順書備忘用">AWS SSM 経由で Windows EC2 に RDP 接続する手順書（備忘用）</h2>
+<p>本記事はChatGPT4oを用いて作成を行いました。<br> 内容に誤りがある可能性があるため、各自で確認の上使用してください。</p>
+<hr>
+<section id="目的" class="level3">
+<h3 class="anchored" data-anchor-id="目的">📘 目的</h3>
+<p>AWS Systems Manager (SSM) を使って Windows EC2 に RDP 接続する手順をまとめる。</p>
 </section>
-<section id="apatchのインストールとコマンド" class="level2">
-<h2 class="anchored" data-anchor-id="apatchのインストールとコマンド">Apatchのインストールとコマンド</h2>
-<p><code>sudo apt install apache2</code><br> Apacheのインストール、CentOSの場合httpdとなる。以下も同様</p>
-<p><code>sudo ufw allow 'Apache'</code><br> ポート80番の通信を許可し、ページの閲覧が可能なようにする。</p>
-<p><code>sudo systemctl status apache2</code><br> Apacheの状態確認、この段階ではinactiveになっている</p>
-<p><code>sudo systemctl start apache2</code><br> Apacheを起動する。起動を止めたい場合は<code>start</code>を<code>stop</code>に変える</p>
-<p><code>sudo systemctl enable apache2</code> Apacheをシステムが起動した際、同時に起動できるようにしておく</p>
-<p><code>sudo systemctl restart apache2</code><br> Apacheを再起動する。Apacheのコンフィグを変えた場合にその都度使用する。</p>
+<section id="ssm接続とは" class="level3">
+<h3 class="anchored" data-anchor-id="ssm接続とは">SSM接続とは</h3>
+<p>AWSのSystems Manager (SSM)という機能を利用して、EC2へ接続する方法のこと。<br> セキュリティ的な要件から、インターネットにEC2を公開したくないときに便利。<br> この要件を満たす別の方法として、踏み台サーバーを構築し、踏み台サーバーからEC2へ接続する方法がある。<br> しかしこの場合踏み台とEC2で２つのサーバーが必要となる。<br> SSM接続はこの欠点がなく、１つのパブリックIPを持たないEC2に対し、AWSのサービスを経由してアクセスできる。</p>
+<hr>
 </section>
-<section id="リクエストのモード選択" class="level2">
-<h2 class="anchored" data-anchor-id="リクエストのモード選択">リクエストのモード選択</h2>
-<p>クライアントからリクエストを受ける際3つの方法からその受け方を選択できる。<br> * prefork * worker * event</p>
-<p>workerはプロセス内にスレッドを持つ構造であり、スレッドがリクエストを処理する。<br> 同時に処理できるリクエスト数はserverlimit × threadperchildになる。</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ex 1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">serverlimit:</span> 4</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">threadperchild:</span> 25</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#ex2</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">serverlimit:</span> 10</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">thredperchild:</span> 10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>ex1の場合4×25=100となる。<br> ex2も同様に上限は100である。プロセスとスレッド数のどちらを大きくするかは、システムの構成による。<br></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../static/thread_diff.png" class="img-fluid figure-img"></p>
-<figcaption>ex1とex2の違い</figcaption>
-</figure>
-</div>
-<p>ex1のメリットとデメリット<br> * メリット * プロセスの切り替えが少なく、スループットが向上する * デメリット * １つのプロセスに障害が起こると、その中にあるスレッド全てに影響が出る。</p>
-<p>スレッド数はクライアントにリクエストを受けてからレスポンスを返すまで同じものが使われる。<br> したがってその後のAPやDBで遅延があると、スレッドが埋まりやすくなる。<br> 上限の数の目安 = 1秒間の最大リクエスト数 × レスポンスタイム <br> リクエスト数は多少のブレがあるため、×1.2など多少多めに取る。</p>
+</section>
+<section id="構成要素と準備" class="level2">
+<h2 class="anchored" data-anchor-id="構成要素と準備">✅ 構成要素と準備</h2>
+<section id="ec2-インスタンスwindows側の設定" class="level3">
+<h3 class="anchored" data-anchor-id="ec2-インスタンスwindows側の設定">1. EC2 インスタンス（Windows）側の設定</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Windows ベースの EC2 インスタンスを起動</label></li>
+<li><label><input type="checkbox">EC2 の IAM ロール <code>AmazonSSMManagedInstanceCore</code> ポリシーを付与</label></li>
+<li><label><input type="checkbox">セキュリティグループの Outbound に TCP:443 を許可（デフォルトで許可されている）</label></li>
+<li><label><input type="checkbox">Internet Gateway (<code>igw-xxxxx</code>)、または NAT Gateway 経由でインターネットに出られるようにする</label></li>
+<li><label><input type="checkbox">SSM Agent がデフォルトインストールされており、動作中</label>
+<ul>
+<li>ただし新しいAMIの場合SSM Agentが機能しない場合があるので注意（これでハマった）</li>
+<li>最後まで設定を行いSSM接続ができない場合はEC2のAMIを古いものに変更すると良い</li>
+</ul></li>
+</ul>
+</section>
+<section id="vpc-設定" class="level3">
+<h3 class="anchored" data-anchor-id="vpc-設定">2. VPC 設定</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">IGW もしくはNATゲートウェイが VPC に接続されている</label></li>
+<li><label><input type="checkbox">EC2 の所属するサブネットが IGWもしくはNATゲートウェイ にルーティングされている</label></li>
+<li><label><input type="checkbox">DNS 解決が有効（AmazonProvidedDNS）</label></li>
+<li><label><input type="checkbox">VPCにSSM接続用のエンドポイントを作成する</label></li>
+</ul>
+</section>
+<section id="vpcエンドポイントの作成手順" class="level3">
+<h3 class="anchored" data-anchor-id="vpcエンドポイントの作成手順">VPCエンドポイントの作成手順</h3>
+<p>3つのエンドポイントが必要なため、3つ作成を行う。<br> 以下はSSM接続を行うのに必要なエンドポイントであり、cloudwatchlogs等を使う場合は追加でエンドポイントが必要になる。</p>
+<ol type="1">
+<li>エンドポイント用のセキュリティグループを作成する（ある場合は不要）
+<ol type="1">
+<li>HTTPSの接続ができるようにインバウンドルールを設定する</li>
+</ol></li>
+<li>VPCのページから「エンドポイント作成」をクリック</li>
+<li>AWSのサービスを選択し、以下を選択する
+<ol type="1">
+<li>ssmmessages</li>
+<li>ec2messagae</li>
+<li>ssm</li>
+</ol></li>
+<li>エンドポイントを作成するVPCを選択する。サブネットにEC2を配置する場合はサブネットも指定する</li>
+<li>エンドポイント用のセキュリティグループを選択する</li>
+<li>「エンドポイントの作成」を選択する
+<ol type="1">
+<li>ここでエラーが出る場合はVPCのDNSホスト名を有効化する</li>
+<li>参考：https://zenn.dev/pontan1001/articles/e307b6fc5444fe</li>
+</ol></li>
+</ol>
+</section>
+<section id="ローカルpc-側windows" class="level3">
+<h3 class="anchored" data-anchor-id="ローカルpc-側windows">3. ローカルPC 側（Windows）</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">AWS CLI v2 をインストール：https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html</label></li>
+<li><label><input type="checkbox">Session Manager Plugin をインストール：https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html</label></li>
+<li><label><input type="checkbox"><code>aws configure</code> で IAMユーザーのアクセスキー/シークレットキーを登録</label>
+<ul>
+<li>MFA使用時は <code>aws sts get-session-token</code> を使い <code>.aws/credentials</code> に一時的に登録するか、環境変数に設定</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="実行手順" class="level2">
+<h2 class="anchored" data-anchor-id="実行手順">🧾 実行手順</h2>
+<section id="ステップ-1-ポートフォワーディングセッションを開始cmdpowershell" class="level3">
+<h3 class="anchored" data-anchor-id="ステップ-1-ポートフォワーディングセッションを開始cmdpowershell">ステップ 1: ポートフォワーディングセッションを開始（CMD/PowerShell）</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>aws ssm start-session `</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">--</span>target i-xxxxxxxxxxxxxxxxx `</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">--</span>document-name AWS-StartPortForwardingSession `</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">--</span>parameters <span class="st">'{"portNumber":["3389"],"localPortNumber":["56789"]}'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>i-xxxxxxxxx</code>：接続対象のインスタンスID</li>
+<li><code>56789</code>：任意のローカルポート（空いていればOK）</li>
+</ul>
+</section>
+<section id="ステップ-2-rdp-接続" class="level3">
+<h3 class="anchored" data-anchor-id="ステップ-2-rdp-接続">ステップ 2: RDP 接続</h3>
+<ol type="1">
+<li>AWSの画面から接続するEC2の「接続」をクリックし、RDP用のパスワードを取得する
+<ol type="1">
+<li>パスワードの複合にはEC2起動時に設定した.pemを使う</li>
+</ol></li>
+<li>Windows のリモートデスクトップ（<code>mstsc</code>）を起動</li>
+<li>接続先に <code>127.0.0.1:56789</code> を入力
+<ol type="1">
+<li>:以降はステップ１で選択したポート番号を入力</li>
+</ol></li>
+<li>ユーザー名は <code>Administrator</code></li>
+<li>パスワードは EC2 起動後に <code>.pem</code> を用いて復号して取得</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="補足" class="level2">
+<h2 class="anchored" data-anchor-id="補足">✅ 補足</h2>
+<ul>
+<li>SSMセッションを張っているターミナルは開いたままにしておくこと</li>
+<li>セッション終了は Ctrl+C で中断</li>
+<li>CloudTrail でセッションログの監査も可能</li>
+</ul>
+<hr>
+</section>
+<section id="セキュリティの利点" class="level2">
+<h2 class="anchored" data-anchor-id="セキュリティの利点">🔐 セキュリティの利点</h2>
+<ul>
+<li>ポート3389（RDP）を開放せずに接続できる</li>
+<li>IAM + SSM の権限制御で細かく管理可能</li>
+<li>セッションログが CloudTrail に記録され、監査が容易</li>
+</ul>
+<hr>
+</section>
+<section id="参考リンク" class="level2">
+<h2 class="anchored" data-anchor-id="参考リンク">🎁 参考リンク</h2>
+<ul>
+<li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-port-forwarding.html">SSM ポートフォワーディング公式ドキュメント</a></li>
+<li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Session Manager Plugin のインストール</a></li>
+</ul>
 
 
 </section>

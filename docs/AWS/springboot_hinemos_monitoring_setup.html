@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Yuta Suzuki - Webアプリ</title>
+<title>Yuta Suzuki - Spring BootアプリをHinemosで監視するための設定手順</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -81,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Webアプリ</h1>
+          <h1 class="quarto-secondary-nav-title">Spring BootアプリをHinemosで監視するための設定手順</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -113,23 +147,59 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">note</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../note/ap_web.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Webアプリ</span></a>
+  <a href="../note/ci_cd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CI/CD</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">三層連携</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/front_back.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">フロントエンド＿バックエンド</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">メモリー</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../note/object_programing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">オブジェクト指向</span></a>
+ <span class="menu-text">オブジェクト指向概要</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/object_programing2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">オブジェクト指向の三大要素</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/performance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">性能測定</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../note/reinstall_ubuntu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ubuntuの再構築</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -146,37 +216,37 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../note/tomcat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tomcat</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../note/ubuntu.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linuxサーバー構築に向けた準備</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../note/web.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Web三層モデル</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">AWS</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../AWS/About_AWS.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AWS概要</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/hinemos_install_requirements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hinemosインストール要件と準備</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/iam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IAM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -187,8 +257,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../AWS/memo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SAAのメモ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../AWS/network.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ネットワーク</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/s3_secrity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">S3アクセス制御</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -205,8 +287,38 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../AWS/springboot_hinemos_monitoring_setup.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Spring BootアプリをHinemosで監視するための設定手順</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/springboot_prometheus_cloudwatch.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spring Boot + Prometheus + CloudWatch によるメトリクス可視化手順</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/ssm_rdp_connection_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SSM接続</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../AWS/strage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AWSストレージ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/strage_type.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ブロックストレスとオブジェクトストレージ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../AWS/vpc_internet_access_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VPC構築</span></a>
   </div>
 </li>
       </ul>
@@ -222,7 +334,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Webアプリ</h1>
+<h1 class="title d-none d-lg-block">Spring BootアプリをHinemosで監視するための設定手順</h1>
 </div>
 
 
@@ -239,17 +351,128 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="webアプリって何" class="level2">
-<h2 class="anchored" data-anchor-id="webアプリって何">Webアプリって何？</h2>
-<p>インターネットを通じて動作するアプリケーションのこと。<br> クライアントPCからリクエストを受け取り、サーバーが処理をすることで動作する。<br> クライアントPCはWebブラウザを用いてサーバーへリクエストを送る。<br> サーバーはリクエストに応じたHTMLをレスポンスとして返している。</p>
+<section id="概要" class="level2">
+<h2 class="anchored" data-anchor-id="概要">概要</h2>
+<p>本ドキュメントでは、Spring Bootで構築されたサンプルアプリケーションをHinemosでJMX監視するために、<strong>Spring Boot側で実施すべき設定手順</strong>を記載する。</p>
+<hr>
 </section>
-<section id="cgi" class="level2">
-<h2 class="anchored" data-anchor-id="cgi">CGI</h2>
-<p>Webサーバーとプログラムを連携させる仕組みのこと<br> Webサイト内での検索など、クライアントの要求によって結果が変わるもの（動的コンテンツ）は、事前にHTMLを用意する事ができない。<br> そこでPerlのプログラミングをWebサーバーに付け加えることで、新しくHTMLファイルを作成することで、動的コンテンツに対応できる様になった。<br></p>
+<section id="前提条件" class="level2">
+<h2 class="anchored" data-anchor-id="前提条件">1. 前提条件</h2>
+<ul>
+<li>Spring Boot バージョン：2.7.4</li>
+<li>起動方法：<code>mvn spring-boot:run</code> または <code>java -jar</code></li>
+<li>Hinemosサーバーから監視対象（Spring Boot）へのネットワーク疎通が可能</li>
+<li>Java 8（OpenJDK 1.8）を使用している</li>
+<li>EC2などのクラウド環境の場合、ポート開放（JMX）を実施済み</li>
+</ul>
+<hr>
 </section>
-<section id="javaサーブレット" class="level2">
-<h2 class="anchored" data-anchor-id="javaサーブレット">Java/サーブレット</h2>
-<p>CGIを活用したHTMLの作成はWebアプリの大規模、複雑化に伴ってCGIでのレスポンスに時間がかかることがボトルネックになっていった。<br></p>
+<section id="jmxを有効にしてspring-bootを起動" class="level2">
+<h2 class="anchored" data-anchor-id="jmxを有効にしてspring-bootを起動">2. JMXを有効にしてSpring Bootを起動</h2>
+<p>Spring BootをJMX対応で起動するには、以下のJVMオプションを設定する。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MAVEN_OPTS</span><span class="op">=</span><span class="st">"-Dcom.sun.management.jmxremote </span><span class="dt">\</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="st">-Dcom.sun.management.jmxremote.port=9010 </span><span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="st">-Dcom.sun.management.jmxremote.authenticate=false </span><span class="dt">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">-Dcom.sun.management.jmxremote.ssl=false </span><span class="dt">\</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">-Dcom.sun.management.jmxremote.rmi.port=9010 </span><span class="dt">\</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">-Djava.rmi.server.hostname=</span><span class="va">$(</span><span class="fu">hostname</span> <span class="at">-I</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'{print $1}'</span><span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>その後、以下のように起動する。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mvn</span> spring-boot:run</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>または <code>.jar</code> を起動する場合は以下のようにする。</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">java</span> <span class="va">$MAVEN_OPTS</span> <span class="at">-jar</span> target/springboot-helloworld-2.7.4.jar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="ポート開放必要に応じて" class="level2">
+<h2 class="anchored" data-anchor-id="ポート開放必要に応じて">3. ポート開放（必要に応じて）</h2>
+<p>セキュリティグループやfirewalldで <strong>ポート9010を開放</strong>しておく必要がある。</p>
+<section id="awsセキュリティグループ例" class="level3">
+<h3 class="anchored" data-anchor-id="awsセキュリティグループ例">AWSセキュリティグループ例</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>タイプ</th>
+<th>プロトコル</th>
+<th>ポート範囲</th>
+<th>ソースIP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>カスタムTCP</td>
+<td>TCP</td>
+<td>9010</td>
+<td>HinemosサーバーのIP（例：172.31.37.79）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="動作確認コマンド" class="level2">
+<h2 class="anchored" data-anchor-id="動作確認コマンド">4. 動作確認コマンド</h2>
+<p>Hinemosサーバー側から以下のコマンドで疎通を確認する。</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> <span class="at">-vz</span> <span class="op">&lt;</span>SpringBootサーバーのIP<span class="op">&gt;</span> 9010</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>成功すると：</p>
+<pre><code>Connection to &lt;IP&gt; 9010 port [tcp/*] succeeded!</code></pre>
+<hr>
+</section>
+<section id="起動確認jmxが効いているか" class="level2">
+<h2 class="anchored" data-anchor-id="起動確認jmxが効いているか">5. 起動確認（JMXが効いているか）</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ss</span> <span class="at">-lntp</span> <span class="kw">|</span> <span class="fu">grep</span> 9010</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>出力例：</p>
+<pre><code>LISTEN 0      50     *:9010    *:*    users:(("java",pid=12345,...))</code></pre>
+<hr>
+</section>
+<section id="トラブルシューティング" class="level2">
+<h2 class="anchored" data-anchor-id="トラブルシューティング">6. トラブルシューティング</h2>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>症状</th>
+<th>原因と対策</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>nc</code> が TIMEOUT</td>
+<td>セキュリティグループやファイアウォールが未開放</td>
+</tr>
+<tr class="even">
+<td><code>nc</code> が Connection refused</td>
+<td>Spring BootがJMXポートでLISTENしていない（MAVEN_OPTS不足）</td>
+</tr>
+<tr class="odd">
+<td><code>ss | grep 9010</code> に何も出ない</td>
+<td>Spring Boot再起動 or 起動スクリプトの見直し</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="参考起動スクリプト例start.sh" class="level2">
+<h2 class="anchored" data-anchor-id="参考起動スクリプト例start.sh">7. 参考：起動スクリプト例（start.sh）</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MAVEN_OPTS</span><span class="op">=</span><span class="st">"-Dcom.sun.management.jmxremote </span><span class="dt">\</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">-Dcom.sun.management.jmxremote.port=9010 </span><span class="dt">\</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="st">-Dcom.sun.management.jmxremote.authenticate=false </span><span class="dt">\</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="st">-Dcom.sun.management.jmxremote.ssl=false </span><span class="dt">\</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="st">-Dcom.sun.management.jmxremote.rmi.port=9010 </span><span class="dt">\</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="st">-Djava.rmi.server.hostname=</span><span class="va">$(</span><span class="fu">hostname</span> <span class="at">-I</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'{print $1}'</span><span class="va">)</span><span class="st">"</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="ex">mvn</span> spring-boot:run</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="監視対象にする準備が完了したら" class="level2">
+<h2 class="anchored" data-anchor-id="監視対象にする準備が完了したら">8. 監視対象にする準備が完了したら</h2>
+<p>Hinemosクライアントで次の設定を行う：</p>
+<ul>
+<li>ノード登録</li>
+<li>JMXタブでホスト/IP・ポートを指定</li>
+<li><code>JMX Monitor</code> でMBeanを指定して監視設定を作成</li>
+</ul>
 
 
 </section>
