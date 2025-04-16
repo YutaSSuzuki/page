@@ -75,10 +75,7 @@ SSM接続はこの欠点がなく、１つのパブリックIPを持たないEC2
 ### ステップ 1: ポートフォワーディングセッションを開始（CMD/PowerShell）
 
 ``` powershell
-aws ssm start-session `
-  --target i-xxxxxxxxxxxxxxxxx `
-  --document-name AWS-StartPortForwardingSession `
-  --parameters '{"portNumber":["3389"],"localPortNumber":["56789"]}'
+ aws ssm start-session --target i-xxxxxxxxx --document-name AWS-StartPortForwardingSession --parameters '{\"portNumber\":[\"3389\"],\"localPortNumber\":[\"56789\"]}'
 
 ```
 

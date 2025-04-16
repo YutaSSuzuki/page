@@ -1898,5 +1898,104 @@
     "crumbs": [
       "HOME"
     ]
+  },
+  {
+    "objectID": "AWS/springboot_gc_tomcat_monitoring.html",
+    "href": "AWS/springboot_gc_tomcat_monitoring.html",
+    "title": "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）",
+    "section": "",
+    "text": "Spring Boot (Micrometer StatsD)  \n   ↓ UDP  \nCloudWatch Agent (StatsD Listener)  \n   ↓  \nAmazon CloudWatch（メトリクス & ダッシュボード）",
+    "crumbs": [
+      "AWS",
+      "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_gc_tomcat_monitoring.html#構成概要",
+    "href": "AWS/springboot_gc_tomcat_monitoring.html#構成概要",
+    "title": "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）",
+    "section": "",
+    "text": "Spring Boot (Micrometer StatsD)  \n   ↓ UDP  \nCloudWatch Agent (StatsD Listener)  \n   ↓  \nAmazon CloudWatch（メトリクス & ダッシュボード）",
+    "crumbs": [
+      "AWS",
+      "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_gc_tomcat_monitoring.html#事前要件",
+    "href": "AWS/springboot_gc_tomcat_monitoring.html#事前要件",
+    "title": "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）",
+    "section": "🧩 事前要件",
+    "text": "🧩 事前要件\n\nAmazon EC2 上に Spring Boot アプリを構築済み\nCloudWatch Agent インストール済み\nEC2 に IAM ロール AmazonCloudWatchAgentServerPolicy が付与されていること\n\n必要なコマンドのインストール\n#java\nsudo yum install -y java-1.8.0-openjdk\n#unzip\nsudo yum install -y unzip\n#ss\nsudo yum install -y iproute\n\n#cloudwatch agent\nsudo dnf install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm\nsudo systemctl enable amazon-ssm-agent",
+    "crumbs": [
+      "AWS",
+      "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_gc_tomcat_monitoring.html#spring-boot-アプリに-micrometer-statsd-を導入",
+    "href": "AWS/springboot_gc_tomcat_monitoring.html#spring-boot-アプリに-micrometer-statsd-を導入",
+    "title": "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）",
+    "section": "🪛 1. Spring Boot アプリに Micrometer + StatsD を導入",
+    "text": "🪛 1. Spring Boot アプリに Micrometer + StatsD を導入\n\npom.xml に依存追加\n&lt;dependency&gt;\n  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;\n  &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;\n&lt;/dependency&gt;\n&lt;dependency&gt;\n  &lt;groupId&gt;io.micrometer&lt;/groupId&gt;\n  &lt;artifactId&gt;micrometer-registry-statsd&lt;/artifactId&gt;\n&lt;/dependency&gt;\n\n\napplication.properties の設定\nmanagement.metrics.export.statsd.enabled=true\nmanagement.metrics.export.statsd.host=localhost\nmanagement.metrics.export.statsd.port=8125\nmanagement.metrics.enable.jvm=true\nmanagement.metrics.enable.tomcat=true\nlogging.level.io.micrometer.statsd=INFO",
+    "crumbs": [
+      "AWS",
+      "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_gc_tomcat_monitoring.html#自動収集されるメトリクスの例",
+    "href": "AWS/springboot_gc_tomcat_monitoring.html#自動収集されるメトリクスの例",
+    "title": "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）",
+    "section": "🧠 2. 自動収集されるメトリクスの例",
+    "text": "🧠 2. 自動収集されるメトリクスの例\n\nGC 関連\n\njvm.gc.pause\njvm.gc.max.data.size\njvm.memory.used\njvm.memory.max\n\n\n\nTomcat スレッド関連\n\ntomcat.threads.config.max\ntomcat.threads.current\ntomcat.threads.busy",
+    "crumbs": [
+      "AWS",
+      "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_gc_tomcat_monitoring.html#cloudwatch-agent-の設定",
+    "href": "AWS/springboot_gc_tomcat_monitoring.html#cloudwatch-agent-の設定",
+    "title": "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）",
+    "section": "📦 3. CloudWatch Agent の設定",
+    "text": "📦 3. CloudWatch Agent の設定\n\n/opt/aws/amazon-cloudwatch-agent/bin/config.json 設定例\n{\n  \"metrics\": {\n    \"metrics_collected\": {\n      \"statsd\": {\n        \"service_address\": \":8125\",\n        \"metrics_collection_interval\": 10,\n        \"metrics_aggregation_interval\": 60\n      }\n    }\n  }\n}\n\n\n設定適用コマンド\nsudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \\\n  -a fetch-config \\\n  -m ec2 \\\n  -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json \\\n  -s",
+    "crumbs": [
+      "AWS",
+      "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_gc_tomcat_monitoring.html#cloudwatch-メトリクス確認",
+    "href": "AWS/springboot_gc_tomcat_monitoring.html#cloudwatch-メトリクス確認",
+    "title": "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）",
+    "section": "🔍 4. CloudWatch メトリクス確認",
+    "text": "🔍 4. CloudWatch メトリクス確認\nCloudWatch コンソール → メトリクス → 名前空間：StatsD\n対象メトリクス例：\n\n\n\nタイトル\nメトリクス名\n\n\n\n\nGC Pause\njvm.gc.pause\n\n\nMax Data Size\njvm.gc.max.data.size\n\n\nCurrent Threads\ntomcat.threads.current\n\n\nBusy Threads\ntomcat.threads.busy",
+    "crumbs": [
+      "AWS",
+      "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_gc_tomcat_monitoring.html#cloudwatch-dashboards-で可視化例",
+    "href": "AWS/springboot_gc_tomcat_monitoring.html#cloudwatch-dashboards-で可視化例",
+    "title": "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）",
+    "section": "📊 5. CloudWatch Dashboards で可視化（例）",
+    "text": "📊 5. CloudWatch Dashboards で可視化（例）\nmetric1 / 1000  # GC Pauseを秒に変換",
+    "crumbs": [
+      "AWS",
+      "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）"
+    ]
+  },
+  {
+    "objectID": "AWS/springboot_gc_tomcat_monitoring.html#完了チェックリスト",
+    "href": "AWS/springboot_gc_tomcat_monitoring.html#完了チェックリスト",
+    "title": "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）",
+    "section": "✅ 完了チェックリスト",
+    "text": "✅ 完了チェックリスト\n\nSpring Boot 側に Micrometer StatsD 導入済み\n\nGC・Tomcat スレッドメトリクスが出力されている（nc -u -l 8125 などで確認）\n\nCloudWatch Agent が起動・8125リッスン中\n\nCloudWatch ダッシュボードで可視化できた",
+    "crumbs": [
+      "AWS",
+      "Spring Boot GC・Tomcatスレッド数監視（StatsD + CloudWatch）"
+    ]
   }
 ]
