@@ -17,4 +17,75 @@ h2 {
   border-inline-start: 12px solid $grey3;
 }
 
+/* Javaの実行フローを本文から明確に分離する。 */
+.execution-flow {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: #f4f7fb;
+  border: 1px solid #b8c7d9;
+  border-inline-start: 6px solid #356a9a;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(31, 41, 55, 0.1);
+}
 
+.execution-flow > p:first-child {
+  margin: 0;
+  color: #234b70;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.execution-flow pre {
+  margin: 0.75rem 0 0;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  color: #f8fafc;
+  background: #1f2937;
+  border: 0;
+  border-radius: 0.4rem;
+}
+
+.execution-flow pre code {
+  color: inherit;
+  background: transparent;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* 検証結果のコマンドと出力を本文から分離する。 */
+.result-evidence {
+  margin: 1.25rem 0 1.75rem;
+  padding: 0;
+  overflow: hidden;
+  background: #eef6f2;
+  border: 1px solid #9fc4b2;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(31, 41, 55, 0.1);
+}
+
+.result-evidence > p:first-child {
+  margin: 0;
+  padding: 0.65rem 1rem;
+  color: #174f3a;
+  background: #dceee5;
+  border-bottom: 1px solid #9fc4b2;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.result-evidence pre {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  color: #f8fafc;
+  background: #17202a;
+  border: 0;
+  border-radius: 0;
+}
+
+.result-evidence pre code {
+  color: inherit;
+  background: transparent;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
